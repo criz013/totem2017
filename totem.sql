@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 06 Avril 2017 à 15:10
+-- Généré le :  Jeu 06 Avril 2017 à 15:28
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.5.38
 
@@ -123,6 +123,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `last_name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rôle` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
