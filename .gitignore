@@ -1,4 +1,8 @@
+*.project
+.settings/
+*.idea
 /vendor/
 app/config.php
 /phpDocumentor.phar
 *.log
+.buildpath
