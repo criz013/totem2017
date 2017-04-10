@@ -29,7 +29,7 @@ class WebController extends Controller
     	$message = [];
     	$error = 0;
     	
-    	if (!empty($_POST))
+    	if (!empty($_POST) && isset($_POST))
     	{	
     			// RECUPERER LES INFOS DU FORMULAIRE
     			// http://php.net/manual/en/function.trim.php
@@ -46,59 +46,57 @@ class WebController extends Controller
     			// SECURITE
     			// VERIFIER QUE CHAQUE INFO EST CONFORME
     			// http://php.net/manual/en/function.mb-strlen.php
-    			if (is_string($titre) && ( strlen($titre) <= 0))
+    			if ((is_string($titre) == FALSE) || ( strlen($titre) == 0))
     			{
     				$error++;
     				$message[] = 'Titre invalide';
     				
     				
     			}
-    			if (is_string($url)    && ( strlen($url) <= 1 ))
+    			if ((is_string($url) == FALSE) || ( strlen($url) == 0 ))
     			{
     				$error++;
     				$message[] = 'Url invalide';
     				
     			}
-    			if (is_string($contact)  && ( strlen($contact) <= 0 ))
+    			if ((is_string($contact) == FALSE)  || ( strlen($contact) == 0 ))
     			{
     				$error++;
     				$message[] = 'Contact invalide';
     				
     			}
-    			if (is_string($description) && ( mb_strlen($description) <= 0 ))
+    			if ((is_string($description) == FALSE) || ( mb_strlen($description) == 0 ))
     			{
     				$error++;
     				$message[] = 'Description invalide';
     				
     			}
-    			if(is_string($email)  && ( strlen($email) <= 0))
+    			if((is_string($email) == FALSE)  || ( strlen($email) == 0))
     			{
     				$error++;
     				$message[] = 'Email invalide';
     				
     			}
-    			if(is_string($facebook)      && ( strlen($facebook) <= 0 ))
+    			if((is_string($facebook) == FALSE) || ( strlen($facebook) == 0 ))
     			{
     				$error++;
     				$message[] = 'Facebook invalide';
     				
     			}
-    			if(is_string($twitter) ||  ( strlen($twitter) <= 0 ))
+    			if((is_string($twitter) == FALSE) ||  ( strlen($twitter) == 0 ))
     			{
     				$error++;
     				$message[] = 'Twitter invalide';
     				
     			}
-    			if(is_string($instagram)  ||  strlen($instagram) <= 0   )
+    			if((is_string($instagram) == FALSE)  ||  (strlen($instagram) == 0)   )
     			{
     				$error++;
     				$message[] = 'Instagram invalide';
     			}
     					
-    			if($error > 0)
+    			if($error < 1)
     			{
-    				
-    			}else{
     				// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
     				// JE CREE UN OBJET DE LA CLASSE ArticleModel
     				// NE PAS OUBLIER DE FAIRE use
@@ -117,10 +115,10 @@ class WebController extends Controller
     				],$id);
     				
     				// OK
-    				$message[] = "BRAVO TU AS MODIFIE UN ARTICLE";
+    				$message[] = "BRAVO TU AS MODIFIE Les parametres du site";
     		}
     	}
- 		print_r($error);
+ 		
     	$this->show('back/backConfigModif',['id'=>$id,'message'=>$message]);
     }
     
