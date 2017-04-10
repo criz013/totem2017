@@ -23,8 +23,8 @@
         ['GET', '/aministrateur/gestion-edition/detail/[:id]', 'Challenge#detail', 'challenge_detail'],
 
         //Gestion du site en général
-        ['GET|POST', '/aministrateur/configuration-site', 'Web#site', 'web_site'],
-
+        ['GET', '/aministrateur/configuration-site', 'Web#site', 'web_site'],
+		['GET|POST', '/aministrateur/configuration-site/modification/[:id]', 'Web#modification', 'web_modification'],
 
         ['GET|POST', '/aministrateur/reseau-sociaux', 'Web#sociaux', 'web_sociaux'],
 
