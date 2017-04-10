@@ -9,12 +9,14 @@
 namespace Controller;
 
 
-class WebController
+use W\Controller\Controller;
+
+class WebController extends Controller
 {
     /**
      * @route /aministrateur/configuration-site
      */
     public function site(){
-
+    	$this->show('back/backConfig');
     }
 }

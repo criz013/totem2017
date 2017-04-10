@@ -8,14 +8,16 @@
 
 namespace Controller;
 
+use \W\Controller\Controller;
 
-class AdminController
+class AdminController extends Controller
 {
     /**
      *
      * route: /aministrateur
      */
     public function index(){
-
+		
+    	$this->show('back/backHome');
     }
 }
