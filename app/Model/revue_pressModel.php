@@ -4,7 +4,7 @@ namespace Model;
 
 use \W\Model\Model;
 
-class revue_presseModel extends Model
+class revue_pressModel extends Model
 {
 
 }

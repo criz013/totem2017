@@ -4,8 +4,9 @@
  */
 ?>
 
-		<footer>
-			<p>Tous droit réservé Webforce 3 - 2017</p>
-		</footer>
-	</main>
+			<footer>
+				<p>Tous droit réservé Webforce 3 - 2017</p>
+			</footer>
+		</main>
+	</body>
 </html>

@@ -14,9 +14,12 @@
         ['GET|POST', '/administrateur/gestion-inscription', 'User#inscription', 'user_inscription'],
         ['GET|POST', '/administrateur/gestion-inscription/detail/[:id]', 'User#inscriptionDetail', 'user_inscription_detail'],
 
-        //Edition et suppression d'article de la revue de presse
-        ['GET', '/administrateur/revue-presse', 'Presse#index', 'presse_index'],
-        ['GET', '/administrateur/revue-presse/detail/[:id]', 'Presse#detail', 'presse_detail'],
+        //Edition et suppression d'article de la revue de press
+        ['GET', '/administrateur/revue-press', 'Press#index', 'press_index'],
+        ['GET', '/administrateur/revue-press/detail/[:id]', 'Press#detail', 'press_detail'],
+        ['GET|POST', '/administrateur/revue-press/suppression/[:id]', 'Press#delete', 'press_delete'],
+        ['GET|POST', '/administrateur/revue-press/creation/[:id]', 'Press#create', 'press_create'],
+        ['GET|POST', '/administrateur/revue-press/modification/[:id]', 'Press#modify', 'press_modify'],
 
         //Gestion des editions challenge totem
         ['GET', '/administrateur/gestion-edition', 'Challenge#index', 'challenge_index'],
@@ -24,7 +27,7 @@
 
         //Gestion du site en général
         ['GET', '/administrateur/configuration-site', 'Web#site', 'web_site'],
-		['GET|POST', '/administrateur/configuration-site/modification/[:id]', 'Web#modification', 'web_modification'],
+	['GET|POST', '/administrateur/configuration-site/modification/[:id]', 'Web#modification', 'web_modification'],
 
         ['GET|POST', '/administrateur/reseau-sociaux', 'Web#sociaux', 'web_sociaux'],
 
