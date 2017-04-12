@@ -27,7 +27,7 @@
 
         //Gestion du site en général
         ['GET', '/administrateur/configuration-site', 'Web#site', 'web_site'],
-	['GET|POST', '/administrateur/configuration-site/modification/[:id]', 'Web#modification', 'web_modification'],
+		['GET|POST', '/administrateur/configuration-site/modification/[:id]', 'Web#modification', 'web_modification'],
 
         ['GET|POST', '/administrateur/reseau-sociaux', 'Web#sociaux', 'web_sociaux'],
 
@@ -35,5 +35,6 @@
         ['GET|POST', '/login', 'HomePage#login', 'homePage_login'],
         ['GET|POST', '/logout', 'HomePage#logout', 'homePage_logout'],
         ['GET|POST', '/inscription', 'HomePage#inscription', 'homePage_inscription'],
+		['GET|POST', '/validation', 'HomePage#validationMail', 'homePage_validationMail'],
 
 	);
