@@ -2,7 +2,7 @@
 	
 	$w_routes = array(
 	    //Route pour la home page
-		['GET', '/', 'HomePage#index', 'homePage_index'],
+        ['GET', '/2017', 'HomePage#index', 'homePage_index'],
 
         //route pour la partie administrateur
         ['GET|POST', '/administrateur', 'Admin#index', 'admin_index'],
@@ -36,5 +36,28 @@
         ['GET|POST', '/logout', 'HomePage#logout', 'homePage_logout'],
         ['GET|POST', '/inscription', 'HomePage#inscription', 'homePage_inscription'],
 		['GET|POST', '/validation', 'HomePage#validationMail', 'homePage_validationMail'],
+
+        /** Route ancienne version */
+        ['GET', '/', 'Default#home', 'default_home'],
+                ['GET', '/edition2016/partenaires', 'LastEditionController#partenaires', 'lastEdition_partenaires'],
+                ['GET', '/edition2016/photos', 'LastEdition#photos', 'lastEdition_photos'],
+                ['POST', '/equipages/add', 'Equipages#add', 'equipages_add'],
+                ['GET', '/equipages/classement', 'Equipages#getResults', 'equipages_classement'],
+                ['GET', '/profile/[:name]', 'Profile#entreprise', 'profile_entreprise'],
+                
+                ['GET', '/dashboard', 'Dashboard#home', 'dashboard_home'],
+                ['GET|POST', '/dashboard/profile/edit', 'Dashboard#editProfile', 'dashboard_editprofile'],
+                ['GET|POST', '/dashboard/account', 'Dashboard#editAccount', 'dashboard_editAccount'],
+                ['GET|POST', '/dashboard/website', 'Dashboard#editWebsite', 'dashboard_editWebsite'],
+                ['GET|POST', '/dashboard/challenges', 'Dashboard#editChallenges', 'dashboard_editChallenges'],
+                
+                ['GET|POST', '/auth/login', 'Auth#login', 'auth_login'],
+                ['GET', '/auth/logout', 'Auth#logout', 'auth_logout'],
+                ['GET|POST', '/auth/signin', 'Auth#signin', 'auth_signin'],
+                ['GET|POST', '/auth/lostpassword', 'Auth#lostpassword', 'auth_lostpassword'],
+                ['GET', '/auth/token', 'Facebook#login', 'fb_login'],
+                ['GET', '/auth/callback', 'Facebook#callback', 'fb_callback'],
+                
+                ['POST', '/signup', 'Twizzy#createTeam', 'signup_twizzy'],
 
 	);

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'HousePaint';
+  src: url('HousePaint.eot');
+  src: url('HousePaint.woff2') format('woff2'),
+       url('HousePaint.woff') format('woff'),
+       url('HousePaint.ttf') format('truetype'),
+       url('HousePaint.svg#HousePaint') format('svg'),
+       url('HousePaint.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

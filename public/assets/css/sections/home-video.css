@@ -1,0 +1,122 @@
+#header {
+    background: url('../../img/background.png') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#header video { 
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50vw) translateY(-50vh);
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+#header .navbar {
+    background: none;
+    border: none;
+}
+
+#header .navbar .nav>li>a {
+    color: white;
+    /*font-size: 1.4rem;*/
+    transition: all .2s ease;
+}
+
+#header .navbar .nav>li>a:hover {
+    background: rgba(255,255,255,.35);
+    transition: all .2s ease;
+}
+
+#header .navbar .nav>li>a:focus {
+    color: white;
+    background: rgba(255,255,255,.35);
+    transition: all .2s ease;
+}
+
+/*#countdown {*/
+/*    position: relative;*/
+/*    margin: 30vh auto 0 auto;*/
+/*    left: 20%;*/
+/*}*/
+
+
+/*
+ * compteur - Coming Soon template Web Acappella
+ * source : https://www.tontonduweb.com/compteur-coming-soon/
+ *
+ */
+ 
+/*#countdown {*/
+/*    margin-bottom:50px;*/
+/*}*/
+
+ 
+ 
+/*.alignc {*/
+/*    text-align:center;*/
+/*    color:#66B7B0;*/
+    /*font-size:15px; */
+/*    margin:0; padding:0*/
+/*}*/
+
+/*.dash {*/
+/*    margin-top:34px;*/
+/*}*/
+
+/*.dash ul li {*/
+/*    display:inline-block;*/
+    
+/*}*/
+
+/*.digit {*/
+/*    display:block;*/
+/*    overflow:hidden;*/
+/*    font-size:50px;*/
+/*    height:50px;*/
+/*    line-height:1;*/
+/*    font-weight:100;*/
+    
+/*}*/
+
+/*.dash_title {*/
+/*    display:block;*/
+/*    overflow:hidden;*/
+/*    font-weight:300;*/
+/*    margin-top:10px;*/
+/*}*/
+
+/*.circle {*/
+/*    width:150px;*/
+/*    height:150px;*/
+/*    border:3px solid #FFFFFF;*/
+/*    border-radius:50%;*/
+/*    padding:30px 0;*/
+/*    margin-left:auto;*/
+/*    margin-right:auto;*/
+/*    background: rgba(255,255,255,.85);*/
+/*}*/
+
+/*@media (max-width: 480px) {*/
+
+/*    .circle {*/
+/*        width:100px;*/
+/*        height:100px;*/
+/*        padding:15px 0;*/
+/*    }*/
+    
+    /*.digit {*/
+    /*    font-size:34px;*/
+    /*    height:34px;*/
+    /*}*/
+    
+/*}*/

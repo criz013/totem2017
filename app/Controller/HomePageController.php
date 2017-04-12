@@ -8,7 +8,7 @@
 
 namespace Controller;
 //A tester
-use '../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+// use '../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
 class HomePageController
 {

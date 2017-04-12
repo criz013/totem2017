@@ -1,0 +1,69 @@
+#nav-onepage {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin-bottom:0!important;
+	height: auto;
+	width: 100%;
+	z-index:9998;
+	transition: all .4s ease;
+}
+
+#nav-onepage .navbar-brand {
+	display: none;
+	color: #fff;
+	/*font-size: 1.2rem;*/
+}
+
+#nav-onepage.navbar-onepage {
+    background: rgba(0,0,0,.5);
+    border: none;
+}
+
+#nav-onepage .navbar-onepage li {
+    border-right: 1px solid rgba(255,255,255,.5);
+}
+#nav-onepage .navbar-onepage li:last-child {
+    border-right: none;
+}
+
+.navbar-scroll li a {
+    color: #cbf723!important;
+    /*font-size: 1.2rem;*/
+    padding: .9em 1.2em;
+    /*font-weight: normal;*/
+}
+
+.navbar-scroll li a:hover {
+    background: rgba(255, 255, 255,.35);
+}
+
+.navbar-scroll li a:focus {
+    background: rgba(255, 255, 255,.35);
+    
+}
+
+.fixedToTop {
+	position: fixed!important;
+	top: 0;
+	left: 0;
+	/*font-size: 1.2rem;*/
+	padding: 0;
+	height: 50px!important;
+	background: rgba(26, 188, 156,.5);
+	transition: all .4s ease;
+}
+
+#nav-onepage .navbar-li-fixed a {
+    /*font-size: 1.2rem!important;*/
+    transition: all .4s ease;
+    padding: .9em!important;
+}
+
+#nav-onepage .navbar-brand { 
+    max-height: 40px;
+    max-width: 30%; 
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0; 
+}

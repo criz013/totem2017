@@ -6,3 +6,6 @@ app/config.php
 /phpDocumentor.phar
 *.log
 .buildpath
+public/uploads/
+public/assets/img/
+public/assets/uploads/

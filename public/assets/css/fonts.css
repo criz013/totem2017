@@ -1,0 +1,74 @@
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans');*/
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');*/
+
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('../font/Gotham-Bold/Gotham-Bold.eot');
+  src: url('../font/Gotham-Bold/Gotham-Bold.woff2') format('woff2'),
+       url('../font/Gotham-Bold/Gotham-Bold.woff') format('woff'),
+       url('../font/Gotham-Bold/Gotham-Bold.ttf') format('truetype'),
+       url('../font/Gotham-Bold/Gotham-Bold.svg#Gotham-Bold') format('svg'),
+       url('../font/Gotham-Bold/Gotham-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*@font-face {*/
+/*  font-family: 'HousePaint';*/
+/*  src: url('../font/HousePaint/HousePaint.eot');*/
+/*  src: url('../font/HousePaint/HousePaint.woff2') format('woff2'),*/
+/*       url('../font/HousePaint/HousePaint.woff') format('woff'),*/
+/*       url('../font/HousePaint/HousePaint.ttf') format('truetype'),*/
+/*       url('../font/HousePaint/HousePaint.svg#HousePaint') format('svg'),*/
+/*       url('../font/HousePaint/HousePaint.eot?#iefix') format('embedded-opentype');*/
+/*  font-weight: normal;*/
+/*  font-style: normal;*/
+/*}*/
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('Gotham-Book.eot');
+  src: url('Gotham-Book.woff2') format('woff2'),
+       url('Gotham-Book.woff') format('woff'),
+       url('Gotham-Book.ttf') format('truetype'),
+       url('Gotham-Book.svg#Gotham-Book') format('svg'),
+       url('Gotham-Book.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('Gotham-Light.eot');
+  src: url('Gotham-Light.woff2') format('woff2'),
+       url('Gotham-Light.woff') format('woff'),
+       url('Gotham-Light.ttf') format('truetype'),
+       url('Gotham-Light.svg#Gotham-Light') format('svg'),
+       url('Gotham-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('Gotham-Medium.eot');
+  src: url('Gotham-Medium.woff2') format('woff2'),
+       url('Gotham-Medium.woff') format('woff'),
+       url('Gotham-Medium.ttf') format('truetype'),
+       url('Gotham-Medium.svg#Gotham-Medium') format('svg'),
+       url('Gotham-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*@font-face {*/
+/*  font-family: 'StencilStd';*/
+/*  src: url('StencilStd.eot');*/
+/*  src: url('StencilStd.woff2') format('woff2'),*/
+/*       url('StencilStd.woff') format('woff'),*/
+/*       url('StencilStd.ttf') format('truetype'),*/
+/*       url('StencilStd.svg#StencilStd') format('svg'),*/
+/*       url('StencilStd.eot?#iefix') format('embedded-opentype');*/
+/*  font-weight: normal;*/
+/*  font-style: normal;*/
+/*}*/

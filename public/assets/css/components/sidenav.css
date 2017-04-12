@@ -1,0 +1,51 @@
+#sidenav-seconnecter {
+    position: absolute;
+	top: 0;
+	right: 0;
+	width: 20vw;
+	height: 100vh;
+	z-index: 9999;
+	background: #fff;
+	padding: 2em;
+	transform: translateX(20vw);
+	transition: all .4s ease-out;
+}
+
+#sidenav-participer {
+    position: absolute;
+	top: 0;
+	right: 0;
+	width: 30vw;
+	height: 200vh;
+	z-index: 9999;
+	background: #fff;
+	padding: 2em;
+	transform: translateX(30vw);
+	transition: all .4s ease-out;
+}
+
+#sidenav-participer h2 {
+   color: green;
+}
+
+#sidenav-content {
+	display:none;
+}
+
+.slideLeft {
+    transform: translateX(0vw)!important;
+    transition: all .2s ease-in;
+}
+
+.slideFullScreen {
+	transform: translateX(0vw)!important;
+    transition: all .2s ease-in;
+}
+
+.show {
+	display: block;
+}
+
+/*.step2, .step3, #confirmation {
+	display: none;
+}*/

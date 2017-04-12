@@ -1,0 +1,204 @@
+.revuedepresse {
+    /*transform: rotate(-5deg);*/
+    background: rgba(253,235,26,1);
+    /*width: 140vw;*/
+    /*margin-left: 20vw;*/
+    /*margin-bottom: 20vh;*/
+    padding-bottom : 0;
+}
+
+#revuedepresse .list-group-item {
+    background-color: transparent;
+    border: none !important;
+}
+
+.content {
+	padding-bottom: 4vh;
+}
+
+
+#revuedepresse h1 {
+	margin-bottom: 2em;
+}
+
+#myCarousel .carousel-caption {
+    left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	padding:10px;
+	background:rgba(0,0,0,0.6);
+	text-shadow:none;
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;-group
+	right:0;
+}
+#myCarousel .list-group-item {
+	border-radius:0px;
+	cursor:pointer;
+}
+#myCarousel .list-group .active {
+	background-color:#eee;	
+}
+
+
+.climbdown {
+
+    transform: translateX(-50%) rotate( 5deg);
+}
+
+#cursor-deco {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    z-index: 100;
+    transform: translate( -50%,-80%);
+}
+
+.pastille {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: 5px solid rgba(0,0,0,0.6);
+    /*background-image: url("../../img/img-revuPress/challengeTotem2.jpg");*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.pastille-overlay {
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+}
+
+.pastille:hover {
+    border: 5px solid rgba(0,0,0,0.0);
+}
+
+.pastille-overlay:hover {
+    background-color: rgba(0,0,0,0.0);
+}
+
+.list-group-item {
+    display: inline-block;
+}
+
+@media (min-width: 992px) { 
+	#myCarousel {padding-right:33.3333%;}
+	#myCarousel .carousel-controls {display:none;} 	
+}
+@media (max-width: 991px) { 
+	.carousel-caption p,
+	#myCarousel .list-group {display:none;} 
+}
+.revuedepresse {
+    /*transform: rotate(-5deg);*/
+    /*background: rgba(253,235,26,1);*/
+    /*width: 140vw;*/
+    /*margin-left: 20vw;*/
+    /*margin-bottom: 20vh;*/
+    padding-bottom : 0;
+}
+
+#revuedepresse {
+}
+
+.content {
+	padding-bottom: 4vh;
+}
+
+
+#revuedepresse h1 {
+	margin-bottom: 2em;
+}
+
+#myCarousel .carousel-caption {
+    left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	padding:10px;
+	background:rgba(0,0,0,0.6);
+	text-shadow:none;
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;
+	right:0;
+}
+#myCarousel .list-group-item {
+	border-radius:0px;
+	cursor:pointer;
+}
+#myCarousel .list-group .active {
+	background-color: transparent;	
+}
+
+
+#cursor-deco {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    z-index: 100;
+    transform: translate( -50%,-80%);
+}
+
+.pastille {
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    border: 5px solid rgba(0,0,0,0.6);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.pastille-overlay {
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+}
+
+.pastille:hover {
+    
+    border: 5px solid rgba(0,0,0,0.0);
+    
+}
+
+.pastille-overlay:hover {
+    background-color: rgba(0,0,0,0.0);
+}
+
+.pastille1 {
+    background-image: url("../../img/img-revuPress/challengeTotem1.jpg");
+}
+
+.pastille2 {
+    background-image: url("../../img/img-revuPress/challengeTotem2.jpg");
+}
+
+.pastille3 {
+    background-image: url("../../img/img-revuPress/challengeTotem3.jpg");
+}
+
+.pastille4 {
+    background-image: url("../../img/img-revuPress/challengeTotem4.jpg");
+}
+
+@media (min-width: 992px) { 
+	#myCarousel {padding-right:33.3333%;}
+	#myCarousel .carousel-controls {display:none;} 	
+}
+@media (max-width: 991px) { 
+	.carousel-caption p,
+	#myCarousel .list-group {display:none;} 
+}

@@ -1,0 +1,211 @@
+/*
+**	GENERAL STYLES
+**	styles.css
+*/
+
+* {
+	font-family: 'Gotham-Medium', sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+}
+html, body {
+	/*font-size: 85%;*/
+	overflow-x: hidden;
+	display: flex;
+	min-height: 100vh;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	/*font-family: 'HousePaint', sans-serif;*/
+	/*font-weight: normal;*/
+	-webkit-margin-before: 0 !important;;
+    -webkit-margin-after: 0 !important;;
+}
+
+p {
+	color: rgb(52, 52, 52);
+}
+
+main {
+	/*font-size: 1.6rem;*/
+	/*font-family: 'Open Sans', sans-serif;*/
+	flex: 1 0 auto;
+}
+
+.section {
+	position: relative;
+	/*min-height: 75vh;*/
+	width: 100vw;
+	/*background: #74B62F;*/
+	margin: 0;
+}
+
+.social li {
+	background: none repeat scroll 0 0 #B5B5B5;
+	border: 2px solid  #EDEFF1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	height: 36px;
+	/*line-height: 36px;*/
+	margin: 0 8px 0 0;
+	padding: 0;
+	text-align: center;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+
+.social li:hover {
+	transform: scale(1.15) rotate(360deg);
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+}
+
+.social li a {
+	color:#EDEFF1;
+}
+
+.social li:hover {
+	border: none;
+	background: #74B62F;
+}
+
+.social li a i {
+	/*font-size: 16px;*/
+	margin: 0 0 0 5px;
+	color: #EDEFF1 !important;
+}
+
+.deco-container {
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 60px !important;
+    margin-top: 4vh !important;
+    background-image: Url('../img/skylinemars-transparent-opt.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.deco {
+    width: 140vw;
+    height: 40vw;
+    position: relative;
+    left: 50%;
+}
+
+.climbup {
+
+    transform: translateX(-50%) rotate( -4deg);
+}
+
+
+.climbdown {
+
+    transform: translateX(-50%) rotate( 4deg);
+}
+
+.cursor-deco {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    z-index: 100;
+    transform: translate( -50%,-80%);
+}
+
+#copyright{
+	/*font-family:'Gotham-Bold';*/
+	/*font-size: 10px;*/
+	color: #74B62F;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+/* STYLE COMPTE A REBOURS PROCHAINE EDITION */
+
+
+#countdown p.numbers{
+	font-size: 5em;
+}
+
+#countdown p.strings {
+	font-size: 1.5em;
+	color: rgba(255,255,255,1);
+}
+
+/* countdown styles */
+
+div#countdown{color: #353535;}
+
+/*div#countdown p{
+	width:90%;
+	display: inline-block;
+	text-align: center;
+}*/
+
+/*#countdown p.numbers{*/
+/*	width: 90%;*/
+/*	height: 85%;*/
+/*	background: #FFFFFF;*/
+/*	margin-top: -25px;*/
+/*	padding-top: 100px;*/
+/*}*/
+
+/*#countdown p.strings{*/
+/*	width: 90%;*/
+/*	height: auto;*/
+/*	padding: 30px 0;*/
+/*	background: rgba(116, 182, 47,1);*/
+/*	color: #FFFFFF;*/
+/*}*/
+
+#countdown div.cd-box{
+	position: relative;
+	height: 250px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	/*-webkit-box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);
+	-moz-box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);
+	box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);*/
+	/*http://codepen.io/janoschvg/pen/QwmdwY*/
+	/*http://codepen.io/ewganoel/pen/AIGcE*/
+}
+
+#countdown .cd-box .numberContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding-top: 60px;
+	/*border: 3px solid rgba(116, 182, 47,0.8);*/
+	
+	background: -webkit-linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* Safari 5.1-6.0 */
+	background: -o--linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* For Opera 11.6-12.0 */
+	background: -moz--linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* For Firefox 3.6-15 */
+	background: linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* Standard syntax */
+}
+
+#countdown .stringContainer {
+	position: absolute;
+	width: 100%;
+	background: rgba(116, 182, 47,0.8);
+	bottom: 0%;
+	padding: 10px 0;
+	color: rgba(255,255,255,0.8);
+	
+}
+
+/* FIN STYLE COMPTE A REBOURS PROCHAINE EDITION */

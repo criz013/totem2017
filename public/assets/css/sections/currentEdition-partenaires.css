@@ -1,0 +1,58 @@
+#currentEdition_partenaires {
+    /*background: url('../../img/street.jpg') no-repeat;*/
+    /*background-size: cover;*/
+}
+
+#currentEdition_partenaires .currentPartenaires {
+    
+    background: rgba(206, 86, 69,1);
+    padding-bottom : 0;
+}
+
+#currentEdition_partenaires .grad {
+  background:rgba(206, 86, 69,1); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* Safari 5.1-6.0 */
+  background: -o--linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* For Opera 11.6-12.0 */
+  background: -moz--linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* For Firefox 3.6-15 */
+  background: linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* Standard syntax */
+}
+
+#currentEdition_partenaires h1, #currentEdition_partenaires p {
+    color:white;
+    padding-left: 20px;
+}
+
+.partenaire_car {
+    position: absolute;
+    top: 50px;
+    left: -20vw;
+    width: 850px;
+    height: auto;
+}
+
+.car-container {
+    position: relative;
+    background: url(http://www.renault.pt/img/models/TWZ1/rangepage-off_jahia.png) no-repeat center center;
+    background-size: cover;
+    height: 850px;
+    width: 850px;
+}
+
+.partenaire-logo {
+    position: absolute;
+    top: 421px;
+    left: 375px;
+    width: 150px;
+    transform: rotate(-5deg);
+}
+
+.carAnimated {
+    animation: driving 24s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes driving {
+    0% {transform: translate(-20vw);}
+    100% {transform: translate(120vw);}
+}

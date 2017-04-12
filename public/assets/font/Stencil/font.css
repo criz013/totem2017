@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'StencilStd';
+  src: url('StencilStd.eot');
+  src: url('StencilStd.woff2') format('woff2'),
+       url('StencilStd.woff') format('woff'),
+       url('StencilStd.ttf') format('truetype'),
+       url('StencilStd.svg#StencilStd') format('svg'),
+       url('StencilStd.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

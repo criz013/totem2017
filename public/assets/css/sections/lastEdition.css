@@ -1,0 +1,184 @@
+
+/**************            SECTION EDITION 2016            ****************/ 
+/**************       Collaborate : Dalila FERNANDES       ****************/
+/* BOX */
+
+/*@media (min-width: 768px) {
+   .col-sm-2.point5 {
+   width: 20%;  
+   }
+}*/
+
+
+.lastedition {
+    /*transform: rotate(-5deg);*/
+    background: rgba(102, 183, 176,1);
+    /*width: 140vw;*/
+    /*margin-left: 20vw;*/
+    /*margin-bottom: 20vh;*/
+    padding-bottom : 0;
+}
+
+.single{
+    height:20em;
+}
+
+.features{
+    padding: 50px 0;
+    min-height: 0; 
+    background-size: cover;
+}
+
+.features .single {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+    padding: 15px 15px;
+    margin: 50px auto 80px auto;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out; 
+}
+
+.features .single h2 {
+    /*font-size: 20px;*/
+    text-transform: uppercase;
+    color: #FDEB1A;
+    margin-bottom: 20px;
+    margin-top: 80px; 
+}
+
+.features .single h2:after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    margin: 20px auto;
+    display: block;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.features .single p{
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    /*font-size: 14px;*/
+    /*line-height: 24px;*/
+}
+
+.features .single .icon-outer {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /*-webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);*/
+    transform: translate(-50%);
+    top: 0;
+    /*margin-top: -50px;*/
+    left: 50%;
+   /* margin-left: -50px;*/
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    border-radius: 50%;
+}
+
+.features .single .icon-outer .icon {
+    width: 60px;
+    height: 60px;
+    /*margin: 0px auto;*/
+    margin: 0px auto;
+    vertical-align: middle;
+    transform: translateY(50%);
+}
+
+.features .single .icon-outer .icon i {
+    /*-webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);*/
+    /*color: #fff;*/
+    color: rgba(253,235,26,1);
+    /*font-size: 2.4rem;*/
+}
+
+.features .single:hover {
+    background: rgba(52, 152, 219,.5);
+}
+
+.features .single:hover h2 {
+    color: #fff; 
+}
+
+.features .single:hover h2:after {
+    border-color: rgba(255, 255, 255, 0.3); 
+}
+
+.features .single:hover p {
+    color: rgba(255, 255, 255, 0.8); 
+}
+
+.features .single:hover .icon-outer {
+    background: #FDEB1A;
+    border: none;
+    margin-top: -60px;
+}
+
+.features .single:hover .icon-outer .icon {
+    border: none;
+}
+
+.features .single:hover .icon-outer .icon i {
+    /*color: white;*/
+    color: rgba(102, 183, 176,1);
+}
+
+/*.row h2 {*/
+/*    text-align: center;*/
+/*    color: rgba(255, 255, 255, 0.9);*/
+/*}*/
+
+/************* links photos & partenaires 2016  *************/
+
+.icon span {
+    display:block;
+    text-align:center;
+    /*font-size: 16px;*/
+    /*font-family:'Gotham-Bold';*/
+    margin-top:5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color:white;
+}
+
+.call-to-action {
+    margin: 30px;
+}
+
+.call-to-action a {
+    color: white;
+}
+
+.call-to-action a>i {
+    color: white;
+    /*font-size: 4.8rem;*/
+}
+
+.bg-dark h2 {
+    margin-bottom: 20px;
+}
+
+#lastEdition h1 {
+    color: white;
+}
+
+#lastEdition .grad {
+  background: rgba(102, 183, 176,1); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(102, 183, 176,1) 10%, rgba(102, 183, 176,0.5)); /* Safari 5.1-6.0 */
+  background: -o--linear-gradient(rgba(102, 183, 176,1) 10%, rgba(102, 183, 176,0.5)); /* For Opera 11.6-12.0 */
+  background: -moz--linear-gradient(rgba(102, 183, 176,1) 10%, rgba(102, 183, 176,0.5)); /* For Firefox 3.6-15 */
+  background: linear-gradient(rgba(102, 183, 176,1) 10%, rgba(102, 183, 176,0.5)); /* Standard syntax */
+

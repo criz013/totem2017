@@ -1,0 +1,92 @@
+#success_message{ display: none;}
+
+#contact .contact {
+    /*transform: rotate(-5deg);*/
+    background: rgba(206, 86, 69,1);
+    /*width: 140vw;*/
+    /*margin-left: 20vw;*/
+    /*margin-bottom: 20vh;*/
+    padding-bottom : 0;
+}
+
+
+#contact .row {
+}
+
+#contact img {
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+   color: rgba(206, 86, 69,1);
+   font-weight: bold;
+}
+
+#contact input, #contact textarea {
+   font-weight: bold;
+}
+#contact .skyline {
+    position: relative;
+    left: 50%;
+    width: 140%;
+    transform: translateX(-50%);
+    padding-top: 2vh;
+}
+
+#contact .btn {
+}
+
+#contact h1 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#contactForm .input-group-addon {
+        /*background-color: rgba(116, 182, 47,1);*/
+        /*color: white;*/
+        background-color: rgba(206, 86, 69,1);
+        color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+
+
+#contactFormHeader {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#contactFormHeader p {
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.title{
+    margin-bottom: 1vh;
+}
+
+#contactFormHeader {
+    margin-bottom: 2vh;
+}
+
+
+.btn-vert {
+    color: #fff;
+    background-color: rgba(116, 182, 47,1);
+    border-color: #4cae4c;
+}
+
+#contact .form-control {
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    
+}
+
+#contact .input-group-addon {
+    vertical-align: top;
+}
+
+#contact .grad {
+  background:rgba(206, 86, 69,1); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* Safari 5.1-6.0 */
+  background: -o--linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* For Opera 11.6-12.0 */
+  background: -moz--linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* For Firefox 3.6-15 */
+  background: linear-gradient(rgba(206, 86, 69,1) 10%, rgba(206, 86, 69,0.5)); /* Standard syntax */
+}
