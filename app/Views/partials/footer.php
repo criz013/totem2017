@@ -18,7 +18,7 @@ Fichier footer contenant :
             <h4> Suivez-nous sur </h4>
             <div class="col-xs-4 col-sm-offset-3 col-sm-2 col-md-offset-3 col-md-2 col-lg-offset-3 col-lg-2 text-center">
                 
-                   <a href="https://www.facebook.com/challengetotem/">
+                   <a href="https://www.facebook.com/challengetotem/" target="_blank">
                        <img class="" src="../test/img/fbk.png"></img>
                    </a>
                 
