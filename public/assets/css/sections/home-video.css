@@ -43,6 +43,11 @@
     transition: all .2s ease;
 }
 
+#header .navbar-toggle {
+    float: left; /* À RECHANGER À RIGHT */
+}
+
+
 /*#countdown {*/
 /*    position: relative;*/
 /*    margin: 30vh auto 0 auto;*/
