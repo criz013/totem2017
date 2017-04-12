@@ -10,5 +10,5 @@
 		<title>Back office</title>
 	</head>
 	<body>
-		
+		<h1>Panneau de contrôle</h1>
 		
