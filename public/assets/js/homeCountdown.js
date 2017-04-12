@@ -69,7 +69,7 @@ $(document).ready(function(){
 		}
 		//
 		$("#countdown").countdown({
-			date: "12 April 2017 23:01:00", // change date/time here - do not change the format!
+			date: "21 April 2017 16:00:00", // change date/time here - do not change the format!
 			format: "on"
 		});
 	});

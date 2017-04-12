@@ -17,7 +17,7 @@
     padding-bottom : 0;
 }
 
-.edition2017-content {
+#currentEdition .edition2017-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,5 +33,12 @@
   background: -o--linear-gradient(rgba(116, 182, 47,1) 10%, rgba(116, 182, 47,0.5)); /* For Opera 11.6-12.0 */
   background: -moz--linear-gradient(rgba(116, 182, 47,1) 10%, rgba(116, 182, 47,0.5)); /* For Firefox 3.6-15 */
   background: linear-gradient(rgba(116, 182, 47,1) 10%, rgba(116, 182, 47,0.5)); /* Standard syntax */
+}
+
+#currentEdition #parcours {
+  position: relative;
+}
+
+#currentEdition #map {
 }
 

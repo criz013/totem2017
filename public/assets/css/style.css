@@ -180,3 +180,12 @@ main {
 }
 
 /* FIN STYLE COMPTE A REBOURS PROCHAINE EDITION */
+
+/* DEFINE EQUAL HEIGHT WITH FLEX on row*/
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+/* FIN DEFINE EQUAL HEIGHT WITH FLEX on row*/
