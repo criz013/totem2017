@@ -1,24 +1,9 @@
-<!--
-
-Fichier footer contenant :
-- Liste de liens
-    -> Social
-        -> facebook
-        -> instagram
-        -> twitter
-    -> S'inscrire
-    -> Se connecter
-    -> liens des sections
-- Copyright
-
--->
-
-    <div class="row">
+<div class="row">
         <div id="socialFooter" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
             <h4> Suivez-nous sur </h4>
             <div class="col-xs-4 col-sm-offset-3 col-sm-2 col-md-offset-3 col-md-2 col-lg-offset-3 col-lg-2 text-center">
                 
-                   <a href="https://www.facebook.com/challengetotem/" target="_blank">
+                   <a href="https://www.facebook.com/4GMoto.fr/">
                        <img class="" src="../test/img/fbk.png"></img>
                    </a>
                 
@@ -35,7 +20,6 @@ Fichier footer contenant :
                     <a href="https://www.facebook.com/4GMoto.fr/">
                         <img class="" src="../test/img/instag.png"></img>
                      </a>
-               
             </div>
         </div>
     </div>
@@ -102,5 +86,28 @@ Fichier footer contenant :
             <p>Copyright © Challenge Totem 2017. All right reserved.</p>
         </div>
     </div>
-
-
+    
+    <!-- JAVASCRIPT FILES -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="<?= $this->assetUrl('js/sidenav.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/sections/equipages.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/sections/lastEdition.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/sections/currentEdition.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/sections/revuePresse.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/navigation.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/main.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/sections/footer.js') ?>"></script>
+	
+	<!-- Compteur files -->
+	<script type='text/javascript' src="<?= $this->assetUrl('js/homeCountdown.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/jquery.easing.min.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/supersized.3.2.7.min.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/jquery.lwtCountdown.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/jquery.form.min.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/subscribe-form.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/supersized.3.2.7.min.js') ?>"></script>
+	<script type='text/javascript' src="<?= $this->assetUrl('js/init.js') ?>"></script>
+</body>
+</html>

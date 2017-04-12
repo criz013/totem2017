@@ -26,15 +26,15 @@
             <form action="/public/signup" method="POST">
                 
                 <div id="useraccount" class="step step1">
-                    <?php $this->insert('auth/signup/useraccount'); ?>
+                    <?php $this->insert('front/part/signup/useraccount'); ?>
                 </div>
                 
                 <div id="userprofile" class="step step2">
-                    <?php $this->insert('auth/signup/userprofile'); ?>
+                    <?php $this->insert('front/part/signup/userprofile'); ?>
                 </div>
                 
                 <div id="twizzyteam" class="step step3">
-                    <?php $this->insert('auth/signup/twizzyteam'); ?>
+                    <?php $this->insert('front/part/signup/twizzyteam'); ?>
                 </div>
                 
                 <!--

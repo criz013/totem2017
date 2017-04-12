@@ -7,16 +7,17 @@
  */
 
 namespace Controller;
+use \W\Controller\Controller;
 //A tester
 // use '../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
-class HomePageController
+class HomePageController extends Controller
 {
     /**
      * @route /
      */
     public function index(){
-
+    	$this->show('front/home');
     }
 
     /**

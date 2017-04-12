@@ -2,7 +2,7 @@
 	
 	$w_routes = array(
 	    //Route pour la home page
-        ['GET', '/2017', 'HomePage#index', 'homePage_index'],
+        ['GET', '/', 'HomePage#index', 'homePage_index'],
 
         //route pour la partie administrateur
         ['GET|POST', '/administrateur', 'Admin#index', 'admin_index'],
@@ -38,7 +38,7 @@
 		['GET|POST', '/validation', 'HomePage#validationMail', 'homePage_validationMail'],
 
         /** Route ancienne version */
-        ['GET', '/', 'Default#home', 'default_home'],
+        		['GET', '/old', 'Default#home', 'default_home'],
                 ['GET', '/edition2016/partenaires', 'LastEditionController#partenaires', 'lastEdition_partenaires'],
                 ['GET', '/edition2016/photos', 'LastEdition#photos', 'lastEdition_photos'],
                 ['POST', '/equipages/add', 'Equipages#add', 'equipages_add'],

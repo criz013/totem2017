@@ -1,4 +1,4 @@
-<?= $msg ?>
+
 <form action="/public/auth/login" method="POST" class="text-center">
     <div class="form-group">
         <input type="text" name="email" placeholder="Email"/>

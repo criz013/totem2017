@@ -56,4 +56,3 @@ INCLURE LE FOOTER-SECTION
     -->
 </div>
 
-<?php $this->insert('partials/footer-section'); ?>

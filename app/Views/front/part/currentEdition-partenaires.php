@@ -20,21 +20,5 @@
     </div>
 </div>
 <div id="cars-container">
-    
-    
-    
-<?php foreach ($partenaires as $key=>$partenaire) { ?>
-
-    <div class="partenaire_car car-<?= $key ?>">
-        
-        <a href="/public/profile/engie">
-            <div class="car-container">
-                <img class="partenaire-logo" src="/public<?= $partenaire['partners_logo'] ?>"/>
-            </div>
-        </a>
-        
-    </div>
-    
-<?php } ?>
 
 </div>

@@ -9,12 +9,6 @@ Fichier gallerie pour l'edition 2016 contenant :
     -> display:none par défaut
 -->
 
-<?php $this->layout('layout', ['title' => 'Photos']) ?>
-
-<?php $this->start('main_content') ?>
-
-    <!-- *********************************************  debut section galerie ***************************************************    -->
-
 	<div class="container">
     <h1>Galerie édition challenge totem 2016</h1>
     <div class="alert alert-success">
@@ -165,7 +159,6 @@ Fichier gallerie pour l'edition 2016 contenant :
 </div>
 
 
-<?php $this->stop('main_content') ?>
 
 <!-- *********************************************  fin section galerie *************************************************************    -->
 

@@ -1,6 +1,3 @@
-<?php $this->layout('layout', ['title' => 'Profile']) ?>
-
-<?php $this->start('main_content') ?>
 
 <div id="profile">
     <div class="container">
@@ -33,4 +30,3 @@
     </div>
 </div>
 
-<?php $this->stop('main_content') ?>

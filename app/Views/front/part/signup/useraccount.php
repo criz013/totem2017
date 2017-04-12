@@ -51,7 +51,7 @@
                 
         <input type="hidden" name="role" value="user" />
                 
-        <div class="g-recaptcha" data-sitekey="<?php echo $siteKey; ?>">
+        <div class="g-recaptcha" data-sitekey="<?php //echo $siteKey; ?>">
         
     </div>
 

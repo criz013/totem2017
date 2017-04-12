@@ -137,7 +137,7 @@ INCLURE LE FOOTER-SECTION
                             </a>
                         </div><!--/call-to-action-->
                     </div><!--/container-->
-                    <?php $this->insert('lastEdition/lastEdition-partenaires'); ?>
+                    <?php //$this->insert('lastEdition/lastEdition-partenaires'); ?>
                 </aside><!--/bg-dark-->
         
             </div>
@@ -251,7 +251,7 @@ INCLURE LE FOOTER-SECTION
                             </a>
                         </div><!--/call-to-action-->
                     </div><!--/container-->
-                    <?php $this->insert('lastEdition/lastEdition-partenaires'); ?>
+                    <?php //$this->insert('lastEdition/lastEdition-partenaires'); ?>
                 <!--</aside><!--/bg-dark-->
         
             </div>
@@ -262,7 +262,7 @@ INCLURE LE FOOTER-SECTION
 	
 </section><!--/features-->
     
-<?php $this->insert('partials/footer-section'); ?>
+
 
 <link rel="stylesheet" href="<?= $this->assetUrl('libs/animatecss/animatecss.css') ?>" type="text/css" />
     
