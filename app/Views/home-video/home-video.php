@@ -39,74 +39,42 @@ Fichier home-video (c'est le header de notre one page) contenant :
 </nav>
 
   
-<div class="container">
-  
-    <!-- compteur echeance prochain challenge -->
-    <!--<div id="countdown" class="row">-->
-       
-     <!--	<div class="col-xs-2 dash days_dash">-->
-     <!--       <div class="circle">-->
-    	<!--	<ul class="alignc">-->
-     <!--       <li class="digit">0</li>-->
-    	<!--	<li class="digit">0</li>-->
-     <!--       </ul><!--/alignc-->
-     <!--       <span class="dash_title alignc">Jours</span>-->
-     <!--        </div><!--.circle-->
-    	<!--</div><!--/dash-->
+<div class="container">  
     
-    	<!--<div class="col-xs-2 dash hours_dash">-->
-     <!--       <div class="circle">-->
-    	<!--	<ul class="alignc">-->
-     <!--           <li class="digit">0</li>-->
-     <!--   		<li class="digit">0</li>-->
-     <!--       </ul><!--/alignc-->
-     <!--       <span class="dash_title alignc">Heures</span>-->
-     <!--       </div><!--.circle-->
-    	<!--</div><!--/dash-->
-    
-    	<!--<div class="col-xs-2 dash minutes_dash">-->
-     <!--       <div class="circle">-->
-    	<!--	<ul class="alignc">-->
-     <!--           <li class="digit">0</li>-->
-     <!--   		<li class="digit">0</li>-->
-     <!--       </ul><!--/alignc-->
-     <!--       <span class="dash_title alignc">Minutes</span>-->
-     <!--      </div><!--.circle-->
-    	<!--</div><!--/dash-->
-    
-    	<!--<div class="col-xs-2 dash seconds_dash">-->
-     <!--       <div class="circle">-->
-     <!--       	<ul class="alignc">-->
-     <!--               <li class="digit">0</li>-->
-     <!--       		<li class="digit">0</li>-->
-     <!--           </ul><!--/alignc-->
-     <!--           <span class="dash_title alignc">Secondes</span>-->
-     <!--        </div><!--.circle-->
-    	<!--</div><!--/dash-->
-    	<div class="row">
-    	  <div id="countdown" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    	  <div id="countdown" class="row">
           <div class="cd-box col-xs-6 col-sm-6 col-md-3 col-lg-3">
             <div class="numberContainer text-center">
                 <p class="numbers days">00</p>
             </div>
             <div class="stringContainer text-center">
-                <p class="strings timeRefDays">Days</p>
+                <p class="strings timeRefDays">Jours</p>
             </div>
           </div>
           <div class="cd-box col-xs-6 col-sm-6 col-md-3 col-lg-3">
-            <p class="numbers hours">00</p>
-            <p class="strings timeRefHours">Hours</p>
+            <div class="numberContainer text-center">
+              <p class="numbers hours">00</p>
+            </div>
+            <div class="stringContainer text-center">
+              <p class="strings timeRefHours">Heures</p>
+            </div>
           </div>
           <div class="cd-box col-xs-6 col-sm-6 col-md-3 col-lg-3">
-            <p class="numbers minutes">00</p>
-            <p class="strings timeRefMinutes">Minutes</p>
+            <div class="numberContainer text-center">
+              <p class="numbers minutes">00</p>
+            </div>
+            <div class="stringContainer text-center">
+              <p class="strings timeRefMinutes">Minutes</p>
+            </div>
           </div>
           <div class="cd-box col-xs-6 col-sm-6 col-md-3 col-lg-3">
-            <p class="numbers seconds">00</p>
-            <p class="strings timeRefSeconds">Seconds</p>
+            <div class="numberContainer text-center">
+              <p class="numbers seconds">00</p>
+            </div>
+            <div class="stringContainer text-center">
+              <p class="strings timeRefSeconds">Secondes</p>
+            </div>
           </div>
         </div><!--/countdown row-->
-      </div>
   
 </div>
 

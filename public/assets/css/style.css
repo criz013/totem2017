@@ -147,7 +147,7 @@ main {
 
 
 #countdown{
-	color: #353535;
+	margin-top: 10vh;
 }
 
 #countdown div.cd-box{
@@ -160,18 +160,18 @@ main {
 
 #countdown .cd-box .numberContainer {
 	position: absolute;
-	width: 100%;
+	width: 90%;
 	height: 100%;
 	padding-top: 60px;
-	background: -webkit-linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* Safari 5.1-6.0 */
-	background: -o--linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* For Opera 11.6-12.0 */
-	background: -moz--linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* For Firefox 3.6-15 */
-	background: linear-gradient(rgba(255, 255, 255,0.6) 30%, rgba(255, 255, 255,0.8) 60%, rgba(255, 255, 255,1)); /* Standard syntax */
+	background: -webkit-linear-gradient(rgba(255, 255, 255,0.6) 15%, rgba(255, 255, 255,0.8) 30%, rgba(255, 255, 255,1)); /* Safari 5.1-6.0 */
+	background: -o--linear-gradient(rgba(255, 255, 255,0.6) 15%, rgba(255, 255, 255,0.8) 30%, rgba(255, 255, 255,1)); /* For Opera 11.6-12.0 */
+	background: -moz--linear-gradient(rgba(255, 255, 255,0.6) 15%, rgba(255, 255, 255,0.8) 30%, rgba(255, 255, 255,1)); /* For Firefox 3.6-15 */
+	background: linear-gradient(rgba(255, 255, 255,0.6) 15%, rgba(255, 255, 255,0.8) 30%, rgba(255, 255, 255,1)); /* Standard syntax */
 }
 
 #countdown .stringContainer {
 	position: absolute;
-	width: 100%;
+	width: 90%;
 	background: rgba(116, 182, 47,0.8);
 	bottom: 0%;
 	padding: 10px 0;
