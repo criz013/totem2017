@@ -6,6 +6,7 @@ Fichier de navigation contenant :
 
 <nav id="nav-onepage" class="navbar navbar-onepage">
   <div class="container-fluid">
+    
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header  col-xs-2">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -23,7 +24,6 @@ Fichier de navigation contenant :
     <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-4" id="navbar-collapse">
       <ul class="nav navbar-nav text-center navbar-scroll">
         <li><a href="#currentEdition">Edition 2017</a></li>
-        <!-- <li><a href="#currentEdition_partenaires">Partenaires 2017</a></li> -->
         <li><a href="#equipages">Suivi des équipages</a></li>
         <li><a href="#revuedepresse">Revue de presse</a></li>
         <li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Autre éditions <span class="caret"></span></a>
@@ -32,19 +32,15 @@ Fichier de navigation contenant :
             <li><a href="#collapse2015">2015</a></li>
           </ul>
       </li>
-<!--         <li><a href="#lastEdition">Autres éditons</a></li>
- -->      </ul>
+     </ul>
     </div><!-- /.navbar-collapse -->
+
   </div><!-- /.container-fluid -->
 </nav>
 
 
 
-          <!--<div id="sidenav-seconnecter" class="container">-->
-          <!--  <div class="close"><i class="fa fa-close"></i></div>-->
-          <!--  <h2 class="text-center">Se connecter</h2>-->
-          <!--  <?php $this->insert('front/part/login'); ?>-->
-          <!--</div>-->
+    
         
         
         
