@@ -19,7 +19,7 @@ INCLURE LE FOOTER-SECTION
 
 <div class="currentedition">
     <div class="container">
-      <div class="row currentedition">
+      <div class="row">
         <div class="col-xs-12 title" >
           <h1>Edition 2017</h1> <!--mettre en dynamique-->
         </div>

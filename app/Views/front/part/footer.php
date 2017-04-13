@@ -61,8 +61,8 @@
                 </div>
                 <adress>
                     <p>    
-            	       <a href="https://www.google.fr/maps/place/10+Boulevard+Rivet,+13008+Marseille/@43.2740495,5.3831754,19.25z/data=!4m5!3m4!1s0x12c9c74e20ef065f:0xf53f83877ee1466b!8m2!3d43.2740113!4d5.383371" target="_blank">
-            	           10 Boulevard Rivet<br/>13008 Marseille
+            	       <a href="https://goo.gl/maps/2mzBsQ3LaLy" target="_blank">
+            	           9 impasse des gymnastes<br/>13012 Marseille
             	       </a>
             	    </p>
             	</adress>
@@ -75,7 +75,7 @@
                     </span>
                 </div>
                 <div>
-                    <p><a href="tel:+33491230660">+33 4 91 23 06 60</a></p> 
+                    <p><a href="tel:+33491492275">+33 4 91 49 22 75</a></p>
                 </div>
             </div>
         </div>

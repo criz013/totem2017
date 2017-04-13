@@ -21,26 +21,30 @@ INCLURE LE FOOTER-SECTION
       </div>
 </div>
 
-<div class="row revuedepresse content">
-    <div class="container-fluid title">
-        <h1>
-            Revue de presse
-        </h1>
-    </div> 
-    <div class="container revuedepresse">
-        
+<div class="revuedepresse">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 title" >
+          <h1>Edition 2017</h1> <!--mettre en dynamique-->
+        </div>
+      </div><!--/row-->
+    </div><!--/container-->
+</div><!--/.revuedepresse-->
+
+<div class="grad"> 
+  <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
                   <img src="<?php echo $this->assetUrl("./img/img-revuPress/challengeTotem1.jpg")?>" alt="challenge totem">
-                   <div class="carousel-caption">
+                  <div class="carousel-caption">
                     <h4><a href="#">Challenge Totem 2016 - La DREAL gagne un prix</h4>
                     <h5>publié le 21 novembre 2016 (modifié le 30 novembre 2016)</a></h5>
-                    <p class="excerpt"> La DREAL "éco-mobilisée" pour la semaine de réduction des déchets, 
-            gagne un des premiers prix au challenge Totem en partenariat avec "1 Déchet par jour" et "Totem Mobi"
+                    <p class="excerpt"> La DREAL "éco-mobilisée" pour la semaine de réduction des déchets, gagne un des premiers prix au challenge Totem en partenariat avec "1 Déchet par jour" et "Totem Mobi"
                     <a class="label label-primary" href="http://www.paca.developpement-durable.gouv.fr/" 
-                    target="_blank">Site Dreal PACA</a></p>
+                    target="_blank">Site Dreal PACA</a>
+                    </p>
                   </div>
                 </div><!-- /Item active -->
          
@@ -81,8 +85,7 @@ INCLURE LE FOOTER-SECTION
                   </div>
                 </div><!-- /Item active -->
         
-                
-                 </div><!-- End Carousel Inner -->       
+              </div><!-- End Carousel Inner -->       
 
               <!-- Controls -->
               <div class="carousel-controls">
@@ -93,10 +96,8 @@ INCLURE LE FOOTER-SECTION
                     <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
               </div><!-- /caroussel-controls -->
-        
-            
         </div><!-- Caroussel slide -->
-         <ul class="list-group">
+        <ul class="list-group">
                     <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
                         <!--<h4>Challenge Totem 2016 - La DREAL gagne un prix</h4>-->
                         <div>
@@ -130,7 +131,6 @@ INCLURE LE FOOTER-SECTION
                             </div>
                         </div>
                     </li>
-                </ul>
-    </div><!-- Container -->  
-    
-</div><!-- Row -->
+        </ul>
+  </div><!-- Container -->  
+</div><!-- grad -->
