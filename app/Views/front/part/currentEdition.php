@@ -57,7 +57,7 @@ INCLURE LE FOOTER-SECTION
           in futurum.</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-flex">
-          <h2 id="parcours">Découvrez le parcours de l'édition</h2>
+          <h2 id="parcours">Parcours de l'édition</h2>
           <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d38947.891747827656!2d5.4161795561864015!3d43.275099465486946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1491857602474" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div> 
     </div><!--/row-->
