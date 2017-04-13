@@ -19,9 +19,9 @@
 	</section>
 	
 	<!-- inclure currentEdition partenaires -->
-	<section id="currentEdition_partenaires" class="row section">
+	<!-- <section id="currentEdition_partenaires" class="row section">
 	<?php $this->insert('front/part/currentEdition-partenaires'); ?>
-	</section>
+	</section> -->
 	
 	<!-- inclure equipages -->
 	<section id="equipages" class="row section">
