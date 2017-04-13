@@ -1,36 +1,35 @@
-<?php
-    echo '<div class="classement">
-    <div class="row equipeHeader">
-        <div class=" col-xs-7 col-sm-4 col-md-5 col-lg-4">
+
+<div class="classement col-xs-12">
+    <div class="equipeHeader col-xs-12">
+        <div class="col-xs-7 col-sm-4 col-md-5 col-lg-4">
             <div class="text-center">
                 <p>Performance Sociale</p>
             </div>
         </div>
-        <div class=" text-center col-xs-3 col-sm-3 col-md-2 col-lg-2">
+        <div class="text-center col-xs-3 col-sm-3 col-md-2 col-lg-2">
             <div class="text-center">
                 <p>Team</p>
             </div>
         </div>
-        <div class=" text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
+        <div class="text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
             <div class="text-center">
                 <p>Ratio Activité Sociale</p>
             </div>
         </div>
-        <div class=" hidden-xs hidden-sm col-md-1 col-lg-1">
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
             <div class="text-center">
                 <p>Bat.</p>
             </div>
         </div>
-        <div class=" col-xs-2 hidden-sm hidden-md hidden-lg text-center">
-              <div class="text-center">
+        <div class="col-xs-2 hidden-sm hidden-md hidden-lg text-center">
+            <div class="text-center">
                 <p>Pos.</p>
             </div>
         </div>
-    </div>
-    ';
-    
+    </div><!--equipeHeader-->
+<?php    
     for($i=1; $i<=5; $i++){
-    echo '<div class="row equipe">
+    echo '<div class="equipe col-xs-12">
         <div class="blocSocial col-xs-7 col-sm-4 col-md-5 col-lg-4">
             <div class="tag">
                 <p>#airbustotem</p>
@@ -59,7 +58,7 @@
                     <p>1233 K</p>
                 </div>
             </div>
-        </div>
+        </div><!--blocSocial-->
         <div class="logoClassement text-center col-xs-3 col-sm-3 col-md-2 col-lg-2">
             <img class="img-responsive" src="../test/img/airbus.png"></img>
         </div>
@@ -74,10 +73,10 @@
         <div class="zonePosition col-xs-2 hidden-sm hidden-md hidden-lg text-center">
                 <p class="position text-center">2</p>
         </div>
-    </div>';
+    </div><!--equipe-->';
     }
     ?>
-    </div>
+</div>
 
     
 

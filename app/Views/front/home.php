@@ -45,5 +45,6 @@
 	
 	<?php $this->insert('front/part/sidenav-participer'); ?>
 	<?php $this->insert('front/part/sidenav-seconnecter'); ?>
-
+<footer>
 <?php $this->insert('front/part/footer'); ?>
+</footer>

@@ -17,16 +17,18 @@ INCLURE LE FOOTER-SECTION
       </div>
 </div>
 
-<div class="row currentedition">
-  <div class="container">
-      <div class="col-xs-12 title" >
-        <h1>Edition 2017</h1> <!--mettre en dynamique-->
-      </div>
-  </div><!--/container-->
-</div>
+<div class="currentedition">
+    <div class="container">
+      <div class="row currentedition">
+        <div class="col-xs-12 title" >
+          <h1>Edition 2017</h1> <!--mettre en dynamique-->
+        </div>
+      </div><!--/row-->
+    </div><!--/container-->
+</div><!--/currentedition-->
 <div class="grad"> 
   <div class="container">
-   <div class="row row-eq-height">
+   <div class="row row-flex">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h2>Le Programme</h2>
           <p>Cette année le challenge aura lieu le XX/XX/2017</p>
@@ -54,16 +56,10 @@ INCLURE LE FOOTER-SECTION
           modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
           in futurum.</p>
         </div>
-        <div id="parcours" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <h2>Découvrez le parcours de l'édition</h2>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-flex">
+          <h2 id="parcours">Découvrez le parcours de l'édition</h2>
+          <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d38947.891747827656!2d5.4161795561864015!3d43.275099465486946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1491857602474" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div> 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 row-eq-height"> 
-          <!-- <div id="map" class="col-xs-12 col-sm-12 col-md-12 col-lg-12  row-eq-height"> -->
-        
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d38947.891747827656!2d5.4161795561864015!3d43.275099465486946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1491857602474" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-         
-         <!--  </div> -->
-        </div>
     </div><!--/row-->
   </div><!--/container-->
   
@@ -74,4 +70,4 @@ INCLURE LE FOOTER-SECTION
         </div>
       </div><!--/row-->
   </div><!--/container-->
-</div>
+</div><!--/grad-->

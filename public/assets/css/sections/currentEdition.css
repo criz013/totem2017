@@ -36,9 +36,12 @@
 }
 
 #currentEdition #parcours {
-  position: relative;
+  flex: 0;
 }
 
 #currentEdition #map {
+  flex: 1;
+  width: 100%;
+  min-height: 200px;
 }
 

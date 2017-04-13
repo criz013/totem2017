@@ -134,6 +134,10 @@ main {
 	margin-top: 20px;
 }
 
+.grad {
+	padding-bottom: 50px;
+}
+
 /* STYLE COMPTE A REBOURS PROCHAINE EDITION */
 
 #countdown p.numbers{
@@ -182,10 +186,33 @@ main {
 /* FIN STYLE COMPTE A REBOURS PROCHAINE EDITION */
 
 /* DEFINE EQUAL HEIGHT WITH FLEX on row*/
-.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+.row-flex {
+	display: -moz-flex;
+  	display: -webkit-flex;
+  	display: -ms-flex;
+  	display: flex;
+  	flex-direction: row;
+  	-webkit-flex-direction: row;
+  	-moz-flex-direction: row;
+  	-ms-flex-direction: row;
+  	flex-wrap: wrap;
+  	-webkit-flex-wrap: wrap;
+  	-moz-flex-wrap: wrap;
+  	-ms-flex-wrap: wrap;
+}
+
+.col-flex {
+	display: -moz-flex;
+  	display: -webkit-flex;
+  	display: -ms-flex;
+  	display: flex;
+  	flex-direction: column;
+  	-webkit-flex-direction: column;
+  	-moz-flex-direction: column;
+  	-ms-flex-direction: column;
+  	flex-wrap: wrap;
+  	-webkit-flex-wrap: wrap;
+  	-moz-flex-wrap: wrap;
+  	-ms-flex-wrap: wrap;
 }
 /* FIN DEFINE EQUAL HEIGHT WITH FLEX on row*/

@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/home-video.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/lastEdition.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/currentEdition.css') ?>" />
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/equipages.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/currentEdition-partenaires.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/components/sidenav.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/pages/lastEdition-photos.css') ?>" />
