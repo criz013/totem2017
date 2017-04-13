@@ -34,3 +34,10 @@ var navigationScroll = function () {
         $('body').animate({scrollTop: $(link).offset().top }, 750)
     })
 }
+
+$("#navEditionsList li a").click(function()
+    {
+        //rajouter la classe in sur l'id correspondant au hash
+        $(this.hash).addClass("in");
+        
+    });

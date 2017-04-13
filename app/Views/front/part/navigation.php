@@ -22,13 +22,18 @@ Fichier de navigation contenant :
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-4" id="navbar-collapse">
       <ul class="nav navbar-nav text-center navbar-scroll">
-        <li><a href="#lastEdition">Edition 2016</a></li>
         <li><a href="#currentEdition">Edition 2017</a></li>
-        <li><a href="#currentEdition_partenaires">Partenaires 2017</a></li>
+        <!-- <li><a href="#currentEdition_partenaires">Partenaires 2017</a></li> -->
         <li><a href="#equipages">Suivi des équipages</a></li>
         <li><a href="#revuedepresse">Revue de presse</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Autre éditions <span class="caret"></span></a>
+          <ul id="navEditionsList" class="dropdown-menu">
+            <li><a href="#collapse2016">2016</a></li>
+            <li><a href="#collapse2015">2015</a></li>
+          </ul>
+      </li>
+<!--         <li><a href="#lastEdition">Autres éditons</a></li>
+ -->      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
