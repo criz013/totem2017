@@ -16,7 +16,7 @@ Fichier home-video (c'est le header de notre one page) contenant :
 ?>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container">
 
 
     <!-- Brand and toggle get grouped for better mobile display -->
