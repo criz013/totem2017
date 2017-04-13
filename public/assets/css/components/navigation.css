@@ -67,3 +67,11 @@
     padding-top: 0;
     padding-bottom: 0; 
 }
+
+#header-hamburger {
+	color: white;
+	border: 1px solid white;
+}
+#header-hamburger .icon-bar{
+	background-color: white;
+}

@@ -9,7 +9,7 @@ Fichier de navigation contenant :
     
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header  col-xs-2">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" id="header-hamburger">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
