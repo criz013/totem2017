@@ -5,15 +5,6 @@
             <p>Veuillez renseigner les champs ci-dessous :</p>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col-md-offset-2 col-md-3">
-            <div class="form-group">
-                <label for="team_hashtag">Hashtag :</label>
-                <input type="text" name="team_hashtag"  class="form-control" id="team_hashtag" required />
-            </div>
-        </div>
-    </div>
         
     <div class="row">
         <div class="col-md-offset-2 col-md-3">
@@ -90,15 +81,6 @@
             <div class="form-group">
                 <label for="codrivinglicence">Permis de conduire du co-pilote</label>
                 <input type="file" class="form-control-file" name="copilot_driving_licence" id="teamcopilotpic" aria-describedby="fileHelp">
-            </div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-offset-2 col-md-3">
-            <div class="form-group">
-                <label for="contractfilled_upload">Permis de conduire du pilote</label>
-                <input type="file" class="form-control-file" name="contractfilled_upload" id="contractfilled_upload" aria-describedby="fileHelp">
             </div>
         </div>
     </div>

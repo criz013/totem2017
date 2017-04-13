@@ -7,5 +7,4 @@ use \W\Model\Model;
 class UsersModel extends Model
 {
 	
-	
 }

@@ -23,8 +23,8 @@
         
         <div id="sidenav-content">
             
-            <form action="/public/signup" method="POST">
-                
+            <form action="/totem2/public/inscription" method="POST">
+            
                 <div id="useraccount" class="step step1">
                     <?php $this->insert('front/part/signup/useraccount'); ?>
                 </div>
@@ -36,25 +36,12 @@
                 <div id="twizzyteam" class="step step3">
                     <?php $this->insert('front/part/signup/twizzyteam'); ?>
                 </div>
-                
-                <!--
-                <div id="confirmation" class="step step 4">
-                    <h2>Confirmation des informations</h2>
-                </div>
-                -->
-                
+
+                <input type="hidden" name="operation" value="signup">
                 <button type="submit" class="btn btn-success">Valider ma participation</button>
                 
             </form>
-            
-            <!--
-            <div class="row">
-                <div class="col-md-offset-2 col-md-7">
-                    <a href="#!" id="nextstep" class="btn btn-info" role="button">Etape suivante</a>
-                </div>
-            </div>
-            -->
-            
+          
         </div>
     </div>
 </div>

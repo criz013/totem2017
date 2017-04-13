@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-7">
             <div class="form-group">
-                <label for="companyname">Nom de l'entité:</label>
+                <label for="companyname">Nom de l'entreprise:</label>
                 <input type="text" name="company_name"  class="form-control" placeholder="Nom de l'entité" id="companyname" required/>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-7">
             <div class="form-group">
-                <label for="companylogo">Télécharger le logo de l'entité</label>
+                <label for="companylogo">Télécharger le logo de l'entreprise</label>
                 <input type="file" class="form-control-file" id="companylogo" aria-describedby="fileHelp">
             </div>
         </div>
@@ -39,6 +39,14 @@
             <div class="form-group">
                 <label for="companylink">Le site de votre société:</label>:</label>
                 <input type="url" name="company_link" class="form-control" placeholder="Veuillez saisir l'URL de votre entité." id="companylink" required/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-3">
+            <div class="form-group">
+                <label for="team_hashtag">Hashtag :</label>
+                <input type="text" name="team_hashtag"  class="form-control" id="team_hashtag" required />
             </div>
         </div>
     </div>

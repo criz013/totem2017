@@ -8,8 +8,7 @@
 
 namespace Controller;
 use \W\Controller\Controller;
-//A tester
-// use '../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+
 
 class HomePageController extends Controller
 {
@@ -30,20 +29,19 @@ class HomePageController extends Controller
     	$message = [];
     	$error = 0;
     	
-    	if(isset($_REQUEST['operation']) && $_REQUEST['operation'] == "login" ){
     		
     		// RECUPERER LES INFOS
-    		$login      = trim($_REQUEST["login"]); // Le login est l email de l'utilisateur
-    		$password   = trim($_REQUEST["password"]);
+    		$login      = trim($_POST["email"]); // Le login est l email de l'utilisateur
+    		$password   = trim($_POST["password"]);
     		
     		// UN PEU DE SECURITE
-    		if (filter_var($login, FILTER_VALIDATE_EMAIL))
+    		if (!filter_var($login, FILTER_VALIDATE_EMAIL))
     		{
     			$error++;
     			$message[] = 'Login incorect';
     		}
     		
-    		if(is_string($password)  && ( mb_strlen($password) > 4 ))
+    		if(!is_string($password)  && ( mb_strlen($password) < 5 ))
     		{
     			$error++;
     			$message[] = 'Mot de passe incorrect';
@@ -69,14 +67,18 @@ class HomePageController extends Controller
     				$objetAuthentificationModel->logUserIn($tabUser);
     				
     				// ON PEUT FAIRE UNE REDIRECTION VERS UNE PAGE PROTEGEE
+    				$this->redirectToRoute('homePage_index');
+    				var_dump($message);
     			}
     			else
     			{
     				// KO
     				$message[] = "IDENTIFIANTS INCORRECTS";
+    				var_dump($message);
     			}
+    			
     		}
-    	}
+    		var_dump($message);
     }
 
     /**
@@ -96,7 +98,7 @@ class HomePageController extends Controller
      */
     public function inscription()
     {
-    	// METHODE QUI VA GERER LA ROUTE /users/signup
+    	// METHODE QUI VA GERER LA ROUTE /signup
     	// CONTROLLER
     	$message = [];
     	$error = 0;
@@ -106,15 +108,14 @@ class HomePageController extends Controller
     	{
     		// RECUPERER LES INFOS DU FORMULAIRE
     		// http://php.net/manual/en/function.trim.php
-    		$username           = trim($_POST["username"]);
     		$email              = trim($_POST["email"]);
     		$password           = trim($_POST["password"]);
     		$role				= trim($_POST["role"]);
     		$last_name			= trim($_POST["last_name"]);
     		$first_name 		= trim($_POST["first_name"]);
     		$phone				= trim($_POST["phone"]);
+    		$password_confirm   = trim($_POST["password_confirm"]);
     		
-    		//$status
     		
     		// SECURITE
     		// VERIFIER QUE CHAQUE INFO EST CONFORME
@@ -129,14 +130,21 @@ class HomePageController extends Controller
     			$message[] = 'Le champ prenom invalide';
     		}
     		
-    		if (!is_string($username) || ( mb_strlen($username) < 5) ){
-    			$error++;
-    		}
     		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     			$error++;	
     		}
     		if(!is_string($password)  || ( mb_strlen($password) < 5 )){
+    			
     			$error++;		
+    		}
+    		if(!is_string($password_confirm)  || ( mb_strlen($password_confirm) < 5 )){
+    			$message[]='Votre mot de passe de confirmation n\'est pas conforme'; 
+    			$error++;
+    		}
+    		if($password != $password_confirm)
+    		{
+    			$message[]= 'Votre mot de passe n\'est pas identique';
+    			$error++;
     		}
     				
     		$objetUsersModel = new \W\Model\UsersModel;
@@ -146,38 +154,33 @@ class HomePageController extends Controller
     			$error++;
     			$message[] = "ERREUR: email existe dejà";
     		}
-    		if ($objetUsersModel->usernameExists($username))
-    		{
-    			$error++;
-    			$message[] = "ERREUR: username existe dejà";	
-    		}
-    			
-    			     if($error == 0)
-    			     {
+    		
     			     	$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
     			     	$token_validation = \W\Security\StringUtils::randomString(32);
     			     	$objetUsersModel->insert([
-    			     			"username"  =>   $username,
     			     			"email"     =>   $email,
     			     			"password"  =>   $passwordHash,
     			     			"role"      =>   $role,
     			     			"last_name" =>  $last_name,
     			     			"first_name" => $first_name,
-    			     			"phone" => $phone,
+    			     			"phone" => '0011223344',
+    			     			//"id_users_profil" => '1',
     			     			"role" => $role,
-    			     			"created" => "DATENOW()",
-    			     			"token_validation"=> $token_validation
+    			     			"created" => date('Y-m-d h:i:s'),
+    			     			"token_validation"=> $token_validation,
+    			     			"status"=>'En attente',
+    			     			
     			     	]);
-    			     	//Mail de validation de l'utilisateur
+    			     	/*Mail de validation de l'utilisateur
     			     	$lien = $this->url("homePage_validationMail",['email'=>$email,'token_validation'=>$token_validation]);
     			     	$sujet = "Bienvenue $last_name $first_name, veuillez valider votre compte pour continuer avec ce lien: $lien .";
     			     	envoyerMail('chrastophe@gmail.com', $email,$sujet);
     			     	$message[] = "BIENVENUE $username (IL FAUT CONFIRMER L'INSCRIPTION PAR MAIL)";
-    			     }
-    		
+    			     */
     	}
+    			     	$this->redirectToRoute("homePage_index");
     	// VIEW
-    	$this->show("page/users-signup", [ "message" => $message ]);
+    	//$this->show("front/inscription", [ "message" => $message ]);
     }
     
     public function envoyerMail($expediteur,$destinataire,$sujet){

@@ -32,7 +32,7 @@
         ['GET|POST', '/administrateur/reseau-sociaux', 'Web#sociaux', 'web_sociaux'],
 
         //Identification et inscription
-        ['GET|POST', '/login', 'HomePage#login', 'homePage_login'],
+        ['GET|POST', '/login', 'HomePage#login', 'homepage_login'],
         ['GET|POST', '/logout', 'HomePage#logout', 'homePage_logout'],
         ['GET|POST', '/inscription', 'HomePage#inscription', 'homePage_inscription'],
 		['GET|POST', '/validation', 'HomePage#validationMail', 'homePage_validationMail'],
