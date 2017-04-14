@@ -5,6 +5,7 @@
 var div = document.getElementById("divCacher")
 
 $('#afficher_div').click(function(e){
+	console.log($('#afficher_div'));
   e.preventDefault()
    if(div.style.display == "none") { // Si le div est masqué...
     div.style.display = "block";  // ... on l'affiche...
@@ -18,6 +19,6 @@ $('#afficher_div').click(function(e){
 //    $(this).removeClass("in");
 // });
 
-$('.panel-body').click(function(){
+$('.panel-heding').click(function(){
    $(this).parent().removeClass("in");
 });
