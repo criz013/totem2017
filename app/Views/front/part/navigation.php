@@ -15,9 +15,6 @@ Fichier de navigation contenant :
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#header">
-        <img alt="challengeTotem" src="<?= $this->assetUrl('img/logo.gif') ?>" width="100" />
-      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
