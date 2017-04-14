@@ -28,6 +28,8 @@ Fichier home-video (c'est le header de notre one page) contenant :
 	            <li><a href="#" id="btn-participer">Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter">Se connecter</a></li>
 	        </ul>
+          <?php $this->insert('front/part/sidenav-participer'); ?>
+          <?php $this->insert('front/part/sidenav-seconnecter'); ?>
       </div>
 
 
