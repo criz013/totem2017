@@ -14,6 +14,10 @@ $('#afficher_div').click(function(e){
   }
 });
 
-$('.panel-collapse').click(function(){
-   $(this).removeClass("in");
+// $('.panel-collapse').click(function(){
+//    $(this).removeClass("in");
+// });
+
+$('.panel-body').click(function(){
+   $(this).parent().removeClass("in");
 });

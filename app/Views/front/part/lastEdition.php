@@ -148,7 +148,7 @@ INCLURE LE FOOTER-SECTION
                             </div>
                         </div><!--/call-to-action-->
                     </div><!--/container-->
-                    <?php //$this->insert('lastEdition/lastEdition-partenaires'); ?>
+                    <?php $this->insert('front/part/lastEdition-partenaires'); ?>
         
             </div>
             <div class="" role="tab" id="heading2015">
