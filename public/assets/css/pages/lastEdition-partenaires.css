@@ -178,3 +178,7 @@
 	height: 40px;
 	overflow:hidden;
 }
+
+#div-Cacher {
+	display: none;
+}

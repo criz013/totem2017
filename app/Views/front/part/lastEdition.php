@@ -37,9 +37,8 @@ INCLURE LE FOOTER-SECTION
             <div id="collapse2016" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2015">
                 <div class="panel-body">
                     <!--Teaser-->
-                    <!--<div class="col-sm-2 point5 ">-->
                     <div class="row row-flex">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex editionInfo">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single text-center">
                                     <div class="icon-outer">
                                         <div class="icon">
@@ -51,8 +50,7 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                             <!--colonne1-->
-                            <!--<div class="col-sm-2 point5 ">-->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single text-center">
                                     <div class="icon-outer">
                                         <div class="icon">
@@ -64,8 +62,7 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                             <!--colonne2-->
-                            <!--<div class="col-sm-2 point5 ">-->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  col-flex">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single text-center">
                                     <div class="icon-outer">
                                         <div class="icon">
@@ -78,8 +75,7 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                             <!--colonne3-->
-                            <!--<div class="col-sm-2 point5 ">-->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  col-flex">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single text-center">
                                     <div class="icon-outer">
                                         <div class="icon">
@@ -92,8 +88,7 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                             <!--colonne4-->
-                            <!--<div class="col-sm-2 point5 ">-->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  col-flex">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single">
                                     <div class="icon-outer">
                                         <div class="icon">
@@ -105,8 +100,7 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                             <!--colonne5-->
-                            <!--<div class="col-sm-2 point5 ">-->
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  col-flex">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single">
                                     <div class="icon-outer">
                                         <div class="icon">
@@ -118,37 +112,35 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                     </div>
-                </div><!--/container-->
+                </div><!--/panel-body-->
         
         		<!-- photos & partenaires edition 2016-->	
-                    <div class="container text-center">
-                        <div class="row call-to-action col-xs-12">
-                            <!--/bouton partenaires-->
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
-                                <a class="icon" id="afficher_div" href="#!">
-                                    <p>
-                                        <i class="fa fa-address-card-o center animated bounceInRigh"><!--/icon--></i>
-                                    </p>
-                                    <p>
-                                        <span>Retrouvez les partenaires<br/>EDITION 2016</span>
-                                    </p>   
-                                </a>
-                            </div>
+                    <div class="row call-to-action col-xs-12 text-center">
+                        <!--/bouton partenaires-->
+                        <div class="col-xs-6 col-sm-6 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+                            <a class="icon animated bounceInLeft" id="afficher_div" href="#!">
+                                <p>
+                                    <i class="fa fa-address-card-o center"><!--/icon--></i>
+                                </p>
+                                <p>
+                                    <span>Retrouvez les partenaires<br/>EDITION 2016</span>
+                                </p>   
+                            </a>
+                        </div>
 
-                            <!--/bouton photos-->
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                <a class="icon" href="<?php echo $this->url('lastEdition_photos') ?>">
-                                    <p>
-                                        <i class="fa fa-camera center animated bounceInLeft"><!--/icon--></i> 
-                                    </p>
-                                    <p>
-                                        <span>Retrouvez les photos<br/>EDITION 2016</span>
-                                    </p>
-                                </a>
-                            </div>
-                        </div><!--/call-to-action-->
-                    </div><!--/container-->
-                    <?php $this->insert('front/part/lastEdition-partenaires'); ?>
+                        <!--/bouton photos-->
+                        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                            <a class="icon animated bounceInRight" href="<?php echo $this->url('lastEdition_photos') ?>">
+                                <p>
+                                    <i class="fa fa-camera center"><!--/icon--></i> 
+                                </p>
+                                <p>
+                                    <span>Retrouvez les photos<br/>EDITION 2016</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div><!--/call-to-action-->
+                <?php $this->insert('front/part/lastEdition-partenaires'); ?>
         
             </div>
             <div class="" role="tab" id="heading2015">
