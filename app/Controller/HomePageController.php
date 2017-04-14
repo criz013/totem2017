@@ -196,6 +196,7 @@ class HomePageController extends Controller
     	
     	$mail->isSMTP(); //connexion directe au serveur SMTP
     	$mail->isHTML(true); //utilisation du format HTML pour le message
+
     	$mail->Host = 'smtp.gmail.com';
     	$mail->Port = 465;
     	$mail->SMTPAuth   = true;

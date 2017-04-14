@@ -7,6 +7,7 @@
 	<?php $this->insert('front/part/head'); ?>
 
 	<section id="header" class="row">
+	
 	<?php $this->insert('front/part/home-video'); ?>
 	</section>
 	
@@ -43,8 +44,7 @@
 	<?php $this->insert('front/part/contact'); ?>
 	</section>
 	
-	<?php $this->insert('front/part/sidenav-participer'); ?>
-	<?php $this->insert('front/part/sidenav-seconnecter'); ?>
+	
 <footer>
 <?php $this->insert('front/part/footer'); ?>
 </footer>
