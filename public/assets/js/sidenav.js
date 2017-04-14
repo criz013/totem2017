@@ -20,8 +20,8 @@ var sideNav = function () {
     
     closeBtn.click(function () {
       $(this).parent().removeClass("slideLeft slideFullScreen")
-      signinSection.css("width", "30vw")
-      signinSection.css("transform", "translateX(30vw)")
+      // signinSection.css("width", "30vw")
+      // signinSection.css("transform", "translateX(30vw)")
       $("main").css("background", "none")
       $("#sidenav-content").fadeOut()
       $("#sidenavMenu").fadeIn()
