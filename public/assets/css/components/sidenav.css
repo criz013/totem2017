@@ -3,11 +3,11 @@
 	top: 0;
 	right: 0;
 	width: 20vw;
-	height: 100vh;
+	height: 20vh;
 	z-index: 9999;
 	background: #fff;
 	padding: 2em;
-	transform: translateX(20vw);
+	transform: translateY(-20vw);
 	transition: all .4s ease-out;
 }
 
