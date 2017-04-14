@@ -1,18 +1,21 @@
 #sidenav-seconnecter {
     position: absolute;
-   
+   	background: #fff;
 	/*top: 0;
 	right: 0;
-	width: 20vw;
+	
 	height: 100vh;*/
 	z-index: 9999;
-	background: #fff;
-	padding: 0;
+	padding-top: 0;
 	/*transform: translateX(20vw);*/
 	transition: all .4s ease-out;
-	height: 5px;
+	height: 0px;
 	overflow:hidden;
 	min-height: 0px;
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 100%;
+	border-radius: 20px;
 }
 
 #sidenav-participer {
@@ -23,7 +26,6 @@
 	width: 30vw;
 	/*height: 200vh;*/
 	z-index: 9999;
-	background: #fff;
 	padding: 0;
 	/*transform: translateX(30vw);*/
 	transition: all .4s ease-out;
@@ -62,3 +64,12 @@
 /*.step2, .step3, #confirmation {
 	display: none;
 }*/
+
+.sign {
+	padding-top: 15px;
+}
+
+
+#login, #signin {
+position: relative;
+margin-right: 0;}

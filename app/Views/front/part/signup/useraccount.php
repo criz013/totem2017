@@ -1,7 +1,7 @@
 <div class="container" id="step1">
     <div class="row">
         <div class="col-md-offset-2 col-md-8">
-            <h1>Je crée mon compte</h1>
+            <h2>Je crée mon compte</h2>
             <p>Veuillez renseigner les champs ci-dessous :</p>
         </div>
     </div>
@@ -69,9 +69,6 @@
             </div>
         </div>
     </div>    
-
-    </div>
-
 </div>
 
 

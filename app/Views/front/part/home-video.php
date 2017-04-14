@@ -26,17 +26,21 @@ Fichier home-video (c'est le header de notre one page) contenant :
         	<ul class="nav navbar-nav navbar-right">
 	            <li><a href="#contact">Nous contacter</a></li>
 	            <li><a href="#" id="btn-participer">Participer</a></li>
-	            <li><a href="#" id="btn-seconnecter">Se connecter</a></li>
+	            <li><a href="#" id="btn-seconnecter"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Se connecter</a></li>
 	        </ul>
-      </div>
-      <?php $this->insert('front/part/sidenav-participer'); ?>
-          <?php $this->insert('front/part/sidenav-seconnecter'); ?>
-
-
+        </div>
       <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
 </nav>
+<div class="container">
+  <div class="row" id="login">
+  <?php $this->insert('front/part/sidenav-seconnecter'); ?>
+  </div>
+  <div class="row" id="signin">
+  <?php $this->insert('front/part/sidenav-participer'); ?>
+  </div>
+</div>
 <div class="container">
     <div id="countdown" class="row">
         <div class="cd-box col-xs-6 col-sm-6 col-md-3 col-lg-3">

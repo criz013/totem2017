@@ -1,8 +1,8 @@
 <!--création d'une liste de liens pour accéder au différents formulaires-->
 
-<div class="row">
-    <div class="container-fluid">
-
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
         <form action="<?php echo $this->url("homePage_inscription")?>" method="POST">
             
                 <div id="useraccount" class="step step1">
@@ -44,7 +44,7 @@
                 
             </form>
           */?>
-        </div>
-        
+        <!-- </div> -->
+    </div>    
     </div>
 </div>
