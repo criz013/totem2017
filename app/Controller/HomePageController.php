@@ -149,11 +149,12 @@ class HomePageController extends Controller
     				
     		$objetUsersModel = new \W\Model\UsersModel;
     			
-    		if ($objetUsersModel->emailExists($email))
+    		if ($objetUsersModel->emailExists($email) == true)
     		{
     			$error++;
     			$message[] = "ERREUR: email existe dejà";
-    		}
+    			//Une redirection ici aussi
+    		}else{
     		
     			     	$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
     			     	$token_validation = \W\Security\StringUtils::randomString(32);
@@ -164,59 +165,83 @@ class HomePageController extends Controller
     			     			"last_name" =>  $last_name,
     			     			"first_name" => $first_name,
     			     			"phone" => '0011223344',
-    			     			//"id_users_profil" => '1',
+    			     			"id_users_profil" => $this->lastInsertId(),
     			     			"role" => $role,
     			     			"created" => date('Y-m-d h:i:s'),
     			     			"token_validation"=> $token_validation,
     			     			"status"=>'En attente',
-    			     			
+    			     			"username" => $email
     			     	]);
-    			     	/*Mail de validation de l'utilisateur
-    			     	$lien = $this->url("homePage_validationMail",['email'=>$email,'token_validation'=>$token_validation]);
-    			     	$sujet = "Bienvenue $last_name $first_name, veuillez valider votre compte pour continuer avec ce lien: $lien .";
-    			     	envoyerMail('chrastophe@gmail.com', $email,$sujet);
-    			     	$message[] = "BIENVENUE $username (IL FAUT CONFIRMER L'INSCRIPTION PAR MAIL)";
-    			     */
+    			     	
+    			     	
+    			     	
+    			     	/*Mail de validation de l'utilisateur */
+    			     	$lien = $this->generateUrl("homePage_validationMail");
+    			     	$lien .= "?email=".$email."&"."token=".$token_validation;
+    			     	
+    			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
+    			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
+    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
+    			     	
+    			     	$this->show("front/inscription", [ "message" => $message,'lien'=>$lien ]);
     	}
-    			     	$this->redirectToRoute("homePage_index");
+    }
+    			     	//$this->redirectToRoute("homePage_index");
     	// VIEW
-    	//$this->show("front/inscription", [ "message" => $message ]);
+    	
     }
     
-    public function envoyerMail($expediteur,$destinataire,$sujet){
-    	//Create a new PHPMailer instance
-    	$mail = new PHPMailer;
-    	// Set PHPMailer to use the sendmail transport
-    	$mail->isSendmail();
-    	//Set who the message is to be sent from
-    	$mail->setFrom($expediteur);
-    	//Set who the message is to be sent to
-    	$mail->addAddress($destinataire);
-    	//Set the subject line
-    	$mail->Subject = 'Mail de validation d\'inscription';
-    	//Read an HTML message body from an external file, convert referenced images to embedded,
-    	//convert HTML into a basic plain-text alternative body
-    	//$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-    	//Replace the plain text body with one created manually
-    	$mail->AltBody = $sujet;
+    public function envoyerMail($expediteur,$destinataire,$sujet,$corp){
     	
-    	//send the message, check for errors
+    	$mail = new \PHPMailer();
+    	
+    	$mail->isSMTP(); //connexion directe au serveur SMTP
+    	$mail->isHTML(true); //utilisation du format HTML pour le message
+    	$mail->Host = 'ss://smtp.gmail.com';
+    	$mail->SMTPAuth   = true;
+    	
+    	$mail->Username = "chrastophe@gmail.com";
+    	$mail->Password = "t3rrypratch3tt";
+    	/*$mail->SMTPSecure = "ssl";
+    	$mail->Port = 465; // Par défaut*/
+    	$mail->SMTPSecure ="tls";
+    	$mail->Port = 587;
+    	$mail->setFrom($expediteur);
+    	$mail->addAddress($destinataire);
+    	$mail->Subject = $sujet;
+    	$mail->Body =$corp;
+    	
     	if (!$mail->send()) {
     		echo "Mailer Error: " . $mail->ErrorInfo;
     	} else {
     		echo "Message sent!";
     	}
     }
+    
     public function validationMail(){
+    	$message =[];
     	$safe = array_map('strip_tags',$_GET);
+    	$error = 0;
     	
-    	$objetUsersModel = new \W\Model\UsersModel;
+    	$email = trim($safe['email']);
+    	$token = trim($safe['token']);
     	
-    	$tokenBdd = $objetUsersModel->search(array($safe['email'],'or',FALSE));
-    	
-    	if($tokenBdd['']){
-    		
+    	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    		$error++;
     	}
     	
+    	if($error == 0){
+    	
+    		$objetUsersModel = new \W\Model\UsersModel;
+    		$tokenBdd = $objetUsersModel->search(array($safe['email'],'or',FALSE));
+    		
+    		if($tokenBdd['token_validation'] == $token){
+    			$message[]= 'token validez';
+    			$tokenBdd->update(['valider'=>1]);
+    		}
+    	}
+    	else{
+    		$message[] = 'Erreur';
+    	}	
     }
 }

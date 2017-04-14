@@ -9,16 +9,6 @@
                     Je sponsorise le challenge en Twizzy
                 </a>
             </li>
-            <li id="sponsor">
-                <a href="#sponsorform">
-                    Je sponsorise le challenge
-                </a>
-            </li>
-            <li id="benevole">
-                <a href="#">
-                    J'aide les organisateurs
-                </a>
-            </li>
         </ul>
         
         <div id="sidenav-content">
@@ -28,7 +18,7 @@
                 <div id="useraccount" class="step step1">
                     <?php $this->insert('front/part/signup/useraccount'); ?>
                 </div>
-                
+                <?php /*
                 <div id="userprofile" class="step step2">
                     <?php $this->insert('front/part/signup/userprofile'); ?>
                 </div>
@@ -36,7 +26,7 @@
                 <div id="twizzyteam" class="step step3">
                     <?php $this->insert('front/part/signup/twizzyteam'); ?>
                 </div>
-
+				*/?>
                 <input type="hidden" name="operation" value="signup">
                 <button type="submit" class="btn btn-success">Valider ma participation</button>
                 

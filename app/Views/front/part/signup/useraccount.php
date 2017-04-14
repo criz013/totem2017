@@ -36,8 +36,6 @@
         </div>
     </div>
                     
-    <input type="hidden" name="role" value="user" />
-                    
     <div class="row">
         <div class="col-md-offset-2 col-md-7">
             <div class="form-group">
@@ -71,11 +69,7 @@
             </div>
         </div>
     </div>    
-                
-        
-                
-        <div class="g-recaptcha" data-sitekey="<?php //echo $siteKey; ?>">
-        
+
     </div>
 
 </div>
