@@ -10,19 +10,22 @@ var sideNav = function () {
     
     signinBtn.click(function () {
         console.log("TEST");
-        signinSection.addClass("slideLeft")
-        $("main").css("background", "rgba(0,0,0,.5)")
+        //signinSection.addClass("slideLeft")
+        //$("main").css("background", "rgba(0,0,0,.5)")
+        signinSection.css("height", "auto")
     })
     
     loginBtn.click(function () {
-        loginSection.addClass("slideLeft")
+        //loginSection.addClass("slideLeft")
+        loginSection.css("height", "auto")
     })
     
     closeBtn.click(function () {
-      $(this).parent().removeClass("slideLeft slideFullScreen")
+      //$(this).parent().removeClass("slideLeft slideFullScreen")
+      $(this).parent().css("height", "0px")
       // signinSection.css("width", "30vw")
       // signinSection.css("transform", "translateX(30vw)")
-      $("main").css("background", "none")
+      //$("main").css("background", "none")
       $("#sidenav-content").fadeOut()
       $("#sidenavMenu").fadeIn()
     })

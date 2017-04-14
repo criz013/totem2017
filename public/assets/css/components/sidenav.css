@@ -1,29 +1,35 @@
 #sidenav-seconnecter {
-    /*position: absolute;*/
-    position: relative;
+    position: absolute;
+   
 	/*top: 0;
 	right: 0;
 	width: 20vw;
-	height: 100vh;
-	z-index: 9999;*/
+	height: 100vh;*/
+	z-index: 9999;
 	background: #fff;
-	padding: 2em;
+	padding: 0;
 	/*transform: translateX(20vw);*/
 	transition: all .4s ease-out;
-	height: 0;
+	height: 5px;
+	overflow:hidden;
+	min-height: 0px;
 }
 
 #sidenav-participer {
     position: absolute;
-	top: 0;
+   
+	/*top: 0;
 	right: 0;
 	width: 30vw;
-	height: 200vh;
+	/*height: 200vh;*/
 	z-index: 9999;
 	background: #fff;
-	padding: 2em;
-	transform: translateX(30vw);
+	padding: 0;
+	/*transform: translateX(30vw);*/
 	transition: all .4s ease-out;
+	height: 5px;
+	min-height: 0px;
+	overflow:hidden;
 }
 
 #sidenav-participer h2 {
