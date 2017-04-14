@@ -5,10 +5,10 @@ Fichier de navigation contenant :
 -->
 
 <nav id="nav-onepage" class="navbar navbar-onepage">
-  <div class="container-fluid">
+  <div class="container">
     
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header  col-xs-2">
+    <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" id="header-hamburger">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -16,9 +16,10 @@ Fichier de navigation contenant :
         <span class="icon-bar"></span>
       </button>
     </div>
-
+    
+    <div class="row">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-4" id="navbar-collapse">
+    <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-3" id="navbar-collapse">
       <ul class="nav navbar-nav text-center navbar-scroll">
         <li><a href="#currentEdition">Edition 2017</a></li>
         <li><a href="#equipages">Suivi des équipages</a></li>
@@ -31,6 +32,7 @@ Fichier de navigation contenant :
       </li>
      </ul>
     </div><!-- /.navbar-collapse -->
+</div>
 
   </div><!-- /.container-fluid -->
 </nav>
