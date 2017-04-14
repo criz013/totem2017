@@ -156,7 +156,7 @@ class HomePageController extends Controller
     			//Une redirection ici aussi
     		}else{
     		
-    			     	$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
+    			     	/*$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
     			     	$token_validation = \W\Security\StringUtils::randomString(32);
     			     	$objetUsersModel->insert([
     			     			"email"     =>   $email,
@@ -164,24 +164,23 @@ class HomePageController extends Controller
     			     			"role"      =>   $role,
     			     			"last_name" =>  $last_name,
     			     			"first_name" => $first_name,
-    			     			"phone" => '0011223344',
-    			     			"id_users_profil" => $this->lastInsertId(),
+    			     			"phone" => $phone,
     			     			"role" => $role,
     			     			"created" => date('Y-m-d h:i:s'),
     			     			"token_validation"=> $token_validation,
     			     			"status"=>'En attente',
     			     			"username" => $email
-    			     	]);
-    			     	
-    			     	
+    			     	]);*/
+    			     /*	$objetUsersProfilModel = new \Model\Users_profilModel;
+    			     	$objetUsersProfilModel->insert(['id_users'=>$this->lastInsertId()]);*/
     			     	
     			     	/*Mail de validation de l'utilisateur */
-    			     	$lien = $this->generateUrl("homePage_validationMail");
-    			     	$lien .= "?email=".$email."&"."token=".$token_validation;
+    	//		     	$lien = $this->generateUrl("homePage_validationMail");
+    		//	     	$lien .= "?email=".$email."&"."token=".$token_validation;
     			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
-    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
+    			     	$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
     			     	
     			     	$this->show("front/inscription", [ "message" => $message,'lien'=>$lien ]);
     	}
@@ -197,15 +196,13 @@ class HomePageController extends Controller
     	
     	$mail->isSMTP(); //connexion directe au serveur SMTP
     	$mail->isHTML(true); //utilisation du format HTML pour le message
-    	$mail->Host = 'ss://smtp.gmail.com';
+    	$mail->Host = 'smtp.gmail.com';
     	$mail->SMTPAuth   = true;
     	
-    	$mail->Username = "chrastophe@gmail.com";
+    	$mail->Username = "chrastophe";
     	$mail->Password = "t3rrypratch3tt";
-    	/*$mail->SMTPSecure = "ssl";
-    	$mail->Port = 465; // Par défaut*/
-    	$mail->SMTPSecure ="tls";
-    	$mail->Port = 587;
+    	$mail->SMTPSecure ="ssl";
+    	$mail->Port = 465;
     	$mail->setFrom($expediteur);
     	$mail->addAddress($destinataire);
     	$mail->Subject = $sujet;
