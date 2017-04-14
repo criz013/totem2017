@@ -121,26 +121,34 @@ INCLURE LE FOOTER-SECTION
                 </div><!--/container-->
         
         		<!-- photos & partenaires edition 2016-->	
-                <aside class="bg-dark">
                     <div class="container text-center">
-                        <div class="call-to-action">
+                        <div class="row call-to-action col-xs-12">
                             <!--/bouton partenaires-->
-                            <a class="icon" id="afficher_div" href="#!">
-                                <i class="fa fa-address-card-o center animated bounceInRigh"><!--/icon--></i>
-                                <span>Retrouvez les partenaires</span>
-                                <span>EDITION 2016</span>
-                            </a>
-                            
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+                                <a class="icon" id="afficher_div" href="#!">
+                                    <p>
+                                        <i class="fa fa-address-card-o center animated bounceInRigh"><!--/icon--></i>
+                                    </p>
+                                    <p>
+                                        <span>Retrouvez les partenaires<br/>EDITION 2016</span>
+                                    </p>   
+                                </a>
+                            </div>
+
                             <!--/bouton photos-->
-                            <a class="icon" href="<?php echo $this->url('lastEdition_photos') ?>">
-                                <i class="fa fa-camera center animated bounceInLeft"><!--/icon--></i>
-                                <span>Retrouvez les photos</span>
-                                <span>EDITION 2016</span>
-                            </a>
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="icon" href="<?php echo $this->url('lastEdition_photos') ?>">
+                                    <p>
+                                        <i class="fa fa-camera center animated bounceInLeft"><!--/icon--></i> 
+                                    </p>
+                                    <p>
+                                        <span>Retrouvez les photos<br/>EDITION 2016</span>
+                                    </p>
+                                </a>
+                            </div>
                         </div><!--/call-to-action-->
                     </div><!--/container-->
                     <?php //$this->insert('lastEdition/lastEdition-partenaires'); ?>
-                </aside><!--/bg-dark-->
         
             </div>
             <div class="" role="tab" id="heading2015">
@@ -237,20 +245,30 @@ INCLURE LE FOOTER-SECTION
         		<!-- photos & partenaires edition 2016-->	
                 <!--<aside class="bg-dark">-->
                     <div class="container text-center">
-                        <div class="call-to-action">
+                        <div class="call-to-action col-xs-12">
                             <!--/bouton partenaires-->
-                            <a class="icon" id="afficher_div" href="#!">
-                                <i class="fa fa-address-card-o center animated bounceInRigh"><!--/icon--></i>
-                                <span>Retrouvez les partenaires</span>
-                                <span>EDITION 2015</span>
-                            </a>
-                            
+                            <div class="col-xs-6">
+                                <a class="icon" id="afficher_div" href="#!">
+                                    <p>
+                                        <i class="fa fa-address-card-o center animated bounceInRigh"><!--/icon--></i>
+                                    </p>
+                                    <p>
+                                        <span>Retrouvez les partenaires<br/>EDITION 2015</span>
+                                    </p>   
+                                </a>
+                            </div>
+
                             <!--/bouton photos-->
-                            <a class="icon" href="<?php echo $this->url('lastEdition_photos') ?>">
-                                <i class="fa fa-camera center animated bounceInLeft"><!--/icon--></i>
-                                <span>Retrouvez les photos</span>
-                                <span>EDITION 2015</span>
-                            </a>
+                            <div class="col-xs-6">
+                                <a class="icon" href="<?php echo $this->url('lastEdition_photos') ?>">
+                                    <p>
+                                        <i class="fa fa-camera center animated bounceInLeft"><!--/icon--></i> 
+                                    </p>
+                                    <p>
+                                        <span>Retrouvez les photos<br/>EDITION 2015</span>
+                                    </p>
+                                </a>
+                            </div>
                         </div><!--/call-to-action-->
                     </div><!--/container-->
                     <?php //$this->insert('lastEdition/lastEdition-partenaires'); ?>

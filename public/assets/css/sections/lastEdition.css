@@ -118,30 +118,30 @@
 
 /************* links photos & partenaires 2016  *************/
 
-.call-to-action .icon span{
-    display:block;
+.call-to-action .icon{
+    display:inline-block;
     text-align:center;
     /*font-size: 16px;*/
-    /*font-family:'Gotham-Bold';*/
+    font-weight: bold;
     margin-top:5px;
     margin-left: 5px;
     margin-right: 5px;
-    /*color:white;*/
     color: rgba(52, 52, 52, 1);
 }
 
 .call-to-action {
-    margin: 30px;
+    /*margin: 30px;*/
+    padding-bottom: 20px;
 }
 
-.call-to-action a {
-    color: white;
-    
-}
 
-.call-to-action a>i {
+.call-to-action a i {
     color: rgba(52, 52, 52, 1);
     font-size: 4.8rem;
+}
+
+.call-to-action a:hover {
+    text-decoration: none;
 }
 
 
