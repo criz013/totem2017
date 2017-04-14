@@ -34,9 +34,8 @@ INCLURE LE FOOTER-SECTION
                 </a>
               </h2>
             </div>
-            <div id="collapse2016" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2015">
+            <div id="collapse2016" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2016">
                 <div class="panel-body">
-                    <!--Teaser-->
                     <div class="row row-flex">
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-flex animated flipInX">
                                 <div class="single text-center">
@@ -112,13 +111,13 @@ INCLURE LE FOOTER-SECTION
                                 </div><!--/single-->
                             </div><!--/col-->
                     </div>
-                </div><!--/panel-body-->
-        
-        		<!-- photos & partenaires edition 2016-->	
+                </div>
+        		<!-- photos & partenaires edition 2016-->
+                <div id="accordion-goodies" role="tablist" aria-multiselectable="true">
                     <div class="row call-to-action col-xs-12 text-center">
                         <!--/bouton partenaires-->
-                        <div class="col-xs-6 col-sm-6 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
-                            <a class="icon animated bounceInLeft" id="afficher_div" href="#!">
+                        <div role="tab" id="sponsor2016" class="col-xs-6 col-sm-6 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+                            <a class="icon animated bounceInLeft" role="button" data-toggle="collapse" data-parent="#accordion-goodies" href="#collapseSponsor2016" aria-expanded="true" aria-controls="collapseSponsor2016"><!-- id="afficher_div" -->
                                 <p>
                                     <i class="fa fa-address-card-o center"><!--/icon--></i>
                                 </p>
@@ -129,8 +128,8 @@ INCLURE LE FOOTER-SECTION
                         </div>
 
                         <!--/bouton photos-->
-                        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                            <a class="icon animated bounceInRight" href="<?php echo $this->url('lastEdition_photos') ?>">
+                        <div  role="tab" id="photo2016" class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                            <a class="icon animated bounceInRight" role="button" data-toggle="collapse" data-parent="#accordion-goodies" href="#collapsePhoto2016" aria-expanded="true" aria-controls="collapsePhoto2016">
                                 <p>
                                     <i class="fa fa-camera center"><!--/icon--></i> 
                                 </p>
@@ -140,9 +139,20 @@ INCLURE LE FOOTER-SECTION
                             </a>
                         </div>
                     </div><!--/call-to-action-->
-                <?php $this->insert('front/part/lastEdition-partenaires'); ?>
-        
-            </div>
+                    <!-- section sponsors -->
+                    <div id="collapseSponsor2016" class="panel-collapse collapse" role="tabpanel" aria-labelledby="sponsor2016">
+                        <div class="panel-body">    
+                            <?php $this->insert("front/part/lastEdition-partenaires"); ?>
+                        </div>
+                    </div><!--/collapseSponsor2016-->
+                    <!-- section photos -->
+                    <div id="collapsePhoto2016" class="panel-collapse collapse" role="tabpanel" aria-labelledby="photo2016">
+                        <div class="panel-body">    
+                            <?php $this->insert('front/part/lastEdition-photos'); ?>
+                        </div>
+                    </div><!--/collapsePhoto2016-->
+                </div><!--/accordeon-goodies-->
+            </div><!--/collapseXXXX-->
             <div class="" role="tab" id="heading2015">
               <h2 class="">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2015" aria-expanded="true" aria-controls="collapse2015">
@@ -252,7 +262,7 @@ INCLURE LE FOOTER-SECTION
 
                             <!--/bouton photos-->
                             <div class="col-xs-6">
-                                <a class="icon" href="<?php echo $this->url('lastEdition_photos') ?>">
+                                <a class="icon" href="#">
                                     <p>
                                         <i class="fa fa-camera center animated bounceInLeft"><!--/icon--></i> 
                                     </p>
@@ -265,16 +275,10 @@ INCLURE LE FOOTER-SECTION
                     </div><!--/container-->
                     <?php //$this->insert('lastEdition/lastEdition-partenaires'); ?>
                 <!--</aside><!--/bg-dark-->
-        
-            </div>
+            </div><!--/collapseXXXX-->
         </div>
     </div>
-    
-    
-	
-</section><!--/features-->
-    
-
+</section><!--/features--> 
 
 <link rel="stylesheet" href="<?= $this->assetUrl('libs/animatecss/animatecss.css') ?>" type="text/css" />
     

@@ -1,5 +1,5 @@
-<!--div cachee par defaut-->
-<div id="divCacher">
+<!-- div cachee par defaut-->
+<div class="sponsorList"><!-- id="divCacher" -->
 	<ul class="ch-grid">
 		<li>
 		    <!--Cap Profils-->
