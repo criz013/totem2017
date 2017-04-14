@@ -3,7 +3,7 @@
 <div class="row">
     <div class="container-fluid">
 
-        <form action="/totem2/public/inscription" method="POST">
+        <form action="<?php echo $this->url("homePage_inscription")?>" method="POST">
             
                 <div id="useraccount" class="step step1">
                     <?php $this->insert('front/part/signup/useraccount'); ?>

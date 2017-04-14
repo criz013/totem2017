@@ -197,13 +197,13 @@ class HomePageController extends Controller
     	$mail->isSMTP(); //connexion directe au serveur SMTP
     	$mail->isHTML(true); //utilisation du format HTML pour le message
     	$mail->Host = 'smtp.gmail.com';
+    	$mail->Port = 465;
     	$mail->SMTPAuth   = true;
-    	
+    	$mail->SMTPSecure ="ssl";
     	$mail->Username = "chrastophe";
     	$mail->Password = "t3rrypratch3tt";
-    	$mail->SMTPSecure ="ssl";
-    	$mail->Port = 465;
     	$mail->setFrom($expediteur);
+    	$mail->FromName='admin-totem';
     	$mail->addAddress($destinataire);
     	$mail->Subject = $sujet;
     	$mail->Body =$corp;
