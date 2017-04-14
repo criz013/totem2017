@@ -27,7 +27,7 @@ Fichier home-video (c'est le header de notre one page) contenant :
 	            <li><a href="#contact">Nous contacter</a></li>
 	            <li><a href="#" id="btn-participer">Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter">Se connecter</a></li>
-         	</ul>
+	        </ul>
       </div>
 
 
