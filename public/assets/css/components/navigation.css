@@ -16,7 +16,7 @@
 }
 
 #nav-onepage.navbar-onepage {
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.7);
     border: none;
     border-radius:0 !important;
 }
@@ -29,9 +29,9 @@
 }
 
 .navbar-scroll li a {
-    color: #cbf723!important;
+    color: rgba(116, 182, 47,1)!important;
     font-size: 1.3em;
-    padding: .9em 1.2em;
+    padding: .9em;
     /*font-weight: normal;*/
 }
 
@@ -48,10 +48,10 @@
 	position: fixed!important;
 	top: 0;
 	left: 0;
-	font-size: 1.5rem;
+	/*font-size: 1.5rem;*/
 	padding: 0;
 	height: 50px!important;
-	background: rgba(0,0,0,.5) !important;
+	background: rgba(0,0,0,.7) !important;
 	transition: all .4s ease;
 	margin-top: 50px;
 
@@ -85,4 +85,9 @@
 #navbar-collapse ul li {
 	text-align: right;
 	/*background: rgba(0,0,0,.5);*/
+}
+
+#nav-onepage .navbar-nav {
+	float: none;
+	display: inline-block;
 }

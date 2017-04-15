@@ -19,7 +19,7 @@ Fichier de navigation contenant :
     
     <div class="row">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-6" id="navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-scroll">
         <li><a href="#currentEdition">Edition 2017</a></li>
         <li><a href="#equipages">Suivi des équipages</a></li>
