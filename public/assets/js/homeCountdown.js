@@ -28,14 +28,14 @@ $(document).ready(function(){
 					days = String(days).length >= 2 ? days : "0" + days;
 					hours = String(hours).length >= 2 ? hours : "0" + hours;
 					minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
-					seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+					seconds = String(seconds).length >= 2 ? seconds : "0" + seconds;
 				}
 				//
 				if(!isNaN(eventDate)){
 					thisEl.find(".days").text(days);
 					thisEl.find(".hours").text(hours);
 					thisEl.find(".minutes").text(minutes);
-					thisEl.find(".seconds").text(seconds)
+					thisEl.find(".seconds").text(seconds);
 				}
         else{
           errorMessage = "Invalid date. Example: 27 March 2015 17:00:00";

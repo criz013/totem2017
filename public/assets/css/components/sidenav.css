@@ -1,4 +1,4 @@
-#sidenav-seconnecter {
+#sidenav-seconnecter, #sidenav-participer {
     position: absolute;
    	background: #fff;
 	/*top: 0;
@@ -8,31 +8,35 @@
 	z-index: 9999;
 	padding-top: 0;
 	/*transform: translateX(20vw);*/
-	transition: all .4s ease-out;
-	height: 0px;
+	/*transition: height 1s ease-out;*/
 	overflow:hidden;
 	min-height: 0px;
 	padding-right: 15px;
 	padding-left: 15px;
 	width: 100%;
 	border-radius: 20px;
+	display:none;
 }
 
-#sidenav-participer {
+/*#sidenav-participer {
     position: absolute;
-   
+   	background: #fff;
 	/*top: 0;
 	right: 0;
 	width: 30vw;
-	/*height: 200vh;*/
+	height: 200vh;
 	z-index: 9999;
-	padding: 0;
-	/*transform: translateX(30vw);*/
-	transition: all .4s ease-out;
-	height: 5px;
+	padding-top: 0;
+	/*transform: translateX(30vw);
+	transition: height 1s ease-out;
 	min-height: 0px;
+	padding-right: 15px;
+	padding-left: 15px;
 	overflow:hidden;
-}
+	display: none;
+	width: 100%;
+	border-radius: 20px;
+}*/
 
 #sidenav-participer h2 {
    color: green;

@@ -2,8 +2,9 @@
 Fichier de la sidenav contenant:
 Boutons + Formulaires d'inscriptions et de connexion
 -->
-
-<section id="sidenav-participer">
-    <div class="close"><i class="fa fa-close"></i></div>
-	<?php $this->insert('front/part/signin'); ?>
-</section>
+<div class="col-xs-12 col-md-8 col-md-offset-4">
+	<div id="sidenav-participer">
+    	<div class="close sign"><i class="fa fa-close"></i></div>
+		<?php $this->insert('front/part/signin'); ?>
+	</div>
+</div>

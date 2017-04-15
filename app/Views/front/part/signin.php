@@ -1,9 +1,6 @@
 <!--création d'une liste de liens pour accéder au différents formulaires-->
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-6">
-        <form action="<?php echo $this->url("homePage_inscription")?>" method="POST">
+        <form action="<?php echo $this->url("homePage_inscription")?>" method="POST" class="text-center sign">
             
                 <div id="useraccount" class="step step1">
                     <?php $this->insert('front/part/signup/useraccount'); ?>
@@ -18,8 +15,9 @@
                 </div>
                     */?>
                 <input type="hidden" name="operation" value="signup">
-                <button type="submit" class="btn btn-success">Valider ma participation</button>
-                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-vert">Proposer ma participation</button>
+                </div>
             </form>
         <?php /*
 
@@ -45,6 +43,3 @@
             </form>
           */?>
         <!-- </div> -->
-    </div>    
-    </div>
-</div>

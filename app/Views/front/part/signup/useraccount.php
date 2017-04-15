@@ -1,13 +1,8 @@
-<div class="container" id="step1">
+<div id="step1">
     <div class="row">
-        <div class="col-md-offset-2 col-md-8">
             <h2>Je crée mon compte</h2>
             <p>Veuillez renseigner les champs ci-dessous :</p>
-        </div>
     </div>
-    
-    <div class="row">
-        <div class="col-md-offset-2 col-md-7">
             <div class="form-group">
                 <label for="role">Vous êtes ?:
 					<select name="role" id="role">
