@@ -14,7 +14,7 @@ class AdminController extends Controller
 {
     /**
      *
-     * route: /aministrateur
+     * route: /administrateur
      */
     public function index(){
 		
