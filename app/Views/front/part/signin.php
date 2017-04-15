@@ -1,6 +1,6 @@
 <!--création d'une liste de liens pour accéder au différents formulaires-->
 
-        <form action="<?php echo $this->url("homePage_inscription")?>" method="POST" class="text-center sign">
+        <form action="<?php echo $this->url("homePage_inscription")?>" method="POST" class="text-center sign form-horizontal">
             
                 <div id="useraccount" class="step step1">
                     <?php $this->insert('front/part/signup/useraccount'); ?>

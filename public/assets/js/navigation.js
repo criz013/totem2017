@@ -13,7 +13,7 @@ var navigationFixed = function () {
             
             if (scroll > navPosition) { // Si on scroll plus loin que la position de la nav
                nav.addClass("fixedToTop") // On ajoute une classe à la nav
-               nav.find(".navbar-nav li").addClass("navbar-li-fixed")
+               //nav.find(".navbar-nav li").addClass("navbar-li-fixed")
                nav.find('.navbar-brand').fadeIn()
             } else {
                 nav.removeClass("fixedToTop") // Quand on remonte, on enlève cette classe

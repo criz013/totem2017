@@ -1,69 +1,22 @@
 #sidenav-seconnecter, #sidenav-participer {
     position: absolute;
-   	background: #fff;
-	/*top: 0;
-	right: 0;
-	
-	height: 100vh;*/
+   	background: rgba(255, 255, 255, 0.9);
 	z-index: 9999;
 	padding-top: 0;
-	/*transform: translateX(20vw);*/
-	/*transition: height 1s ease-out;*/
 	overflow:hidden;
 	min-height: 0px;
 	padding-right: 15px;
 	padding-left: 15px;
 	width: 100%;
-	border-radius: 20px;
 	display:none;
 }
 
-/*#sidenav-participer {
-    position: absolute;
-   	background: #fff;
-	/*top: 0;
-	right: 0;
-	width: 30vw;
-	height: 200vh;
-	z-index: 9999;
-	padding-top: 0;
-	/*transform: translateX(30vw);
-	transition: height 1s ease-out;
-	min-height: 0px;
-	padding-right: 15px;
-	padding-left: 15px;
-	overflow:hidden;
-	display: none;
-	width: 100%;
-	border-radius: 20px;
-}*/
 
-#sidenav-participer h2 {
+
+#sidenav-seconnecter h2,#sidenav-participer h2 {
    color: green;
 }
 
-#sidenav-content {
-	display:none;
-}
-
-.slideLeft {
-    transform: translateX(0vw)!important;
-    transition: all .2s ease-in;
-}
-
-.expand {
-    height: auto;
-    transition: all .2s ease-in;
-}
-
-.slideFullScreen {
-	transform: translateX(0vw)!important;
-    transition: all .2s ease-in;
-}
-
-.show {
-	display: block;
-}
 
 /*.step2, .step3, #confirmation {
 	display: none;
@@ -72,6 +25,7 @@
 .sign {
 	padding-top: 15px;
 }
+
 
 
 #login, #signin {

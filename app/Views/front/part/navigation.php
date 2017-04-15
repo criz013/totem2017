@@ -19,12 +19,12 @@ Fichier de navigation contenant :
     
     <div class="row">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-3" id="navbar-collapse">
-      <ul class="nav navbar-nav text-center navbar-scroll">
+    <div class="collapse navbar-collapse  col-xs-6 col-xs-offset-6" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-scroll">
         <li><a href="#currentEdition">Edition 2017</a></li>
         <li><a href="#equipages">Suivi des équipages</a></li>
         <li><a href="#revuedepresse">Revue de presse</a></li>
-        <li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Autre éditions <span class="caret"></span></a>
+        <li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Autres éditions <span class="caret"></span></a>
           <ul id="navEditionsList" class="dropdown-menu">
             <li><a href="#collapse2016">2016</a></li>
             <li><a href="#collapse2015">2015</a></li>

@@ -15,7 +15,7 @@ Fichier home-video (c'est le header de notre one page) contenant :
 */
 ?>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav id="sidenav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -24,9 +24,9 @@ Fichier home-video (c'est le header de notre one page) contenant :
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         	<ul class="nav navbar-nav navbar-right">
-	            <li><a href="#contact">Nous contacter</a></li>
-	            <li><a href="#" id="btn-participer">Participer</a></li>
-	            <li><a href="#" id="btn-seconnecter"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Se connecter</a></li>
+	            <li><a href="#contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> Nous contacter</a></li>
+	            <li><a href="#" id="btn-participer"><i class="fa fa-handshake-o" aria-hidden="true"></i> Participer</a></li>
+	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
 	        </ul>
         </div>
       <!-- /.navbar-collapse -->
