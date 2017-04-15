@@ -22,7 +22,7 @@ class HomePageController extends Controller
     /**
      * @route /login
      * Login sur l'email.
-     * Rajoutet un input avec le name operation en hidden
+     * 
      */
     public function login(){
 		
@@ -46,6 +46,13 @@ class HomePageController extends Controller
     			$error++;
     			$message[] = 'Mot de passe incorrect';
     		}
+    		$objetUsersProfilModel = new \Model\Users_profilModel;
+    		$bValide = $objetUsersProfilModel->search(['email'=>$login]);
+    		
+    		if ($bValide == '0'){
+    			$error++;
+    			$message[] = 'Vous n\'avez pas encore valider votre compte' ;
+    		}
 			
     		if($error == 0)
     		{
@@ -57,8 +64,6 @@ class HomePageController extends Controller
     			$idUser = $objetAuthentificationModel->isValidLoginInfo($login, $password);
     			if ($idUser > 0)
     			{
-    				// OK
-    				$message[] = "BIENVENUE $idUser";
     				
     				$objetUsersModel = new \W\Model\UsersModel;
     				// ON RECUPERE TOUTE LA LIGNE SUR L'UTILISATEUR
@@ -68,6 +73,7 @@ class HomePageController extends Controller
     				
     				// ON PEUT FAIRE UNE REDIRECTION VERS UNE PAGE PROTEGEE
     				$this->redirectToRoute('homePage_index');
+    				
     				var_dump($message);
     			}
     			else
@@ -94,6 +100,8 @@ class HomePageController extends Controller
     }
 
     /**
+     * Methode qui gere les inscriptions d'un bénévole ou d'un sponsor
+     * 
      * @route /inscription
      */
     public function inscription()
@@ -129,6 +137,12 @@ class HomePageController extends Controller
     			$error++;
     			$message[] = 'Le champ prenom invalide';
     		}
+    		//Numéro de télphone français sous la form 00 00 00 00 00
+    		if (!preg_match ( " \^(\d\d\s){4}(\d\d)$\ " , $phone ) )
+    		{
+    			$error++;
+    			$message[] = 'Numéros de téléphone invalide';
+    		}
     		
     		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     			$error++;	
@@ -157,22 +171,22 @@ class HomePageController extends Controller
     		}else{
     			     	$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
     			     	$token_validation = \W\Security\StringUtils::randomString(32);
-    			     $x =	$objetUsersModel->insert([
-    			     			"email"     =>   $email,
-    			     			"password"  =>   $passwordHash,
-    			     			"role"      =>   $role,
-    			     			"last_name" =>  $last_name,
-    			     			"first_name" => $first_name,
-    			     			"phone" => $phone,
-    			     			"role" => $role,
-    			     			"created" => date('Y-m-d h:i:s'),
-    			     			"token_validation"=> $token_validation,
-    			     			"status"=>'En attente',
-    			     			"username" => $email
+    			     $lastId =	$objetUsersModel->insert([
+    			     			"email"      		=> $email,
+    			     			"password"   		=> $passwordHash,
+    			     			"role"       		=> $role,
+    			     			"last_name"  		=> $last_name,
+    			     			"first_name" 		=> $first_name,
+    			     			"phone"      		=> $phone,
+    			     			"role"       		=> $role,
+    			     			"created"    		=> date('Y-m-d h:i:s'),
+    			     			"token_validation"	=> $token_validation,
+    			     			"status"			=>'En attente',
+    			     			"username" 			=> $email
     			     	]);
-    			     	var_dump($x);
+    			     	
     			     	$objetUsersProfilModel = new \Model\Users_profilModel;
-    			     	$objetUsersProfilModel->insert(['id_users'=>$x['id']]);
+    			     	$objetUsersProfilModel->insert(['id_users'=>$lastId['id']]);
     			     	
     			     	/*Mail de validation de l'utilisateur */
     		     		$lien = $this->generateUrl("homePage_validationMail");
@@ -180,16 +194,24 @@ class HomePageController extends Controller
     			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
-    			     	$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
+    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
     			     	
     			     	$this->show("front/inscription", [ "message" => $message,'lien'=>$lien ]);
+    		}
+    		//Ici message d'erreur avec les messages
     	}
-    }
-    			     	//$this->redirectToRoute("homePage_index");
-    	// VIEW
-    	
+    			     	
     }
     
+    /**
+     * 
+     * Methode qui permet d'envoyer des msgs par mail
+     * 
+     * @param string $expediteur adresse email de l'espediteur du msg
+     * @param string $destinataire adresse mail du destinataire
+     * @param string $sujet Titre du mail
+     * @param string $corp Corp du msg en html
+     */
     public function envoyerMail($expediteur,$destinataire,$sujet,$corp){
     	
     	$mail = new \PHPMailer();
@@ -201,8 +223,8 @@ class HomePageController extends Controller
     	$mail->Port = 465;
     	$mail->SMTPAuth   = true;
     	$mail->SMTPSecure ="ssl";
-    	$mail->Username = "chrastophe";
-    	$mail->Password = "t3rrypratch3tt";
+    	$mail->Username = "";
+    	$mail->Password = "";
     	$mail->setFrom($expediteur);
     	$mail->FromName='admin-totem';
     	$mail->addAddress($destinataire);
@@ -216,6 +238,11 @@ class HomePageController extends Controller
     	}
     }
     
+    /**
+     * Vérifie si le mail et le token envoyer par mail sont valides
+     * si il y est valide on passe le valeur dans la bdd du champ valider à 1
+     * On récupère les valeurs passer en GET 
+     */
     public function validationMail(){
     	$message =[];
     	$safe = array_map('strip_tags',$_GET);
@@ -241,5 +268,23 @@ class HomePageController extends Controller
     	else{
     		$message[] = 'Erreur';
     	}	
+    }
+    
+    /**
+     * Permet à un utilisateur de générer un nouveau mdp.
+     */
+    public function mdpPerdu(){
+    	$chaine = 'azertyuiopqsdfghjklmwxcvbn123456789';
+    	
+    	$nb_lettres = strlen($chaine) - 1;
+    	$generation = '';
+    	for($i=0; $i < 7; $i++)
+    	{
+    		$pos = mt_rand(0, $nb_lettres);
+    		$car = $chaine[$pos];
+    		$generation .= $car;
+    	}
+    	return $generation;
+    
     }
 }
