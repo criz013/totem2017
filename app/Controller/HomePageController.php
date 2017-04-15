@@ -155,10 +155,9 @@ class HomePageController extends Controller
     			$message[] = "ERREUR: email existe dejà";
     			//Une redirection ici aussi
     		}else{
-    		
-    			     	/*$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
+    			     	$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
     			     	$token_validation = \W\Security\StringUtils::randomString(32);
-    			     	$objetUsersModel->insert([
+    			     $x =	$objetUsersModel->insert([
     			     			"email"     =>   $email,
     			     			"password"  =>   $passwordHash,
     			     			"role"      =>   $role,
@@ -170,13 +169,14 @@ class HomePageController extends Controller
     			     			"token_validation"=> $token_validation,
     			     			"status"=>'En attente',
     			     			"username" => $email
-    			     	]);*/
-    			     /*	$objetUsersProfilModel = new \Model\Users_profilModel;
-    			     	$objetUsersProfilModel->insert(['id_users'=>$this->lastInsertId()]);*/
+    			     	]);
+    			     	var_dump($x);
+    			     	$objetUsersProfilModel = new \Model\Users_profilModel;
+    			     	$objetUsersProfilModel->insert(['id_users'=>$x['id']]);
     			     	
     			     	/*Mail de validation de l'utilisateur */
-    	//		     	$lien = $this->generateUrl("homePage_validationMail");
-    		//	     	$lien .= "?email=".$email."&"."token=".$token_validation;
+    		     		$lien = $this->generateUrl("homePage_validationMail");
+    			     	$lien .= "?email=".$email."&token=".$token_validation;
     			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
