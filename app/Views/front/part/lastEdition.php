@@ -12,7 +12,7 @@ INCLURE LE FOOTER-SECTION
 <div class="deco-container text-center">
       <div class="deco climbup lastedition" >
         <div class="">
-          <img id="" class="cursor-deco" src="../test/img/cursor-bleu.png"/>
+          <img class="cursor-deco" src="../test/img/cursor-bleu.png"/>
         </div>
       </div>
 </div>
