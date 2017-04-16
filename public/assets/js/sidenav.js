@@ -72,11 +72,24 @@ var sideNav = function () {
         current.next().fadeIn();
     }
     
-    
-    
     /*userProfileForm.hide()
     twizzyTeamForm.hide()*/
     
     
-    
 }
+
+$("#pwd-chk").mousedown(function(){
+            $(".pwd-chk #password").attr('type','text');
+            }).mouseup(function(){
+            $(".pwd-chk #password").attr('type','password');
+            }).mouseout(function(){
+            $(".pwd-chk #password").attr('type','password');
+            });
+
+$("#pwd-conf-chk").mousedown(function(){
+            $(".pwd-chk #password_confirma").attr('type','text');
+            }).mouseup(function(){
+            $(".pwd-chk #password_confirma").attr('type','password');
+            }).mouseout(function(){
+            $(".pwd-chk #password_confirma").attr('type','password');
+            });

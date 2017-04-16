@@ -1,10 +1,16 @@
 
 <form action="login" method="POST" class="text-center sign">
     <div class="form-group">
-        <input type="text" class="form-control" name="email" placeholder="Email"/>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user-secret fa-lg" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="email" placeholder="Email"/>
+        </div>
     </div>
     <div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Mot de passe"/>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key fa-lg" aria-hidden="true"></i></span>
+            <input type="password" class="form-control" name="password" placeholder="Mot de passe"/>
+        </div>
     </div>
     <input type="hidden" name="operation" value="login">
     <div class="form-group">

@@ -7,8 +7,8 @@ $tabPress = $objetPressModel->findAll();
  ?>
 
 <h1>Listing articles</h1>
-<a href="#">Créer un article</a>
-<table>
+<a class="btn btn-vert" href="#" role="button">Créer un article</a>
+<table class="table table-stripped table-hover">
 	<tr>
 		<th>Titre</th>
 		<th>Chapo</th>
@@ -19,8 +19,6 @@ $tabPress = $objetPressModel->findAll();
 
 	<?php
 		foreach($tabPress as $item){
-
-
 	?>
 	<tr>
 		<td><?php echo $item['titre']; ?></td>

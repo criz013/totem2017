@@ -1,0 +1,103 @@
+* {
+box-sizing: border-box;
+}
+
+#top-indicators {
+list-style: none;
+float: left;
+padding-top: 6px;
+vertical-align: middle;
+}
+
+#top-right-infos {
+list-style: none;
+float: right !important;
+padding-top: 6px;
+vertical-align: middle;
+}
+
+#top-right-infos li {
+	display: inline-block;
+	position: relative;
+	color: white;
+	padding: 5px 30px 10px 10px;
+}
+
+
+#top-indicators::before, #back-organisation::before, #back-logout::before, #back-welcome::before, #back-title::before {
+content: " ";
+display: table;
+}
+
+#top-indicators li {
+	display: inline-block;
+	position: relative;
+	color: white;
+	padding: 10px 30px 10px 10px;
+}
+
+#top-indicators li a {
+	line-height: 17px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+
+#top-indicators .badge {
+background-color: #337ab7;
+margin-bottom: 5px;
+position: absolute;
+top: 0;
+
+}
+
+#top-infos {
+	background-color: #282b30;
+	color: white;
+	height: 50px;
+	border-bottom: 1px solid white;
+}
+
+#top-infos navbar-header{
+	width: 100%;
+	height: 50px;
+}
+
+#back-title {
+	float: left;
+	vertical-align: middle;
+	height: 35px;
+	line-height: 22px;
+	padding: 9px 5px;
+	font-size: 20px;
+}
+#back-organisation {
+	float: left;
+	vertical-align: middle;
+	height: 35px;
+	line-height: 17px;
+	padding: 13px 5px;
+	font-size: 15px;
+	color: rgba(116, 182, 47,1);
+}
+
+#back-welcome {
+	float: right;
+	vertical-align: middle;
+}
+
+#back-logout {
+	display: block;
+	float: right;
+	vertical-align: middle;
+}
+
+#top-indicators::after, #back-organisation::after, #back-logout::after, #back-welcome::after, #back-title::after {
+clear: both;
+}
+
+#nav-sidebar {
+	width: 300px;
+	height: 100%;
+	background-color: #282b30;
+	color: white;
+}

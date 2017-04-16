@@ -31,3 +31,35 @@
 #login, #signin {
 position: relative;
 margin-right: 0;}
+
+#sidenav-seconnecter .form-control, #sidenav-participer .form-control {
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(116, 182, 47,1);
+   
+}
+
+
+#sidenav-seconnecter .input-group-addon, #sidenav-participer .input-group-addon{
+    vertical-align: middle;
+    background-color: rgba(116, 182, 47,1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(116, 182, 47,1);
+    min-width: 50px;
+}
+
+#sidenav-seconnecter input, #sidenav-participer input, #sidenav-participer select{
+	height: 40px;
+	font-size: 1.14em;
+}
+
+#sidenav-seconnecter label, #sidenav-participer label {
+	font-size: 1.14em;
+}
+
+#sidenav-seconnecter .btn, #sidenav-participer .btn {
+	font-size: 1.14em;
+}
+
+.pwd-chk .glyphicon{
+    cursor:pointer;
+}

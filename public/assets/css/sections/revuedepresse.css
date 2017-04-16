@@ -50,13 +50,6 @@
     transform: translateX(-50%) rotate( 5deg);
 }
 
-#cursor-deco {
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    z-index: 100;
-    transform: translate( -50%,-80%);
-}
 
 .pastille {
     width: 10vw;
@@ -139,15 +132,6 @@
 }
 #myCarousel .list-group .active {
 	background-color: transparent;	
-}
-
-
-#cursor-deco {
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    z-index: 100;
-    transform: translate( -50%,-80%);
 }
 
 .pastille {

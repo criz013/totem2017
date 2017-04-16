@@ -10,18 +10,34 @@ extract($tabPress);
 
 <h1>Formulaire pour modification d'article</h1>
 
-<form method="post" action="">
-	<input type="text" name="titre" value="<?php echo $titre ?>" >
-	<label>Titre</label>
+<form method="post" action="" class="form-horizontal sign">
+	<div class="form-group">
+        <label for="titreArticle" class="control-label col-sm-4 hidden-xs">Titre :</label>
+        <div class="col-sm-8">
+			<input type="text" id="titreArticle" name="titre" value="<?php echo $titre ?>" >
+		</div>
+	</div>
+	
+	<div class="form-group">
+        <label for="chapoArticle" class="control-label col-sm-4 hidden-xs">Titre :</label>
+        <div class="col-sm-8">
+			<input type="text" id="chapoArticle" name="chapo" value="<?php echo $chapo ?>" >
+		</div>
+	</div>
 
-	<input type="text" name="chapo" value="<?php echo $chapo ?>" >
-	<label>Chapo</label>
+	<div class="form-group">
+        <label for="corpsArticle" class="control-label col-sm-4 hidden-xs">Corps :</label>
+        <div class="col-sm-8">
+			<input type="text" id="corpsArticle" name="corp" value="<?php echo $corp ?>" >
+		</div>
+	</div>
 
-	<input type="text" name="corp" value="<?php echo $corp ?>" >
-	<label>Corp</label>
-
-	<input type="text" name="lien" value="<?php echo $lien ?>" >
-	<label>Lien</label>
+	<div class="form-group">
+        <label for="lienArticle" class="control-label col-sm-4 hidden-xs">Corps :</label>
+        <div class="col-sm-8">
+			<input type="text" id="lienArticle" name="lien" value="<?php echo $lien ?>" >
+		</div>
+	</div>
 
 	<button type="submit">Modifier</button>
 </form>
