@@ -258,7 +258,7 @@ class HomePageController extends Controller
     	if($error == 0){
     	
     		$objetUsersModel = new \W\Model\UsersModel;
-    		$tokenBdd = $objetUsersModel->search(array($safe['email'],'or',FALSE));
+    		$tokenBdd = $objetUsersModel->search(array($safe['email']));
     		
     		if($tokenBdd['token_validation'] == $token){
     			$message[]= 'token validez';
@@ -274,17 +274,46 @@ class HomePageController extends Controller
      * Permet à un utilisateur de générer un nouveau mdp.
      */
     public function mdpPerdu(){
-    	$chaine = 'azertyuiopqsdfghjklmwxcvbn123456789';
     	
-    	$nb_lettres = strlen($chaine) - 1;
-    	$generation = '';
-    	for($i=0; $i < 7; $i++)
-    	{
-    		$pos = mt_rand(0, $nb_lettres);
-    		$car = $chaine[$pos];
-    		$generation .= $car;
+    	$objetUsersModel = new \W\Model\UsersModel;
+    	$message =[];
+    	$error = 0;
+    	$safe = array_map('strip_tags',$_GET);
+    	$email = trim($safe['email']);
+    	
+    	if ($objetUsersModel->emailExists($email) == FALSE){
+    		$error++;
+    		$message[] = 'Email invalide';
     	}
-    	return $generation;
+    	
+    	if($error == 0){
+    		
+	    	$chaine = 'azertyuiopqsdfghjklmwxcvbn123456789';
+	    	$nb_lettres = strlen($chaine) - 1;
+	    	$generation = '';
+	    	
+	    	for($i=0; $i < 7; $i++)
+	    	{
+	    		$pos = mt_rand(0, $nb_lettres);
+	    		$car = $chaine[$pos];
+	    		$generation .= $car;
+	    	}
+	    	
+	    	$nvxMdp = password_hash($generation, PASSWORD_DEFAULT);
+	    	
+	    	$utilisateur = $objetUsersModel->search(array($email));
+	    	$utilisateur->update(['password'=>$nvxMdp]);
+	    	
+	    	$sujet = 'Totem - Nouveau mot de passe';
+	    	$corp = 'Bonjour, voici votre nouveau mot de passe: '.$generation.' .Vous pouvez vous connecter avec votre nouveau mot de passe.';
+	    	
+	    	envoyerMail($expediteur,$email,$sujet,$corp);
+	    	
+	    	$message[] = 'Un email a été envoyer avec votre nouveau mot de passe.';
+	    	
+	    	//redirection vers une page
+	    	
+    	}
     
     }
 }
