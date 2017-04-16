@@ -27,18 +27,13 @@
         </div>
     </div>
     
-                    
-    
     <div class="form-group">
         <label for="email" class="control-label col-sm-4 hidden-xs">Email :</label>
         <div class="col-sm-8">
-            <div class="input-group">
             <input type="text" name="email" class="form-control" placeholder="Email" id="email" required />
-            
             </div>
         </div>
     </div>
-
 
     <div class="form-group">
         <label for="phone" class="control-label col-sm-4 hidden-xs">Téléphone :</label>
@@ -46,8 +41,6 @@
             <input type="text" name="phone" class="form-control" placeholder="Téléphone" id="phone" required />
         </div>
     </div>
-
-
 
     <div class="form-group">
         <label for="password" class="control-label col-sm-4 hidden-xs">Mot de passe :</label>
@@ -58,7 +51,6 @@
         </div>
         </div>
     </div>
-
 
     <div class="form-group">
         <label for="password_confirm" class="control-label col-sm-4 hidden-xs">Confirmez votre mot de passe :</label>
