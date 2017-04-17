@@ -14,7 +14,7 @@
                     <?php $this->insert('front/part/signup/twizzyteam'); ?>
                 </div>
                     */?>
-                <input type="hidden" name="operation" value="signup">
+                <input type="hidden" name="operation" value="signup"/>
                 <div class="form-group">
                     <button type="submit" class="btn btn-vert">Proposer ma participation</button>
                 </div>

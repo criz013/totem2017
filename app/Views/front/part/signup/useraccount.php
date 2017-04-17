@@ -10,8 +10,8 @@
       				<option value="benevole">Bénévole</option>
  				</select>
             </div>
-			</label>            
-		</div>
+		</label>            
+	</div>
 
     <div class="form-group">
         <label for="lastname" class="control-label col-sm-4 hidden-xs">Nom :</label>
@@ -55,14 +55,14 @@
     <div class="form-group">
         <label for="password_confirm" class="control-label col-sm-4 hidden-xs">Confirmez votre mot de passe :</label>
         <div class="col-sm-8">
-        <div class="input-group pwd-chk">
-            <input type="password" name="password_confirm" class="form-control pwd-chk"  placeholder="Vérification du mot de passe" id="password_confirma" required /> 
-            <span class="input-group-addon" id="pwd-conf-chk"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></span>
-        </div>
+            <div class="input-group pwd-chk">
+                <input type="password" name="password_confirm" class="form-control pwd-chk"  placeholder="Vérification du mot de passe" id="password_confirma" required /> 
+                <span class="input-group-addon" id="pwd-conf-chk"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></span>
+            </div>
         </div>
     </div>
  
-</div>
+<!-- </div> -->
 
 
 
