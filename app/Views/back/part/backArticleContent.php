@@ -7,7 +7,7 @@ $tabPress = $objetPressModel->findAll();
  ?>
 
 <h1>Listing articles</h1>
-<a class="btn btn-vert" href="#" role="button">Créer un article</a>
+<a class="btn btn-vert" href="<?php echo $this->url('press_create') ?>" role="button">Créer un article</a>
 <table class="table table-stripped table-hover">
 	<tr>
 		<th>Titre</th>
@@ -25,7 +25,7 @@ $tabPress = $objetPressModel->findAll();
 		<td><?php echo $item['chapo']; ?></td>
 		<td><?php echo $item['corp']; ?></td>
 		<td><?php echo $item['lien']; ?></td>
-		<td><a href="<?php echo $this->url('press_modify',['id'=>$item['id']]) ?>">Modifier</a> <a href="<?php echo $this->url('press_delete') ?>">Supprimer</a></td>
+		<td><a href="<?php echo $this->url('press_modify',['id'=>$item['id']]) ?>">Modifier</a> <a href="<?php echo $this->url('press_delete',['id'=>$item['id']]) ?>">Supprimer</a></td>
 	</tr>
 		<?php }
 		?>

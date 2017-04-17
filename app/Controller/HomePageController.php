@@ -49,7 +49,7 @@ class HomePageController extends Controller
     		$objetUsersProfilModel = new \Model\Users_profilModel;
     		$bValide = $objetUsersProfilModel->search(['email'=>$login]);
     		
-    		if ($bValide == '0'){
+    		if ($bValide['valider'] == '0'){
     			$error++;
     			$message[] = 'Vous n\'avez pas encore valider votre compte' ;
     		}
@@ -178,7 +178,6 @@ class HomePageController extends Controller
     			     			"last_name"  		=> $last_name,
     			     			"first_name" 		=> $first_name,
     			     			"phone"      		=> $phone,
-    			     			"role"       		=> $role,
     			     			"created"    		=> date('Y-m-d h:i:s'),
     			     			"token_validation"	=> $token_validation,
     			     			"status"			=>'En attente',
@@ -242,6 +241,7 @@ class HomePageController extends Controller
      * Vérifie si le mail et le token envoyer par mail sont valides
      * si il y est valide on passe le valeur dans la bdd du champ valider à 1
      * On récupère les valeurs passer en GET 
+     * @route /validation
      */
     public function validationMail(){
     	$message =[];
@@ -258,7 +258,7 @@ class HomePageController extends Controller
     	if($error == 0){
     	
     		$objetUsersModel = new \W\Model\UsersModel;
-    		$tokenBdd = $objetUsersModel->search(array($safe['email']));
+    		$tokenBdd = $objetUsersModel->search(array('email' =>$email));
     		
     		if($tokenBdd['token_validation'] == $token){
     			$message[]= 'token validez';
@@ -272,6 +272,7 @@ class HomePageController extends Controller
     
     /**
      * Permet à un utilisateur de générer un nouveau mdp.
+     * @route /mdp-perdu
      */
     public function mdpPerdu(){
     	
@@ -301,7 +302,7 @@ class HomePageController extends Controller
 	    	
 	    	$nvxMdp = password_hash($generation, PASSWORD_DEFAULT);
 	    	
-	    	$utilisateur = $objetUsersModel->search(array($email));
+	    	$utilisateur = $objetUsersModel->search(array('email' =>$email));
 	    	$utilisateur->update(['password'=>$nvxMdp]);
 	    	
 	    	$sujet = 'Totem - Nouveau mot de passe';
@@ -312,8 +313,10 @@ class HomePageController extends Controller
 	    	$message[] = 'Un email a été envoyer avec votre nouveau mot de passe.';
 	    	
 	    	//redirection vers une page
-	    	
     	}
     
     }
+    
+
+    
 }
