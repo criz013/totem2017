@@ -55,6 +55,20 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-flex">
+							<div class="encart">
+								<h3><i class="fa fa-cogs" aria-hidden="true"></i> Paramètres</h3>
+								<div class="encart">
+									<ul id="settings-indicators">
+											<li><i class="fa fa-map-marker" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
+											<li><i class="fa fa-envelope" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
+											<li><i class="fa fa-facebook" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
+											<li><i class="fa fa-twitter" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
+											<li><i class="fa fa-instagram" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
+										</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
