@@ -10,9 +10,10 @@ var navigationFixed = function () {
         // Au scroll de la page
         $(document).scroll(function(){
             var scroll = $(document).scrollTop() // Taille du scroll en pixel
-            
+            var marge =$("#sidenav").css("height")
             if (scroll > navPosition) { // Si on scroll plus loin que la position de la nav
                nav.addClass("fixedToTop") // On ajoute une classe à la nav
+               nav.css("marginTop",marge) // on definit la position par rapport à la sidenav avec un margin-top
                nav.find(".navbar-nav li").addClass("navbar-li-fixed")
                nav.find('.navbar-brand').fadeIn()
             } else {

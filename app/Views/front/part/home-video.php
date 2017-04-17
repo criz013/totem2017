@@ -20,14 +20,16 @@ Fichier home-video (c'est le header de notre one page) contenant :
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
            <a class="navbar-brand" href="#"><img src="<?= $this->assetUrl('img/logo.jpg') ?>" alt="logo challenge" width="150" /></a>
-        </div>
+        
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+        <div class="right-menu">
         	<ul class="nav navbar-nav navbar-right">
 	            <li><a href="#contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> Nous contacter</a></li>
 	            <li><a href="#" id="btn-participer"><i class="fa fa-handshake-o" aria-hidden="true"></i> Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
 	        </ul>
+        </div>
         </div>
       <!-- /.navbar-collapse -->
     </div>

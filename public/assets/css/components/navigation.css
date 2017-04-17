@@ -71,12 +71,12 @@
     padding-bottom: 0; 
 }
 
+
 #header-hamburger {
-	color: white;
-	border: 1px solid white;
+	border: 2px solid rgba(116, 182, 47,1);
 }
 #header-hamburger .icon-bar{
-	background-color: white;
+	background-color: rgba(116, 182, 47,1);
 }
 
 #navbar-collapse {

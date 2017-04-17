@@ -24,7 +24,7 @@
 	display: block;
 	position: relative;
 	color: white;
-	padding: 5px 30px 10px 10px;
+	padding: 5px 30px 5px 10px;
 }
 
 
@@ -77,9 +77,9 @@
 	float: left;
 	vertical-align: middle;
 	height: 35px;
-	line-height: 17px;
-	padding: 13px 5px;
-	font-size: 15px;
+	line-height: 22px;
+	padding: 9px 5px;
+	font-size: 20px;
 	color: rgba(116, 182, 47,1);
 }
 
@@ -127,6 +127,7 @@ clear: both;
 
 #nav-sidebar-collapse .navbar-nav>li>a{
 	color: rgba(116, 182, 47,1);
+	font-size: 1.3em;
 }
 
 #nav-sidebar-collapse .navbar-nav>li>a:hover{
@@ -169,12 +170,14 @@ clear: both;
 	position: relative;
 	color: white;
 	padding: 10px 30px 10px 10px;
+	font-size: 1.2em;
 }
 
 #back-content .badge {
 	margin-bottom: 5px;
 	position: absolute;
 	top: 0;
+	font-size: 14px;
 }
 
 .badge-vert {
@@ -195,6 +198,10 @@ clear: both;
 
 #main {
 	clear: both;
+}
+
+#top-right-infos {
+	font-size: 17px;
 }
 
 

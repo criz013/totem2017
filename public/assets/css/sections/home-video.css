@@ -33,6 +33,10 @@
     transition: all .2s ease;
 }
 
+#header .navbar-right {
+    float: right!important;
+}
+
 #header .navbar .nav>li>a:hover {
     background: rgba(255,255,255,.35);
     transition: all .2s ease;
@@ -48,6 +52,18 @@
     float: left; /* À RECHANGER À RIGHT */
 }
 
+#sidenav .right-menu {
+    float: right;
+    margin-right: 15px;
+}
+
+#sidenav .navbar-header {
+    float: none !important;
+}
+
+#sidenav .navbar-brand {
+    height: auto !important;
+}
 
 /*#countdown {*/
 /*    position: relative;*/
