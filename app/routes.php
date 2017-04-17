@@ -13,6 +13,9 @@
         //Validation des inscriptions
         ['GET|POST', '/administrateur/gestion-inscription', 'User#inscription', 'user_inscription'],
         ['GET|POST', '/administrateur/gestion-inscription/detail/[:id]', 'User#inscriptionDetail', 'user_inscription_detail'],
+		['GET|POST', '/administrateur/gestion-inscription/valider/[:id]', 'User#userValider', 'user_userValider'],
+		['GET|POST', '/administrateur/gestion-inscription/refuser/[:id]', 'User#userRefuser', 'user_userRefuser'],
+		['GET|POST', '/administrateur/gestion-inscription/traitement/[:id]', 'User#userTraitement', 'user_userTraitement'],
 
         //Edition et suppression d'article de la revue de press
         ['GET', '/administrateur/revue-press', 'Press#index', 'press_index'],

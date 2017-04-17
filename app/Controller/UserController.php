@@ -34,7 +34,7 @@ class UserController extends Controller
     		$first_name             = trim($_POST["first_name"]);
     		$phone           		= trim($_POST["phone"]);
     		$email            		= trim($_POST["email"]);
-    		$password           	= trim($_POST["password"]);
+    		//$password           	= trim($_POST["password"]);
     		$avatar            		= trim($_POST["avatar"]);
     		$logo            		= trim($_POST["logo"]);
     		$name_compagny          = trim($_POST["name_compagny"]);
@@ -50,8 +50,8 @@ class UserController extends Controller
     			$error++;
     			$message[] = 'Le champ prenom invalide';
     		}
-    		//Numéro de télphone français sous la form 00 00 00 00 00
-    		if (!preg_match ( " \^(\d\d\s){4}(\d\d)$\ " , $phone ) )
+    		$motif ='`^0[1-9][0-9]{8}$`';
+    		if (preg_match ( $motif, $phone ) )
     		{
     			$error++;
     			$message[] = 'Numéros de téléphone invalide';
@@ -103,7 +103,30 @@ class UserController extends Controller
      * @route /aministrateur/gestion-inscription/detail/[:id]
      */
     public function inscriptionDetail($id){
-
+    	$objetUsersModel = new \W\Model\UsersModel;
+    	$objetUsersProfilModel = new \Model\Users_profilModel;
+    	$users =	$objetUsersModel->find($id);
+    	$usersProfil = $objetUsersProfilModel->search(['id_users'=>$id]);
+    	$this->show('back/gestionIncriptionDetail',['users' => $users,'usersProfil'=>$usersProfil]);
+    }
+    
+    public function userValider($id){
+    	$objetUsersModel = new \W\Model\UsersModel;
+    	$objetUsersModel->update(['status'=>'valider'],$id);
+    	$users =	$objetUsersModel->findAll();
+    	$this->show('back/gestionIncription',['users' => $users]);
+    }
+    public function userRefuser($id){
+    	$objetUsersModel = new \W\Model\UsersModel;
+    	$objetUsersModel->update(['status'=>'refuser'],$id);
+    	$users =	$objetUsersModel->findAll();
+    	$this->show('back/gestionIncription',['users' => $users]);
+    }
+    public function userTraitement($id){
+    	$objetUsersModel = new \W\Model\UsersModel;
+    	$objetUsersModel->update(['status'=>'Cour'],$id);
+    	$users =	$objetUsersModel->findAll();
+    	$this->show('back/gestionIncription',['users' => $users]);
     }
 
 }

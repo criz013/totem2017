@@ -29,7 +29,6 @@ class HomePageController extends Controller
     	$message = [];
     	$error = 0;
     	
-    		
     		// RECUPERER LES INFOS
     		$login      = trim($_POST["email"]); // Le login est l email de l'utilisateur
     		$password   = trim($_POST["password"]);
@@ -138,7 +137,8 @@ class HomePageController extends Controller
     			$message[] = 'Le champ prenom invalide';
     		}
     		//Numéro de télphone français sous la form 00 00 00 00 00
-    		if (!preg_match ( " \^(\d\d\s){4}(\d\d)$\ " , $phone ) )
+    		$motif ='`^0[1-9][0-9]{8}$`';
+    		if (preg_match ( $motif, $phone ) )
     		{
     			$error++;
     			$message[] = 'Numéros de téléphone invalide';
@@ -151,6 +151,7 @@ class HomePageController extends Controller
     			
     			$error++;		
     		}
+    				
     		if(!is_string($password_confirm)  || ( mb_strlen($password_confirm) < 5 )){
     			$message[]='Votre mot de passe de confirmation n\'est pas conforme'; 
     			$error++;
@@ -244,6 +245,7 @@ class HomePageController extends Controller
      * @route /validation
      */
     public function validationMail(){
+    	
     	$message =[];
     	$safe = array_map('strip_tags',$_GET);
     	$error = 0;
@@ -259,14 +261,17 @@ class HomePageController extends Controller
     	
     		$objetUsersModel = new \W\Model\UsersModel;
     		$tokenBdd = $objetUsersModel->search(array('email' =>$email));
-    		
-    		if($tokenBdd['token_validation'] == $token){
+			$id = $tokenBdd[0]['id'];
+			
+    		if($token == $tokenBdd[0]['token_validation']){
     			$message[]= 'token validez';
-    			$tokenBdd->update(['valider'=>1]);
+    			$objetUsersModel->update(['valider'=>1,],$id);
+    			
     		}
     	}
     	else{
     		$message[] = 'Erreur';
+    		print_r($message);
     	}	
     }
     
@@ -303,12 +308,12 @@ class HomePageController extends Controller
 	    	$nvxMdp = password_hash($generation, PASSWORD_DEFAULT);
 	    	
 	    	$utilisateur = $objetUsersModel->search(array('email' =>$email));
-	    	$utilisateur->update(['password'=>$nvxMdp]);
+	    	$objetUsersModel->update(['password'=>$nvxMdp],$utilisateur[0]['id']);
 	    	
 	    	$sujet = 'Totem - Nouveau mot de passe';
 	    	$corp = 'Bonjour, voici votre nouveau mot de passe: '.$generation.' .Vous pouvez vous connecter avec votre nouveau mot de passe.';
 	    	
-	    	envoyerMail($expediteur,$email,$sujet,$corp);
+	    	//envoyerMail($expediteur,$email,$sujet,$corp);
 	    	
 	    	$message[] = 'Un email a été envoyer avec votre nouveau mot de passe.';
 	    	

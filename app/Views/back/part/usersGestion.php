@@ -7,6 +7,7 @@
 		<th>Rôle</th>
 		<th>Téléphone</th>
 		<th>E-mail</th>
+		<th>Status</th>
 		<th>Action</th>
 	</tr>
 
@@ -19,11 +20,12 @@
 		<td><?php echo $item['role']; ?></td>
 		<td><?php echo $item['phone']; ?></td>
 		<td><?php echo $item['email']; ?></td>
+		<td><?php echo $item['status']; ?></td>
 		<td>
-			<a href="<?php //echo $this->url('users_detail',['id'=>$item['id']]) ?>">Détail</a> 
-			<a href="<?php //echo $this->url('press_valider',['id'=>$item['id']]) ?>">Valider</a>
-			<a href="<?php //echo $this->url('press_refuser',['id'=>$item['id']]) ?>">Refuser</a>
-			<a href="<?php //echo $this->url('press_refuser',['id'=>$item['id']]) ?>">En cour</a>
+			<a href="<?php echo $this->url('user_inscription_detail',['id'=>$item['id']]) ?>">Détail</a> 
+			<a href="<?php echo $this->url('user_userValider',['id'=>$item['id']]) ?>">Valider</a>
+			<a href="<?php echo $this->url('user_userRefuser',['id'=>$item['id']]) ?>">Refuser</a>
+			<a href="<?php echo $this->url('user_userTraitement',['id'=>$item['id']]) ?>">En cour</a>
 		</td>
 	</tr>
 		<?php }
