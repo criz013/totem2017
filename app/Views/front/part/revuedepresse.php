@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 title" >
-          <h1>Edition 2017</h1> <!--mettre en dynamique-->
+          <h1>Revue de presse</h1> <!--mettre en dynamique-->
         </div>
       </div><!--/row-->
     </div><!--/container-->
