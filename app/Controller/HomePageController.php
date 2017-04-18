@@ -30,13 +30,23 @@ class HomePageController extends Controller
         // on recupere la date de debut du prochain evenement pour le countdown
         $nextChallengeStart = $challenges[0]['date_start'];
 
+        // on regarde si un challenge est en cour
+        $currrentTime = time();
+        $isChallengeEnCour = false;
+
+        foreach ( $challenges as $challenge) {
+            if( strtotime($challenge['date_start']) <= $currrentTime && strtotime($challenge['date_end']) >= $currrentTime) {
+                $isChallengeEnCour = true;
+            }
+        }
+
     	$this->show('front/home',[
     	    'log'           => $loggedUser,
             'message'       => '',
             'challenges'    => $challenges,
-            'web'           => $web
-            'nextChallengeStart'    => $nextChallengeStart
-
+            'web'           => $web,
+            'nextChallengeStart' => $nextChallengeStart,
+            'isChallengeEnCour' => $isChallengeEnCour
         ]);
     }
 

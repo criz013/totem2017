@@ -24,10 +24,12 @@
 	<!-- </section>  -->
 	
 	<!-- inclure equipages -->
-	<section id="equipages" class="row section">
-	<?php $this->insert('front/part/equipages'); ?>
-	</section>
-	
+	<?php if ( $isChallengeEnCour ) : ?>
+		<section id="equipages" class="row section">
+		<?php $this->insert('front/part/equipages'); ?>
+		</section>
+	<?php endif; ?>
+
 	<!-- inclure revuedepresse -->
 	<section id="revuedepresse" class="row section">
 	<?php $this->insert('front/part/revuedepresse'); ?>
