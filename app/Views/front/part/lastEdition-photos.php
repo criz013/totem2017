@@ -31,7 +31,7 @@ Fichier gallerie pour l'edition 2016 contenant :
                     {
                         if(substr($file,-3)=="jpg" || substr($file,-3)=="png")
                         {
-                            $url=$this->assetUrl('.'.$urldir.$annee.'/'.$file.filetype($file));
+                            $url=$this->assetUrl('.'.$urldir.$annee.'/'.$file);
                             echo '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 vignette">';
                             echo '<a class="fancybox" data-fancybox="img2016" href="'.$url.'"><img class="img-responsive" src="'.$url.'" alt="challenge totem '.$annee.'"></a>';
                             echo '</div>';
