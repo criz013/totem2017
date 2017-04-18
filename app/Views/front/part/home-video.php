@@ -29,11 +29,16 @@ Fichier home-video (c'est le header de notre one page) contenant :
         	
 	            <li><a href="#contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> Nous contacter</a></li>
 	            <?php 
-        			var_dump($log);
-        			if($log == TRUE){?>
+        			
+	            if(empty($log)){?>
 	            <li><a href="#" id="btn-participer"><i class="fa fa-handshake-o" aria-hidden="true"></i> Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
-	        <?php }?>
+	        <?php }else{
+	        var_dump($log);?>
+	        	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);" >Bonjour, <?php echo $log['last_name'].' '.$log['last_name'];?></a></li>
+	        	<li><a href="<?php echo $this->url('homePage_logout');?>" >Se deconnecter</a></li>
+	       <?php }
+	        ?>
 	        </ul>
         </div>
         </div>

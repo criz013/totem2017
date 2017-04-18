@@ -16,7 +16,8 @@ class HomePageController extends Controller
      * @route /
      */
     public function index(){
-    	$this->show('front/home',['log'=>$log,'message'=>$message,]);
+    	$loggedUser = $this->getUser();
+    	$this->show('front/home',['log'=>$loggedUser,'message'=>'']);
     }
 
     /**
@@ -28,7 +29,6 @@ class HomePageController extends Controller
 		
     	$message = [];
     	$error = 0;
-    	
     	
     		// RECUPERER LES INFOS
     		$login      = trim($_POST["email"]); // Le login est l email de l'utilisateur
@@ -70,16 +70,18 @@ class HomePageController extends Controller
     				$tabUser = $objetUsersModel->find($idUser);
     				// JE VAIS MEMORISER CES INFOS DANS UNE SESSION
     				$objetAuthentificationModel->logUserIn($tabUser);
-    				$log = TRUE;
+    				$log = 'true';
+    				$loggedUser = $this->getUser();
+
     				// ON PEUT FAIRE UNE REDIRECTION VERS UNE PAGE PROTEGEE
-    				$this->show('homePage_index',['message'=>$message,'log'=>$log]);
+    				$this->redirectToRoute('homePage_index',['message'=>$message,'loggedUser'=>$loggedUser]);
     				
     			}
     			else
     			{
     				// KO
     				$message[] = "IDENTIFIANTS INCORRECTS";
-    				$log =FALSE;
+    				$log ='false';
     			}
     			
     		}
@@ -94,7 +96,7 @@ class HomePageController extends Controller
     	
     	$objetAuthentificationModel = new \W\Security\AuthentificationModel;
     	$objetAuthentificationModel->logUserOut();
-    	
+    	$this->redirectToRoute('homePage_index');
     	// REDIRIGER VERS LA PAGE D'index
     }
 
