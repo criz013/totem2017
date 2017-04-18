@@ -56,9 +56,10 @@ Fichier home-video (c'est le header de notre one page) contenant :
 </div>
 <div class="container">
     <div id="countdown" class="row">
+        <div id="nextChallengeStart" class="hidden"><?php echo $nextChallengeStart ; ?></div>
         <div class="cd-box col-xs-6 col-sm-6 col-md-3 col-lg-3">
         	<div class="numberContainer text-center">
-            	<p class="numbers days">00</p>
+            	<p class="numbers days"00</p>
         	</div>
         <div class="stringContainer text-center">
            	<p class="strings timeRefDays">Jours</p>

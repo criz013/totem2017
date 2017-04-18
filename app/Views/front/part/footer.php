@@ -103,6 +103,7 @@
 	<script src="<?= $this->assetUrl('js/sections/footer.js') ?>"></script>
 	
 	<!-- Compteur files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script type='text/javascript' src="<?= $this->assetUrl('js/homeCountdown.js') ?>"></script>
 	<script type='text/javascript' src="<?= $this->assetUrl('js/jquery.easing.min.js') ?>"></script>
 	<script type='text/javascript' src="<?= $this->assetUrl('js/supersized.3.2.7.min.js') ?>"></script>

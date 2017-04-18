@@ -67,9 +67,12 @@ $(document).ready(function(){
 			futureFormattedDate = mm + "/" + dd + "/" + y;
 			return futureFormattedDate
 		}
-		//
+
+		var start = new Date( $('#nextChallengeStart').text());
+		var month =  moment(start).format("MMM");
+
 		$("#countdown").countdown({
-			date: "21 April 2017 16:00:00", // change date/time here - do not change the format!
+			date: start.getDate()+ " " + month +" " + start.getFullYear() + " " + start.toLocaleTimeString(), // change date/time here - do not change the format!
 			format: "on"
 		});
 	});

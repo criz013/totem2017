@@ -7,8 +7,7 @@
 	<?php $this->insert('front/part/head'); ?>
 
 	<section id="header" class="row">
-	
-	<?php $this->insert('front/part/home-video',['message'=>$message,'log'=>$log]); ?>
+	<?php error_log($nextChallengeStart);$this->insert('front/part/home-video',['message'=>$message,'log'=>$log,'nextChallengeStart'=> $nextChallengeStart]); ?>
 	</section>
 	
 	<!-- inclure nav -->

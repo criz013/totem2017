@@ -7,8 +7,9 @@
  */
 
 namespace Controller;
-use \W\Controller\Controller;
 
+use \W\Controller\Controller;
+use \Model\ChallengeModel;
 
 class HomePageController extends Controller
 {
@@ -17,7 +18,20 @@ class HomePageController extends Controller
      */
     public function index(){
     	$loggedUser = $this->getUser();
-    	$this->show('front/home',['log'=>$loggedUser,'message'=>'']);
+
+        // on recupere les challenges
+        $challengeModel = new ChallengeModel();
+        $challenges     = $challengeModel->findAll("year","desc");
+
+        // on recupere la date de debut du prochain evenement pour le countdown
+        $nextChallengeStart = $challenges[0]['date_start'];
+
+    	$this->show('front/home',[
+    	    'log'           => $loggedUser,
+            'message'       => '',
+            'challenges'    => $challenges,
+            'nextChallengeStart'    => $nextChallengeStart
+        ]);
     }
 
     /**
