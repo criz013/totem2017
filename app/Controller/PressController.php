@@ -34,6 +34,9 @@ class PressController extends Controller
     	$log = $this->getUser();
     	$error = 0;
     	$message=[];
+    	$alertclass="";
+    	$icoclass="";
+    	
     	if (!empty($_POST) && isset($_POST))
     	{
     		// RECUPERER LES INFOS DU FORMULAIRE
@@ -90,10 +93,13 @@ class PressController extends Controller
     	
     			// OK
     			$message[] = "BRAVO L'ARTICLE A ÉTÉ CRÉÉ.";
+    		}else{
+    			$alertclass="danger";
+    			$icoclass="thumbs-down";
     		}
     	}
     	
-    	$this->show("back/backNewArticle",['message'=>$message,'log'=>$log]);
+    	$this->show("back/backNewArticle",['message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'log'=>$log]);
     }
 
     //fonction pour gérer modification(s) d'un article 
@@ -101,6 +107,8 @@ class PressController extends Controller
     	$log = $this->getUser();
         $message = [];
         $error = 0;
+        $alertclass='';
+        $icoclass='';
         
         if (!empty($_POST) && isset($_POST))
         {   
@@ -157,10 +165,15 @@ class PressController extends Controller
                     
                     // OK
                     $message[] = "BRAVO L'ARTICLE A ÉTÉ MODIFIÉ.";
+                    $alertclass="success";
+                    $icoclass="thumbs-up";
+                }else{
+                	$alertclass="danger";
+                	$icoclass="thumbs-down";
                 }
             }
         
-        $this->show('back/backArticleModify',['id'=>$id,'message'=>$message,'log'=>$log]);
+        $this->show('back/backArticleModify',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'log'=>$log]);
     }  
 
     //fonction pour gérer suppression d'un article 

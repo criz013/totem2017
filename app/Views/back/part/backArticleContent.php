@@ -12,7 +12,7 @@ $tabPress = $objetPressModel->findAll();
 	<tr>
 		<th>Titre</th>
 		<th>Chapo</th>
-		<th>Corps</th>
+		<th>Date de creation</th>
 		<th>Lien</th>
 		<th>Action</th>
 	</tr>
@@ -23,7 +23,7 @@ $tabPress = $objetPressModel->findAll();
 	<tr>
 		<td><?php echo $item['titre']; ?></td>
 		<td><?php echo $item['chapo']; ?></td>
-		<td><?php echo $item['corp']; ?></td>
+		<td><?php echo $item['dateCreate']; ?></td>
 		<td><?php echo $item['lien']; ?></td>
 		<td><a href="<?php echo $this->url('press_modify',['id'=>$item['id']]) ?>">Modifier</a> <a href="<?php echo $this->url('press_delete',['id'=>$item['id']]) ?>">Supprimer</a></td>
 	</tr>

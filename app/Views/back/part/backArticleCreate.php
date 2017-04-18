@@ -16,14 +16,14 @@
 	<div class="form-group">
         <label for="chapoArticle" class="control-label col-sm-4 hidden-xs">Chapo :</label>
         <div class="col-sm-8">
-			<input type="text" id="chapoArticle" name="chapo" value="" >
+        	<textarea rows="5" cols="100" id="chapoArticle" name="chapo"></textarea>
 		</div>
 	</div>
 
 	<div class="form-group">
         <label for="corpsArticle" class="control-label col-sm-4 hidden-xs">Corps :</label>
         <div class="col-sm-8">
-			<input type="text" id="corpsArticle" name="corp" value="" >
+        	<textarea rows="5" cols="100" id="corpsArticle" name="corp"></textarea>
 		</div>
 	</div>
 
@@ -36,5 +36,11 @@
 
 	<button type="submit">Ajouter</button>
 </form>
-
-<?php print_r($message); ?>
+<a class="btn btn-vert" href="<?php echo $this->url('press_index') ?>" role="button">Retour</a>
+<div class="form-group">
+	<ul>
+       <?php foreach ($message as $item){?>
+    <li><?php echo $item; ?></li>
+    <?php }?>
+    </ul>
+	</div>

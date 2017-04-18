@@ -19,21 +19,21 @@ extract($tabPress);
 	</div>
 	
 	<div class="form-group">
-        <label for="chapoArticle" class="control-label col-sm-4 hidden-xs">Titre :</label>
+        <label for="chapoArticle" class="control-label col-sm-4 hidden-xs">Chapo :</label>
         <div class="col-sm-8">
-			<input type="text" id="chapoArticle" name="chapo" value="<?php echo $chapo ?>" >
+        	<textarea rows="5" cols="100" id="chapoArticle" name="chapo"><?php echo $chapo ?></textarea>
 		</div>
 	</div>
 
 	<div class="form-group">
         <label for="corpsArticle" class="control-label col-sm-4 hidden-xs">Corps :</label>
         <div class="col-sm-8">
-			<input type="text" id="corpsArticle" name="corp" value="<?php echo $corp ?>" >
+        	<textarea rows="5" cols="100" id="corpsArticle" name="corp"><?php echo $corp ?></textarea>
 		</div>
 	</div>
 
 	<div class="form-group">
-        <label for="lienArticle" class="control-label col-sm-4 hidden-xs">Corps :</label>
+        <label for="lienArticle" class="control-label col-sm-4 hidden-xs">Lien :</label>
         <div class="col-sm-8">
 			<input type="text" id="lienArticle" name="lien" value="<?php echo $lien ?>" >
 		</div>
@@ -41,5 +41,11 @@ extract($tabPress);
 
 	<button type="submit">Modifier</button>
 </form>
-
-<?php print_r($message); ?>
+<a class="btn btn-vert" href="<?php echo $this->url('press_index') ?>" role="button">Retour</a>
+<div class="form-group">
+	<ul>
+       <?php foreach ($message as $item){?>
+    <li><?php echo $item; ?></li>
+    <?php }?>
+    </ul>
+	</div>
