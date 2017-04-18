@@ -26,7 +26,7 @@
         ['GET|POST', '/administrateur/revue-press/modification/[:id]', 'Press#modify', 'press_modify'],
 
         //Gestion des editions challenge totem
-        ['GET', '/administrateur/gestion-edition', 'Challenge#index', 'challenge_index'],
+        ['GET', '/administrateur/challenges', 'Challenge#index', 'challenge_index'],
         ['GET', '/administrateur/gestion-edition/detail/[:id]', 'Challenge#detail', 'challenge_detail'],
 
         //Gestion du site en général
