@@ -102,20 +102,22 @@ class UserController extends Controller
      * @route /aministrateur/gestion-inscription
      */
     public function inscription(){
+    	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     		$users =	$objetUsersModel->findAll();
-    	    $this->show('back/gestionIncription',['users' => $users]);
+    	    $this->show('back/gestionIncription',['users' => $users,'log'=>$log]);
     }
 
     /**
      * @route /aministrateur/gestion-inscription/detail/[:id]
      */
     public function inscriptionDetail($id){
+    	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersProfilModel = new \Model\Users_profilModel;
     	$users =	$objetUsersModel->find($id);
     	$usersProfil = $objetUsersProfilModel->search(['id_users'=>$id]);
-    	$this->show('back/gestionIncriptionDetail',['users' => $users,'usersProfil'=>$usersProfil]);
+    	$this->show('back/gestionIncriptionDetail',['users' => $users,'usersProfil'=>$usersProfil,'log'=>$log]);
     }
     
     /**

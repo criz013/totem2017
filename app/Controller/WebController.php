@@ -17,7 +17,8 @@ class WebController extends Controller
      * @route /aministrateur/configuration-site
      */
     public function site(){
-    	$this->show('back/backConfig');
+    	$log = $this->getUser();
+    	$this->show('back/backConfig',['log'=>$log]);
     }
     
     /**
@@ -25,7 +26,7 @@ class WebController extends Controller
      * @param integer $id il renvois l'id de la table website
      */
     public function modification($id){
-    	
+    	$log = $this->getUser();
     	$message = [];
     	$error = 0;
     	
@@ -119,7 +120,7 @@ class WebController extends Controller
     		}
     	}
  		
-    	$this->show('back/backConfigModif',['id'=>$id,'message'=>$message]);
+    	$this->show('back/backConfigModif',['id'=>$id,'message'=>$message,'log'=>$log]);
     }
     
 }

@@ -17,7 +17,7 @@ class PressController extends Controller
      */
     public function index(){
     	$log = $this->getUser();
-        $this->show("back/backArticle");
+    	$this->show("back/backArticle",['log'=>$log]);
     }
 
     /**
@@ -93,7 +93,7 @@ class PressController extends Controller
     		}
     	}
     	
-    	$this->show("back/backNewArticle",['message'=>$message]);
+    	$this->show("back/backNewArticle",['message'=>$message,'log'=>$log]);
     }
 
     //fonction pour gérer modification(s) d'un article 
