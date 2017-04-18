@@ -39,14 +39,14 @@ class WebController extends Controller
     			$titre              = trim($_POST["titre"]);
     			$url                = trim($_POST["url"]);
     			$adresse            = trim($_POST["adresse"]);
-    			$codePostal            = trim($_POST["codePostal"]);
-    			$ville            = trim($_POST["ville"]);
+    			$codePostal         = trim($_POST["codePostal"]);
+    			$ville            	= trim($_POST["ville"]);
     			//$logo               = trim($_POST["logo"]);
     			$description        = trim($_POST["description"]);
     			$email              = trim($_POST["email"]);
     			$facebook           = trim($_POST["facebook"]);
     			$twitter            = trim($_POST["twitter"]);
-    			$instagram         = trim($_POST["instagram"]);
+    			$instagram          = trim($_POST["instagram"]);
     			
     			// SECURITE
     			// VERIFIER QUE CHAQUE INFO EST CONFORME
@@ -123,8 +123,8 @@ class WebController extends Controller
     						"titre"         => $titre,
     						"url"           => $url,
     						"adresse"       => $adresse,
-    						'codePostal'=>$codePostal,
-    						'ville'=>$ville,
+    						'codePostal'	=> $codePostal,
+    						'ville'			=> $ville,
     						"logo"          => 'logo1',
     						"description"   => $description,
     						"email"         => $email,
