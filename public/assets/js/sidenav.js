@@ -9,10 +9,12 @@ var sideNav = function () {
     var loginSection = $("#sidenav-seconnecter");
     
     signinBtn.click(function () {
-        console.log("TEST");
+        //console.log("TEST");
         //signinSection.addClass("slideLeft")
         //$("main").css("background", "rgba(0,0,0,.5)")
         //signinSection.css("height", "auto");
+        var margesidenav = $("#sidenav").css("height");
+        $(".sidenav-container").css("marginTop",margesidenav);
         if(loginSection.css('display')!="none")
         {
             loginSection.slideUp();
@@ -23,6 +25,9 @@ var sideNav = function () {
     loginBtn.click(function () {
         //loginSection.addClass("slideLeft")
         //loginSection.css("height", "auto");
+        var margesidenav = $("#sidenav").css("height");
+        console.log(margesidenav);
+        $(".sidenav-container").css("marginTop",margesidenav);
         if(signinSection.css('display')!="none")
         {
             signinSection.slideUp();

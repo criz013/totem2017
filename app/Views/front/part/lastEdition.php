@@ -30,7 +30,7 @@ INCLURE LE FOOTER-SECTION
             <div class="" role="tab" id="heading2016">
               <h2 class="">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2016" aria-expanded="true" aria-controls="collapse2016">
-                 Edition 2016
+                    2016
                 </a>
               </h2>
             </div>
@@ -156,7 +156,7 @@ INCLURE LE FOOTER-SECTION
             <div class="" role="tab" id="heading2015">
               <h2 class="">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2015" aria-expanded="true" aria-controls="collapse2015">
-                 Edition 2015
+                    2015
                 </a>
               </h2>
             </div>

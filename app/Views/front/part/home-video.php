@@ -35,7 +35,7 @@ Fichier home-video (c'est le header de notre one page) contenant :
     </div>
     <!-- /.container-fluid -->
 </nav>
-<div class="container">
+<div class="container sidenav-container">
   <div class="row" id="login">
   <?php $this->insert('front/part/sidenav-seconnecter'); ?>
   </div>

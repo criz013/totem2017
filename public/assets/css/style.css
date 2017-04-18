@@ -147,12 +147,13 @@ main {
 
 #countdown p.strings {
 	font-size: 1.5em;
-	color: rgba(255,255,255,1);
+	/*color: rgba(255,255,255,1);*/
+	color: rgba(52, 52, 52, 1);
 }
 
 
 #countdown{
-	margin-top: 10vh;
+	margin-top: 25vh;
 }
 
 #countdown div.cd-box{
