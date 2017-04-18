@@ -35,8 +35,8 @@ Fichier home-video (c'est le header de notre one page) contenant :
 	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
 	        <?php }else{
 	        var_dump($log);?>
-	        	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);?>"> Bonjour, <?php echo $log['last_name'].' '.$log['first_name']; ?></a></li>
-	        	<li><a href="<?php echo $this->url('homePage_logout');?>" >Se deconnecter</a></li>
+	        	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $log['first_name'].' '.$log['last_name']; ?></a></li>
+	        	<li><a href="<?php echo $this->url('homePage_logout');?>" ><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Se déconnecter</a></li>
 	       <?php }
 	        ?>
 	        </ul>

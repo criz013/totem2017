@@ -36,20 +36,27 @@
         <div class="spinner" style="display: none">Loading...</div>
     </div>
     <div class="action">
-        <input type="file" id="file" style="float:left; width: 250px">
-        <input type="button" id="btnCrop" value="Crop" style="float: right">
-        <input type="button" id="btnZoomIn" value="+" style="float: right">
-        <input type="button" id="btnZoomOut" value="-" style="float: right">
-    </div>
-    <div class="cropped">
+        <div>
+        <input class="form-control col-xs-12" type="file" id="file">
+        </div>
+        </div>
+        <input type="button" class="btn btn-primary" id="btnZoomIn" value="Zoom +">
+        <input type="button" class="btn btn-primary" id="btnZoomOut" value="Zoom -">
+        </div>
+        <div>
+        <input type="button" class="btn btn-vert" id="btnCrop" value="Enregister">
+        <div>
 
     </div>
+    <!-- <div class="cropped">
+
+    </div> -->
 </div>
 
-<script src="../require.js"></script>
+<script src="<?= $this->assetUrl('js/cropbox/require.js') ?>"></script>
 <script>
     require.config({
-        baseUrl: "../",
+        baseUrl: "<?= $this->assetUrl('js/cropbox/') ?>",
         paths: {
             jquery: 'jquery-1.11.1.min',
             cropbox: 'cropbox'
@@ -74,7 +81,6 @@
         })
         $('#btnCrop').on('click', function(){
             var img = cropper.getDataURL();
-            console.log(img);
             $('.cropped').append('<img src="'+img+'">');
         })
         $('#btnZoomIn').on('click', function(){

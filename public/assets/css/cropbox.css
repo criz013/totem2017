@@ -35,16 +35,22 @@
     bottom: 0;
     right: 0;
     text-align: center;
-    line-height: 400px;
+    line-height: 300px;
     background: rgba(0,0,0,0.7);
 }
 
 .action {
-    width: 400px;
-    height: 30px;
+    /*width: 400px;
+    height: 30px;*/
     margin: 10px 0;
 }
 
 .cropped>img {
     margin-right: 10px;
+}
+
+#btnCrop, #btnZoomIn,#btnZoomOut {
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
 }
