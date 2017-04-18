@@ -27,7 +27,7 @@
 
         //Gestion des editions challenge totem
         ['GET', '/administrateur/challenges', 'Challenge#index', 'challenge_index'],
-        ['GET', '/administrateur/gestion-edition/detail/[:id]', 'Challenge#detail', 'challenge_detail'],
+        ['GET', '/administrateur/challenges/edit/[:id]', 'Challenge#edit', 'challenge_edit'],
 
         //Gestion du site en général
         ['GET', '/administrateur/configuration-site', 'Web#site', 'web_site'],
