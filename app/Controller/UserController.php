@@ -86,7 +86,7 @@ class UserController extends Controller
              * Debut de l upload
              *on crée un fichier à partir de la base encodée 64 */
     		 
-                  $filename="logoavatar-id-".$id;
+                $filename="logoavatar-id-".$id;
     	        $dir="<?= $this->assetUrl('/img/logoavatar/') ?>";
                 if(isset($avatar)){
                  file_put_contents($dir.$filename, base64_decode($avatar));
