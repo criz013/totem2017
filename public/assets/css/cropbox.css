@@ -3,7 +3,7 @@
     position: relative;
     height: 300px;
     width: 300px;
-    border:1px solid #aaa;
+    border:3px solid rgba(116, 182, 47,1);
     background: #fff;
     overflow: hidden;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@
     /*margin-top: -50px;
     margin-left: -50px;*/
     box-sizing: border-box;
-    border: 2px solid rgb(102, 102, 102);
+    border: 3px solid rgba(116, 182, 47,1);
     box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
     background: none repeat scroll 0% 0% transparent;
     border-radius: 50%;
@@ -49,8 +49,13 @@
     margin-right: 10px;
 }
 
-#btnCrop, #btnZoomIn,#btnZoomOut {
+#btnCrop {
     float: right;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 10px;
+}
+
+#btnZoomOut,#btnZoomIn {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

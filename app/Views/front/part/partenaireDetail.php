@@ -17,8 +17,7 @@
 
 $objetUsersModel = new \W\Model\UsersModel;
 $tabArticle= $objetUsersModel->find($id);
-$objetUsersProfilModel = new \Model\Users_profilModel;
-$usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
+
 ?>
 
 <h1>Fiche utilisateur</h1>
@@ -51,10 +50,71 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 		</div>
 	</div>
 	
-	
+	<div class="container">
+	    <div class="imageBox">
+	        <div class="thumbBox"></div>
+	        <div class="spinner" style="display: none">Loading...</div>
+	    </div>
+	    <div class="action">
+	        <div>
+	        <input class="form-control col-xs-12" type="file" id="file">
+	        </div>
+	        <div class="text-center">
+	        <input type="button" class="btn btn-primary" id="btnZoomIn" value="Zoom +">
+	        <input type="button" class="btn btn-primary" id="btnZoomOut" value="Zoom -">
+	        </div>
+	        <div>
+	        <input type="button" class="btn btn-vert" id="btnCrop" value="Enregister">
+	        </div>
+	    </div>
+    <!-- <div class="cropped">
+
+    </div> -->
+	</div>
+
+<script src="<?= $this->assetUrl('/js/cropbox/require.js') ?>"></script>
+<script>
+    require.config({
+        baseUrl: "<?= $this->assetUrl('/js/cropbox/') ?>",
+        paths: {
+            jquery: 'jquery-1.11.1.min',
+            cropbox: 'cropbox'
+        }
+    });
+    require( ["jquery", "cropbox"], function($) {
+        var options =
+        {
+            thumbBox: '.thumbBox',
+            spinner: '.spinner',
+            imgSrc: '<?= $this->assetUrl('/js/cropbox/fond-voiture-clair.jpg') ?>'
+        }
+        var cropper = $('.imageBox').cropbox(options);
+        $('#file').on('change', function(){
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                options.imgSrc = e.target.result;
+                cropper = $('.imageBox').cropbox(options);
+            }
+            reader.readAsDataURL(this.files[0]);
+            this.files = [];
+        })
+        $('#btnCrop').on('click', function(){
+            var img = cropper.getDataURL();
+            $('.cropped').append('<img src="'+img+'">');
+        })
+        $('#btnZoomIn').on('click', function(){
+            cropper.zoomIn();
+        })
+        $('#btnZoomOut').on('click', function(){
+            cropper.zoomOut();
+        })
+        }
+    );
+</script>
 	<?php 
-		
-	
+	$objetUsersProfilModel = new \Model\Users_profilModel;
+$usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
+var_dump($usersProfil);
 	if($tabArticle['role'] == 'benevole' ) {?>
 	<div class="form-group">
         <label for="avatar" class="control-label col-sm-4 hidden-xs">avatar :</label>
