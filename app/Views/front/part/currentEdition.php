@@ -9,6 +9,8 @@ Fichier edition 2017 contenant :
 
 INCLURE LE FOOTER-SECTION
 -->
+
+
 <div class="deco-container text-center">
       <div class="deco climbdown currentedition" >
         <div class="">
@@ -31,30 +33,13 @@ INCLURE LE FOOTER-SECTION
    <div class="row row-flex">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h2>Le Programme</h2>
-          <p>Cette année le challenge aura lieu le XX/XX/2017</p>
+          <p>Cette année Totem Challenge aura lieu le 22 septembre 2017</p>
           <p>Départ des équipage à 09H00</p>
           <p>Fin du challenge à 18H00</p>
-          <h2>La cause</h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-          magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-          quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-          ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-          dolor in hendrerit in vulputate velit esse molestie consequat,
-          vel illum dolore eu feugiat nulla facilisis at vero eros et
-          accumsan et iusto odio dignissim qui blandit praesent luptatum
-          zzril delenit augue duis dolore te feugait nulla facilisi.
-          Nam liber tempor cum soluta nobis eleifend option congue
-          nihil imperdiet doming id quod mazim placerat facer possim
-          assum. Typi non habent claritatem insitam; est usus legentis
-          in iis qui facit eorum claritatem. Investigationes
-          demonstraverunt lectores legere me lius quod ii legunt saepius.
-          Claritas est etiam processus dynamicus, qui sequitur mutationem
-          consuetudium lectorum. Mirum est notare quam littera gothica,
-          quam nunc putamus parum claram, anteposuerit litterarum formas
-          humanitatis per seacula quarta decima et quinta decima. Eodem
-          modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-          in futurum.</p>
+          <h2>La cause : Action Recyclage Marseille</h2>
+          <p>Action Recyclage Marseille réunit plus de 85% des établissements scolaires de Marseille avec le but de sensibiliser les jeunes Marseillais autour de la nécessité de recycler les déchets de leur ville. Des bénévoles d'Action Recyclage Marseille organisent des ateliers trimestriels dans les écoles de Marseille avec un suivi en-ligne de nombreux projets créés par des jeunes Marseillais.</p>
+          <p>Par ailleurs, l'association leurs proposent des formations intensives pendant les vacances d'été au sujet des plus nouvelles innovations dans le domaine du recyclage.</p>
+          <p>Le recyclage de déchets touche non seulement aux initiatives anti-pollution, mais aussi a un but économique important. Installée sur le site de l’entreprise à Rousset (Bouches-du-Rhône), cette ligne de traitement devrait démarrer son unité prochainement et « permettra de valoriser plus de 1.400 tonnes de matières d’ici à la fin de l’année 2017 ». Les matières premières secondaires seront réinjectées dans diverses filières (aluminium, verre, cuivre, etc). « Veolia anticipe une augmentation d’environ 40 % chaque année des tonnages recyclés qui excéderont les 4.000 tonnes au terme du contrat en 2021 », souligne le communiqué.</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-flex">
           <h2 id="parcours">Parcours de l'édition</h2>
