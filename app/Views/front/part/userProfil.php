@@ -51,7 +51,7 @@ extract($tabusers);
 	<?php 
 		
 	extract($tabusers_profil);
-		if($role == 'benevole' ) {?>
+		if($role == 'benevole' || $role == 'admin' || $role == 'super-admin' ) {?>
 	<div class="form-group">
         <label for="avatar" class="control-label col-sm-4 hidden-xs">avatar :</label>
         <div class="col-sm-8">

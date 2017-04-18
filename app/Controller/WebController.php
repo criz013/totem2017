@@ -41,6 +41,8 @@ class WebController extends Controller
     			$adresse            = trim($_POST["adresse"]);
     			$codePostal         = trim($_POST["codePostal"]);
     			$ville            	= trim($_POST["ville"]);
+    			$phone            	= trim($_POST["phone"]);
+    			
     			//$logo               = trim($_POST["logo"]);
     			$description        = trim($_POST["description"]);
     			$email              = trim($_POST["email"]);
@@ -125,6 +127,7 @@ class WebController extends Controller
     						"adresse"       => $adresse,
     						'codePostal'	=> $codePostal,
     						'ville'			=> $ville,
+    						'phone'			=> $phone,
     						"logo"          => 'logo1',
     						"description"   => $description,
     						"email"         => $email,

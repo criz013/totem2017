@@ -32,7 +32,11 @@ extract($tabArticle);
 	</p>
 	<p>
 	<label for="ville">Ville: </label>
-		<input type="text" name="ville" id=""ville"" value="<?php echo $ville ?>"  placeholder="Ville">
+		<input type="text" name="ville" id="ville" value="<?php echo $ville ?>"  placeholder="Ville">
+	</p>
+	<p>
+	<label for="phone">Téléphone: </label>
+		<input type="text" name="phone" id="phone" value="<?php echo $phone ?>"  placeholder="Telphone">
 	</p>
 	
 	<p>

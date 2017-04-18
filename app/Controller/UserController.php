@@ -92,7 +92,7 @@ class UserController extends Controller
     			     								 'haschtag'=>$haschtage, 
     			     								 'avatar'=>$avatar],$x['id']);
     			     
-    			     $message[] = "BRAVO TU AS MODIFIE Les parametres du site";
+    			     $message[] = "BRAVO TU AS MODIFIE tes données personnels";
     			     $alertclass="success";
     			     $icoclass="thumbs-up";
     		}else{
@@ -101,7 +101,7 @@ class UserController extends Controller
     		}
     	}
     	
-    	//$this->show('',['id'=>$id,'message'=>$message]);
+    	$this->show('user_partenaire',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass]);
     	
     }
 

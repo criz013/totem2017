@@ -25,8 +25,9 @@ $tabPress = $objetPressModel->findAll();
 		<td><?php echo $item['chapo']; ?></td>
 		<td><?php echo $item['dateCreate']; ?></td>
 		<td><?php echo $item['lien']; ?></td>
-		<td><a href="<?php echo $this->url('press_modify',['id'=>$item['id']]) ?>">Modifier</a> <a href="<?php echo $this->url('press_delete',['id'=>$item['id']]) ?>">Supprimer</a></td>
+		<td><a href="<?php echo $this->url('press_modify',['id'=>$item['id']]) ?>">Modifier</a> - <a href="<?php echo $this->url('press_delete',['id'=>$item['id']]) ?>">Supprimer</a></td>
 	</tr>
 		<?php }
 		?>
 </table>
+<a href="<?php echo $this->url("admin_index")?>">Retour</a>

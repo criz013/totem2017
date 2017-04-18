@@ -39,3 +39,4 @@
 		<?php }
 		?>
 </table>
+<a href="<?php echo $this->url("admin_index")?>">Retour</a>

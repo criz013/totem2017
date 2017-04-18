@@ -3,21 +3,21 @@
             <h4> Suivez-nous sur </h4>
             <div class="col-xs-4 col-sm-offset-3 col-sm-2 col-md-offset-3 col-md-2 col-lg-offset-3 col-lg-2 text-center">
                 
-                   <a href="https://www.facebook.com/4GMoto.fr/">
+                   <a href="<?php echo $web[0]['facebook'];?>">
                        <img class="" src="../test/img/fbk.png"></img>
                    </a>
                 
             </div>
             <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center">
                 
-                    <a href="https://www.facebook.com/Latelier-de-la-mer-Plong%C3%A9e-Apn%C3%A9e-Chasse-sous-marine-Marseille-54072677482/">
+                    <a href="<?php echo $web[0]['twitter'];?>">
                         <img class="" src="../test/img/twt.png"></img>
                      </a>
             </div>
 
             <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center">
                 
-                    <a href="https://www.facebook.com/4GMoto.fr/">
+                    <a href="<?php echo $web[0]['instansgram'];?>">
                         <img class="" src="../test/img/instag.png"></img>
                      </a>
             </div>
@@ -50,7 +50,7 @@
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
             <h5> Nous contacter </h5>
             <div>
-                <h4>Challenge Totem</h4>
+                <h4><?php echo $web[0]['titre'];?></h4>
             </div>
             <div class="footerInfo">    
             	<div class="iconInfo">
@@ -62,7 +62,7 @@
                 <adress>
                     <p>    
             	       <a href="https://goo.gl/maps/2mzBsQ3LaLy" target="_blank">
-            	           9 impasse des gymnastes<br/>13012 Marseille
+            	           <?php echo $web[0]['adresse'];?><br/><?php echo $web[0]['codePostal'].' '.$web[0]['ville'];?>
             	       </a>
             	    </p>
             	</adress>
@@ -75,7 +75,7 @@
                     </span>
                 </div>
                 <div>
-                    <p><a href="tel:+33491492275">+33 4 91 49 22 75</a></p>
+                    <p><a href="tel:<?php echo $web[0]['phone'];?>"><?php echo $web[0]['phone'];?></a></p>
                 </div>
             </div>
         </div>

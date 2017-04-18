@@ -18,6 +18,7 @@ $tabArticle = $objetArticleModel->findAll();
 	<p>Adresse: <?php echo $info['adresse']; ?></p>
 	<p>Code postal: <?php echo $info['codePostal']; ?></p>
 	<p>Ville: <?php echo $info['ville']; ?></p>
+	<p>Telephone: <?php echo $info['phone']; ?></p>
 	<p>Logo: <?php echo $info['logo']; ?></p>
 	<p>Description: <?php echo $info['description']; ?></p>
 	<p>Email: <?php echo $info['email']; ?></p>

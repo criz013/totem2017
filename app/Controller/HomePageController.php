@@ -17,7 +17,9 @@ class HomePageController extends Controller
      */
     public function index(){
     	$loggedUser = $this->getUser();
-    	$this->show('front/home',['log'=>$loggedUser,'message'=>'']);
+    	$objetWebModel = new \Model\WebsiteModel;
+    	$web = $objetWebModel->findAll();
+    	$this->show('front/home',['log'=>$loggedUser,'message'=>'','web'=>$web]);
     }
 
     /**

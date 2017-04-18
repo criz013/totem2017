@@ -33,11 +33,15 @@ Fichier home-video (c'est le header de notre one page) contenant :
 	            <li><a href="#" id="btn-participer"><i class="fa fa-handshake-o" aria-hidden="true"></i> Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
 
-	        <?php }else{
+	        <?php }elseif ($log == 'benevole' || $log == 'sponsor' ){
 	        ?>
 	        	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $log['first_name'].' '.$log['last_name']; ?></a></li>
 	        	<li><a href="<?php echo $this->url('homePage_logout');?>" ><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Se déconnecter</a></li>
-	       <?php }
+	       <?php }else{?>
+	       	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $log['first_name'].' '.$log['last_name']; ?></a></li>
+	        <li><a href="<?php echo $this->url('admin_index');?>" ><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Page admin</a></li>
+	       	<li><a href="<?php echo $this->url('homePage_logout');?>" ><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Se déconnecter</a></li>
+	      <?php }
 	        ?>
 	        </ul>
         </div>

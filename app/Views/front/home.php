@@ -4,7 +4,7 @@
 */
 ?>
 <!-- inclure video -->
-	<?php $this->insert('front/part/head'); ?>
+	<?php $this->insert('front/part/head',['web'=>$web]); ?>
 
 	<section id="header" class="row">
 	
@@ -46,5 +46,5 @@
 	
 	
 <footer>
-<?php $this->insert('front/part/footer'); ?>
+<?php $this->insert('front/part/footer',['web'=>$web]); ?>
 </footer>
