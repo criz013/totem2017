@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/fonts.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/pages/profile.css') ?>" />
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/cropbox.css') ?>">
 	
 	<!--
 	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
