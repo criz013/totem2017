@@ -23,7 +23,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8">
 <h1>Fiche utilisateur</h1>
-<form method="post" action="" id="fiche-user" class="form form-horizontal">
+<form method="post" action="" id="fiche-user" class="form form-horizontal" enctype="multipart/form-data">
 	<div class="form-group">
         <label for="last_name" class="control-label col-sm-4 hidden-xs">Nom :</label>
         <div class="col-sm-8">
@@ -69,8 +69,6 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 		</div>
 	</div>
 	<?php }?>
-
-	
 	
 	<div class="container">
 	    <div class="imageBox">
@@ -122,6 +120,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         })
         $('#btnCrop').on('click', function(){
             var img = cropper.getDataURL();
+            console.log(img);
             $('.cropped').append('<img src="'+img+'">');
         })
         $('#btnZoomIn').on('click', function(){
