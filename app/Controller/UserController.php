@@ -64,6 +64,10 @@ class UserController extends Controller
     		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     			$error++;
     		}
+    		
+    		/**
+    		 * Debut de l upload
+    		 */
 
     	
     		if($error < 1)

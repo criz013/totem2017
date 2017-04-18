@@ -17,7 +17,7 @@ class AdminController extends Controller
      * route: /administrateur
      */
     public function index(){
-		
-    	$this->show('back/backHome');
+    	$log = $this->getUser();
+    	$this->show('back/backHome',['log'=>$log]);
     }
 }

@@ -2,6 +2,7 @@
 /**
  * Le part de l'accueil du back office seul l'administrateur et le super administrateur y ont accé
  */
+
 ?>
 	
 			<div id="back-content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

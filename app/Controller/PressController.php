@@ -16,6 +16,7 @@ class PressController extends Controller
      * @route /aministrateur/revue-presse
      */
     public function index(){
+    	$log = $this->getUser();
         $this->show("back/backArticle");
     }
 
@@ -26,10 +27,11 @@ class PressController extends Controller
 
     //fonctions pour gérer affichage d'un article particulier
     public function detail($id){
-
+    	$log = $this->getUser();
     } 
     //fonction pour gérer création d'un article 
     public function create(){
+    	$log = $this->getUser();
     	$error = 0;
     	$message=[];
     	if (!empty($_POST) && isset($_POST))
@@ -96,6 +98,7 @@ class PressController extends Controller
 
     //fonction pour gérer modification(s) d'un article 
     public function modify($id){
+    	$log = $this->getUser();
         $message = [];
         $error = 0;
         
@@ -157,8 +160,8 @@ class PressController extends Controller
                 }
             }
         
-        $this->show('back/backArticleModify',['id'=>$id,'message'=>$message]);
-    }
+        $this->show('back/backArticleModify',['id'=>$id,'message'=>$message,'log'=>$log]);
+    }  
 
     //fonction pour gérer suppression d'un article 
     public function delete($id){

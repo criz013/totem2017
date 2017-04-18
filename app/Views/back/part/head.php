@@ -2,6 +2,7 @@
 /**
  * Fichier html du head du backOffice
  */
+//$loggedUser = $this->getUser();
 ?>
 <!doctype>
 <html>
@@ -29,8 +30,8 @@
 					<li><i class="fa fa-users" aria-hidden="true"></i><span class="badge">81</span></li>
 				</ul>
 				<ul id="top-right-infos">
-					<li>Bienvenue dynamic User Mail adress</li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Déconnexion</a></li>
+					<li>Bienvenue <?php echo $log['email']; ?></li>
+					<li><a href="<?php echo $this->url("homePage_logout");?>"><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Déconnexion</a></li>
 				</ul>
 		</nav>
 	</header>
