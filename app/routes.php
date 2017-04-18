@@ -8,7 +8,8 @@
         ['GET|POST', '/administrateur', 'Admin#index', 'admin_index'],
 
         //route pour pour qu'un benevol ou sponsor puissent modifier leurs informations
-        ['GET|POST', '/administrateur/partenaire/[:id]', 'User#partenaire', 'user_partenaire'],
+        ['GET|POST', '/partenaire/[:id]', 'User#partenaire', 'user_partenaire'],
+		['GET|POST', '/partenaire/update/[:id]', 'User#updateUser', 'user_updateUser'],
 
         //Validation des inscriptions
         ['GET|POST', '/administrateur/gestion-inscription', 'User#inscription', 'user_inscription'],

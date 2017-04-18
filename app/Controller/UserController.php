@@ -14,13 +14,17 @@ class UserController extends Controller
 
      /**
      * Renvois vers la fiche récapitulatif de l'utilisateur
-     * @route /administrateur/partenaire/[:id]
-     *@var interger $id id de l'user
+     * @route /partenaire/[:id]
+     *@param interger $id id de l'user
      */
     public function partenaire($id){
-    	//$this->show('front/partenaire',['id'=>$id]);
+    	$this->show('front/partenaire',['id'=>$id]);
     }
     
+    /**
+     * @route /partenaire/update/[:id]
+     * @param integer $id l'id de l utilisateur
+     */
     public function updateUser($id){
     	
     	$message = [];
@@ -110,18 +114,32 @@ class UserController extends Controller
     	$this->show('back/gestionIncriptionDetail',['users' => $users,'usersProfil'=>$usersProfil]);
     }
     
+    /**
+     * @route /administrateur/gestion-inscription/valider/[:id]
+     * @param integer $id l'id de l utilisateur
+     */
     public function userValider($id){
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'valider'],$id);
     	$users =	$objetUsersModel->findAll();
     	$this->show('back/gestionIncription',['users' => $users]);
     }
+    
+    /**
+     * @route /administrateur/gestion-inscription/refuser/[:id]
+     * @param integer $id l'id de l utilisateur
+     */
     public function userRefuser($id){
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'refuser'],$id);
     	$users =	$objetUsersModel->findAll();
     	$this->show('back/gestionIncription',['users' => $users]);
     }
+    
+    /**
+     * @route /administrateur/gestion-inscription/traitement/[:id]
+     * @param integer $id l'id de l utilisateur
+     */
     public function userTraitement($id){
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'Cour'],$id);

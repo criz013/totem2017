@@ -8,7 +8,7 @@
 
 	<section id="header" class="row">
 	
-	<?php $this->insert('front/part/home-video'); ?>
+	<?php $this->insert('front/part/home-video',['message'=>$message,'log'=>$log]); ?>
 	</section>
 	
 	<!-- inclure nav -->
