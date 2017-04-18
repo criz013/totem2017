@@ -29,6 +29,8 @@ class WebController extends Controller
     	$log = $this->getUser();
     	$message = [];
     	$error = 0;
+    	$alertclass="";
+    	$icoclass="";
     	
     	if (!empty($_POST) && isset($_POST))
     	{	
@@ -36,7 +38,9 @@ class WebController extends Controller
     			// http://php.net/manual/en/function.trim.php
     			$titre              = trim($_POST["titre"]);
     			$url                = trim($_POST["url"]);
-    			$contact            = trim($_POST["contact"]);
+    			$adresse            = trim($_POST["adresse"]);
+    			$codePostal            = trim($_POST["codePostal"]);
+    			$ville            = trim($_POST["ville"]);
     			//$logo               = trim($_POST["logo"]);
     			$description        = trim($_POST["description"]);
     			$email              = trim($_POST["email"]);
@@ -60,11 +64,23 @@ class WebController extends Controller
     				$message[] = 'Url invalide';
     				
     			}
-    			if ((is_string($contact) == FALSE)  || ( strlen($contact) == 0 ))
+    			if ((is_string($adresse) == FALSE)  || ( strlen($adresse) == 0 ))
     			{
     				$error++;
     				$message[] = 'Contact invalide';
     				
+    			}
+    			if ((is_string($codePostal) == FALSE)  ||  strlen($codePostal) != 5 )
+    			{
+    				$error++;
+    				$message[] = 'Code postal invalide';
+    			
+    			}
+    			if ((is_string($ville) == FALSE)  || ( strlen($ville) == 0 ))
+    			{
+    				$error++;
+    				$message[] = 'Nom de ville invalide';
+    				 
     			}
     			if ((is_string($description) == FALSE) || ( mb_strlen($description) == 0 ))
     			{
@@ -106,7 +122,9 @@ class WebController extends Controller
     				$objetArticleModel->update([
     						"titre"         => $titre,
     						"url"           => $url,
-    						"contact"       => $contact,
+    						"adresse"       => $adresse,
+    						'codePostal'=>$codePostal,
+    						'ville'=>$ville,
     						"logo"          => 'logo1',
     						"description"   => $description,
     						"email"         => $email,
@@ -117,10 +135,16 @@ class WebController extends Controller
     				
     				// OK
     				$message[] = "BRAVO TU AS MODIFIE Les parametres du site";
+    				$alertclass="success";
+    				$icoclass="thumbs-up";
+    		}else{
+    			
+    			$alertclass="danger";
+    			$icoclass="thumbs-down";
     		}
-    	}
+    	} 
  		
-    	$this->show('back/backConfigModif',['id'=>$id,'message'=>$message,'log'=>$log]);
+    	$this->show('back/backConfigModif',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'log'=>$log]);
     }
     
 }

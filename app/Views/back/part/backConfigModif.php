@@ -23,8 +23,16 @@ extract($tabArticle);
 	</p>
 	
 	<p>
-	<label for="contact">Contact: </label>
-		<textarea name="contact" id="contact"  placeholder="Vos coordonnées d'entreprise"><?php echo $contact;?></textarea>
+	<label for="adresse">Adresse: </label>
+		<input type="text" name="adresse" id="adresse" value="<?php echo $adresse ?>" placeholder="Adresse de l entreprise">
+	</p>
+	<p>
+	<label for="codePostal">Code postal: </label>
+		<input type="text" name="codePostal" id="codePostal" value="<?php echo $codePostal ?>" placeholder="Code Postal">
+	</p>
+	<p>
+	<label for="ville">Ville: </label>
+		<input type="text" name="ville" id=""ville"" value="<?php echo $ville ?>"  placeholder="Ville">
 	</p>
 	
 	<p>
@@ -53,4 +61,11 @@ extract($tabArticle);
 
 	<button type="submit">MODIFIER</button> - <a href="<?php echo $this->url("web_site")?>">Retour</a>
 </form>
-<span><?php print_r($message);?></span>
+<div class="message">
+<ul>
+<?php foreach ($message as $item){?>
+<li><?php echo $item;?></li>
+<?php }?>
+</ul>
+</div>
+
