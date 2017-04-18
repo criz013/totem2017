@@ -33,6 +33,7 @@ Fichier home-video (c'est le header de notre one page) contenant :
 	            if(empty($log)){?>
 	            <li><a href="#" id="btn-participer"><i class="fa fa-handshake-o" aria-hidden="true"></i> Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
+
 	        <?php }else{
 	        var_dump($log);?>
 	        	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $log['first_name'].' '.$log['last_name']; ?></a></li>
