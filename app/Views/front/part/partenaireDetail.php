@@ -23,7 +23,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8">
 <h1>Fiche utilisateur</h1>
-<form method="post" action="" id="fiche-user" class="form form-horizontal" enctype="multipart/form-data">
+<form method="post" action="" id="fiche-user" class="form form-horizontal">
 	<div class="form-group">
         <label for="last_name" class="control-label col-sm-4 hidden-xs">Nom :</label>
         <div class="col-sm-8">
@@ -58,6 +58,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         <div class="hidden">
 			<input class="form-control" type="text" id="avatar" name="avatar" value="<?php echo $usersProfil[0]['avatar'] ?>" >
 		</div>
+        <div class="text-center formavatar">
+            <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['avatar']) ?>" alt="">
+        </div>
 	</div>
 	<?php }?>
 	
@@ -67,6 +70,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         <div class="hidden">
 			<input class="form-control" type="text" id="logo" name="logo" value="<?php echo $usersProfil[0]['logo'] ?>" >
 		</div>
+        <div class="text-center formlogo">
+            <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['logo']) ?>" alt="">
+        </div>
 	</div>
 	<?php }?>
 	
@@ -120,8 +126,14 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         })
         $('#btnCrop').on('click', function(){
             var img = cropper.getDataURL();
-            console.log(img);
-            $('.cropped').append('<img src="'+img+'">');
+            //$("#avatar").val(img.slice(22));
+            //$("#logo").val(img.slice(22));
+            $("#avatar").val(img);
+            $("#logo").val(img);
+            // console.log($("#logo").val());
+            
+            // $('.cropped').append('<img src="'+img+'">');
+            // return img;
         })
         $('#btnZoomIn').on('click', function(){
             cropper.zoomIn();
@@ -161,6 +173,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 			<input class="form-control" type="text" id="haschtag" name="haschtag" value="<?php echo $usersProfil[0]['haschtag'] ?>" >
 		</div>
 	</div>
+<<<<<<< Updated upstream
 <?php }?></form>
 <?php if($tabUsers['role'] == 'sponsor' ) {?>
 <form action="" method="post">
@@ -222,7 +235,17 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 		</div>
 		<input type="hidden" id="operation" name="operation" value="pilote" >
 		<button>Ajouter</button>
+=======
+<?php }?>
+    <div class="form-group">
+        <button type="submit" class="btn btn-vert">Modifier</button>
+    </div>
+
+>>>>>>> Stashed changes
 </form>
 <?php }?>
 </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

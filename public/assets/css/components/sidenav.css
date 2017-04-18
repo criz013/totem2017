@@ -26,16 +26,18 @@
 	padding-top: 15px;
 }
 
-
-
-#login, #signin, .sidenav-container{
+.sidenav-container{
 position: relative;
-margin-right: 0;}
+}
+
+#login, #signin{
+position: relative;
+margin-right: 0;
+}
 
 #sidenav-seconnecter .form-control, #sidenav-participer .form-control {
     background-color: rgba(255,255,255,0.9);
     border: 1px solid rgba(116, 182, 47,1);
-   
 }
 
 

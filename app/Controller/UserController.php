@@ -34,19 +34,27 @@ class UserController extends Controller
     	
     	if (!empty($_POST) && isset($_POST))
     	{
+            //securisation des données recues
+            $safe=array_map('strip_tags', $_POST);
+
     		// RECUPERER LES INFOS DU FORMULAIRE
     		// http://php.net/manual/en/function.trim.php
-    		$last_name           	= trim($_POST["last_name"]);
-    		$first_name             = trim($_POST["first_name"]);
-    		$phone           		= trim($_POST["phone"]);
-    		$email            		= trim($_POST["email"]);
-    		//$password           	= trim($_POST["password"]);
-    		$avatar            		= trim($_POST["avatar"]);
-    		$logo            		= trim($_POST["logo"]);
-    		$name_compagny          = trim($_POST["name_compagny"]);
-    		$link            		= trim($_POST["link"]);
-    		$description            = trim($_POST["description"]);
-    		$haschtage              = trim($_POST["haschtage"]);
+    		$last_name           	= trim($safe["last_name"]);
+    		$first_name             = trim($safe["first_name"]);
+    		$phone           		= trim($safe["phone"]);
+    		$email            		= trim($safe["email"]);
+    		//$password           	= trim($_safe["password"]);
+            //test si avatar ou logo sont défini dans le POST
+            if(isset($safe["avatar"])){
+                $avatar                 = trim($safe["avatar"]);
+            }
+            if(isset($safe["logo"])){
+    		$logo            		= trim($safe["logo"]);
+            }
+    		$name_compagny          = trim($safe["name_compagny"]);
+    		$link            		= trim($safe["link"]);
+    		$description            = trim($safe["description"]);
+    		$haschtage              = trim($safe["haschtage"]);
     	
     		if(!is_string($last_name) || ( mb_strlen($last_name) < 5)){
     			$error++;
@@ -57,8 +65,9 @@ class UserController extends Controller
     			$error++;
     			$message[] = 'Le champ prenom invalide';
     		}
-    		
-    		$motif ='`^0[1-9][0-9]{8}$`';
+
+    		$motif ='`^0[1-9][0-9]{8}$`';//a corriger car numéro à 10 chiffres
+
     		if (preg_match ( $motif, $phone ) )
     		{
     			$error++;
@@ -70,9 +79,22 @@ class UserController extends Controller
     			$error++;
     		}
     		
+
     		if($error == 0)
-    		{
-    			
+            {
+    		/**
+             * Debut de l upload
+             *on crée un fichier à partir de la base encodée 64 */
+    		 
+                  $filename="logoavatar-id-".$id;
+    	        $dir="<?= $this->assetUrl('/img/logoavatar/') ?>";
+                if(isset($avatar)){
+                 file_put_contents($dir.$filename, base64_decode($avatar));
+                }
+                else{
+                    file_put_contents($dir.$filename, base64_decode($avatar));
+                }
+             
     			$objetUsersModel = new \W\Model\UsersModel;
     			$objetUsersProfilModel = new \Model\Users_profilModel;
     			
@@ -92,7 +114,7 @@ class UserController extends Controller
     			     								 'haschtag'=>$haschtage, 
     			     								 'avatar'=>$avatar],$x['id']);
     			     
-    			     $message[] = "BRAVO TU AS MODIFIE tes données personnels";
+    			     $message[] = "BRAVO vous avez modifier vos données personnelles";
     			     $alertclass="success";
     			     $icoclass="thumbs-up";
     		}else{
