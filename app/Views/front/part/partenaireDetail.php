@@ -51,7 +51,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 			<input class="form-control" type="text" id="email" name="email" value="<?php echo $tabUsers['email'] ?>" >
 		</div>
 	</div>
-
+		<input type="hidden" id="operation" name="operation" value="utilisateur" >
 	<?php if($tabUsers['role'] == 'benevole' ) {?>
 	<div class="form-group">
         <label for="avatar" class="control-label col-sm-4 hidden-xs">avatar :</label>
@@ -161,8 +161,68 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 			<input class="form-control" type="text" id="haschtag" name="haschtag" value="<?php echo $usersProfil[0]['haschtag'] ?>" >
 		</div>
 	</div>
-<?php }?>
-
+<?php }?></form>
+<?php if($tabUsers['role'] == 'sponsor' ) {?>
+<form action="" method="post">
+<h3>Equipier 1</h3>
+	<div class="form-group">
+	        <label for="nom_equip1" class="control-label col-sm-4 hidden-xs">Nom :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="nom_equip1" name="nom_equip1" value="" >
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label for="prenom_equip1" class="control-label col-sm-4 hidden-xs">prenom :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="prenom_equip1" name="prenom_equip1" value="" >
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label for="Pseudo_equip1" class="control-label col-sm-4 hidden-xs">Pseudo :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="Pseudo_equip1" name="Pseudo_equip1" value="" >
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label for="avatar_equip1" class="control-label col-sm-4 hidden-xs">Avatar :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="avatar_equip1" name="avatar_equip1" value="" >
+			</div>
+		</div>
+		<h3>Equipier 2</h3>
+	<div class="form-group">
+	        <label for="nom_equip2" class="control-label col-sm-4 hidden-xs">Nom :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="nom_equip2" name="nom_equip2" value="" >
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label for="prenom_equip2" class="control-label col-sm-4 hidden-xs">prenom :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="prenom_equip2" name="prenom_equip2" value="" >
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label for="Pseudo_equip2" class="control-label col-sm-4 hidden-xs">Pseudo :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="Pseudo_equip2" name="Pseudo_equip2" value="" >
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label for="avatar_equip2" class="control-label col-sm-4 hidden-xs">Avatar :</label>
+	        <div class="col-sm-8">
+				<input class="form-control" type="text" id="avatar_equip2" name="avatar_equip2" value="" >
+			</div>
+		</div>
+		<input type="hidden" id="operation" name="operation" value="pilote" >
+		<button>Ajouter</button>
 </form>
+<?php }?>
 </div>
->>>>>>> f5748314add6c95f7f5fd4541511eb25fa228245
+

@@ -26,14 +26,14 @@ Fichier home-video (c'est le header de notre one page) contenant :
         <div class="right-menu">
         
         	<ul class="nav navbar-nav navbar-right">
-        	
+
 	            <li><a href="#contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> Nous contacter</a></li>
 	            <?php 	
 	            if(empty($log)){?>
 	            <li><a href="#" id="btn-participer"><i class="fa fa-handshake-o" aria-hidden="true"></i> Participer</a></li>
 	            <li><a href="#" id="btn-seconnecter"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a></li>
 
-	        <?php }elseif ($log == 'benevole' || $log == 'sponsor' ){
+	        <?php }elseif ($log['role'] == 'benevole' || $log['role'] == 'sponsor' ){
 	        ?>
 	        	<li><a href="<?php echo $this->url('user_partenaire',['id'=>$log['id']]);?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $log['first_name'].' '.$log['last_name']; ?></a></li>
 	        	<li><a href="<?php echo $this->url('homePage_logout');?>" ><span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span> Se déconnecter</a></li>
