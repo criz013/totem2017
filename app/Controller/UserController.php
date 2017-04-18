@@ -125,10 +125,11 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function userValider($id){
+    	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'valider'],$id);
     	$users =	$objetUsersModel->findAll();
-    	$this->show('back/gestionIncription',['users' => $users]);
+    	$this->show('back/gestionIncription',['users' => $users,'log'=>$log]);
     }
     
     /**
@@ -136,10 +137,11 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function userRefuser($id){
+    	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'refuser'],$id);
     	$users =	$objetUsersModel->findAll();
-    	$this->show('back/gestionIncription',['users' => $users]);
+    	$this->show('back/gestionIncription',['users' => $users,'log'=>$log]);
     }
     
     /**
@@ -147,10 +149,11 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function userTraitement($id){
+    	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'Cour'],$id);
     	$users =	$objetUsersModel->findAll();
-    	$this->show('back/gestionIncription',['users' => $users]);
+    	$this->show('back/gestionIncription',['users' => $users,'log'=>$log]);
     }
 
 }

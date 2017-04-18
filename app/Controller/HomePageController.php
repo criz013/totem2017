@@ -70,7 +70,6 @@ class HomePageController extends Controller
     				$tabUser = $objetUsersModel->find($idUser);
     				// JE VAIS MEMORISER CES INFOS DANS UNE SESSION
     				$objetAuthentificationModel->logUserIn($tabUser);
-    				$log = 'true';
     				$loggedUser = $this->getUser();
 
     				// ON PEUT FAIRE UNE REDIRECTION VERS UNE PAGE PROTEGEE
@@ -81,7 +80,6 @@ class HomePageController extends Controller
     			{
     				// KO
     				$message[] = "IDENTIFIANTS INCORRECTS";
-    				$log ='false';
     			}
     			
     		}
@@ -198,9 +196,10 @@ class HomePageController extends Controller
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
     			     	$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
     			     	
-    			     	$this->show("front/inscription", [ "message" => $message,'lien'=>$lien ]);
+    			     			
     		}
     		//Ici message d'erreur avec les messages
+    		$this->show("front/part/sidenav-participer", [ "message" => $message,'lien'=>$lien ]);
     	}
     			     	
     }

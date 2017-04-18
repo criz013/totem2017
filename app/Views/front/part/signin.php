@@ -17,6 +17,11 @@
                 <input type="hidden" name="operation" value="signup"/>
                 <div class="form-group">
                     <button type="submit" class="btn btn-vert">Proposer ma participation</button>
+                </divv class="form-group msgErreurs">
+                <ul>
+                
+                </ul>
+                <div>
                 </div>
             </form>
         <?php /*
