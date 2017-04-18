@@ -218,3 +218,11 @@ main {
   	-ms-flex-wrap: wrap;
 }
 /* FIN DEFINE EQUAL HEIGHT WITH FLEX on row*/
+
+/* DATETIMEPICKER */
+
+.form-group.datetime{
+	position:relative!important;
+}
+
+/* FIN DATETIMEPICKER */
