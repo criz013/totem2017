@@ -194,3 +194,32 @@
 	.carousel-caption p,
 	#myCarousel .list-group {display:none;} 
 }
+
+.thumbnail {
+    position: relative;
+}
+
+
+.caption h4 {
+    padding-bottom: 20px;
+    font-weight: bold;
+    min-height: 80px;
+}
+
+
+.captionbox {
+    flex: 1;
+}
+
+.thumbnailurl {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+.captionbox p {
+    font-size: 1.15em;
+    padding-bottom: 10px;
+}
+
