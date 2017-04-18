@@ -21,7 +21,7 @@ class ChallengeController extends Controller
 
         // on recupere tous les challenges pour les lister
         $challengeModel = new ChallengeModel();
-        $challenges =	$challengeModel->findAll();
+        $challenges     = $challengeModel->findAll();
 
         $this->show('back/challenge/index',['challenges' => $challenges]);
     }
@@ -30,12 +30,12 @@ class ChallengeController extends Controller
      *
      * route: /administrateur/challenges/edit
      */
-    public function edit(){
+    public function edit($id){
 
-        // on recupere tous les challenges pour les lister
+        // on recupre le challenge à editer
         $challengeModel = new ChallengeModel();
-        $challenges =	$challengeModel->findAll();
+        $challenge      = $challengeModel->find($id);
 
-        $this->show('back/challenge/index',['challenges' => $challenges]);
+        $this->show('back/challenge/edit',['challenge' => $challenge]);
     }
 }

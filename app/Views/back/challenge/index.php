@@ -22,7 +22,7 @@
                     <td><?php echo $challenge['date_start']; ?></td>
                     <td><?php echo $challenge['date_end']; ?></td>
                     <td>
-                        <a href="<?php echo $this->url('user_inscription_detail',['id'=>$challenge['id']]) ?>">Editer</a>
+                        <a href="<?php echo $this->url('challenge_edit',['id'=>$challenge['id']]) ?>">Editer</a>
                     </td>
                 </tr>
             <?php }
