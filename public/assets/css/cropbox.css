@@ -8,6 +8,8 @@
     overflow: hidden;
     background-repeat: no-repeat;
     cursor:move;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .imageBox .thumbBox
@@ -50,7 +52,7 @@
 }
 
 #btnCrop {
-    float: right;
+    text-align: right;
     margin-top: 10px;
 }
 
