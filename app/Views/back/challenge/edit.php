@@ -9,7 +9,9 @@
     <div class="row">
         <div class="container">
 
-            <h1>Edition challenge</h1>
+            <h2 class="back-style">Edition challenge</h2>
+
+
             </br>
 
             <?php // var_dump($challenge); ?>

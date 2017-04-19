@@ -6,7 +6,6 @@ $tabPress = $objetPressModel->findAll();
 
  ?>
 
-<!-- <h1>Listing articles</h1> -->
 <h2 class="back-style">Listing articles</h2>
 <a class="btn btn-vert" href="<?php echo $this->url('press_create') ?>" role="button">Créer un article</a>
 <table class="table table-stripped table-hover">
