@@ -8,6 +8,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8">
+
     <h1>Fiche utilisateur</h1>
     <form method="post" action="<?php echo $this->url("user_updateUser",['id'=>$id]);?>" id="fiche-user" class="form form-horizontal" enctype="multipart/form-data">
     	<div class="form-group">
@@ -38,6 +39,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     		</div>
     	</div>
     		<input type="hidden" id="operation" name="operation" value="utilisateur" >
+    		
     	<?php if($tabUsers['role'] == 'benevole' ) {?>
     	<div class="form-group">
             <label for="avatar" class="control-label col-sm-4 hidden-xs">avatar :</label>
@@ -60,7 +62,6 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     		</div>
             <div class="text-center formlogo">
                 <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['logo']) ?>" alt=""> 
-                
             </div>
     	</div>
     	<?php }?>
@@ -88,6 +89,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	</div>
     	
     <script src="<?= $this->assetUrl('/js/cropbox/require.js') ?>"></script>
+    
     <script>
         require.config({
             baseUrl: "<?= $this->assetUrl('/js/cropbox/') ?>",
@@ -117,13 +119,8 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
                 var img = cropper.getDataURL();
                 $("#avatar").val(img.slice(22));
                 $("#logo").val(img.slice(22));
-                //$("#avatar").val(img);
-               // $("#logo").val(img);
-                console.log($("#logo").val());
-                
-               //$('.cropped').append('<img id="avatar_tmp" name="avatar_tmp" src="'+img+'">');
-                // return img;
-            //})
+               
+            })
             $('#btnZoomIn').on('click', function(){
                 cropper.zoomIn();
             })
@@ -229,9 +226,10 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 		</div>
 		<input type="hidden" id="operation" name="operation" value="pilote" >
 		<button>Ajouter</button>
-<?php }?>
+
 
     </form>
+ <?php }?>
 <a class="btn btn-vert" href="<?php echo $this->url('homePage_index') ?>" role="button">Retour</a>
 </div>
 

@@ -102,7 +102,7 @@ class PressController extends Controller
     		$avatar=$_FILES['img']['name']; //le nom d'origine sur mon pc
 
     		//copie du fichier
-    		move_uploaded_file($imgTemp,$dir.'/'.$img);
+    		move_uploaded_file($imgTemp,$dir.'/'.$avatar);
     			// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
     			// JE CREE UN OBJET DE LA CLASSE ArticleModel
     			// NE PAS OUBLIER DE FAIRE use
@@ -177,6 +177,9 @@ class PressController extends Controller
                                         
                 if($error < 1)
                 {
+                	if(!empty($_FILES['insert_img'])){
+                		$img = $cv=$_FILES['insert_img']['name'];
+                	}
                     // ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
                     // JE CREE UN OBJET DE LA CLASSE ArticleModel
                     // NE PAS OUBLIER DE FAIRE use
@@ -184,9 +187,10 @@ class PressController extends Controller
                     // JE PEUX UTILISER LA METHODE update DE LA CLASSE \W\Model\Model
                     $objetArticleModel->update([
                             "titre"         => $titre,
-                            "lien"           => $lien,
+                            "lien"          => $lien,
                             "chapo"         => $chapo,
                             "corp"          => $corp,
+                    		"photo"         => $img,
                     ],$id);
                     
                     // OK

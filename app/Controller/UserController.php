@@ -30,6 +30,8 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function updateUser($id){
+    	$WebModel = new \Model\WebsiteModel;
+    	$web = $WebModel->findAll();
     	$alertclass="";
     	$icoclass="";
     	$message = [];
@@ -46,19 +48,25 @@ class UserController extends Controller
     		$first_name             = trim($safe["first_name"]);
     		$phone           		= trim($safe["phone"]);
     		$email            		= trim($safe["email"]);
+    		
     		//$password           	= trim($_safe["password"]);
             //test si avatar ou logo sont défini dans le POST
-          if(isset($safe["avatar"])){
-                $avatar                 = trim($safe["avatar"]);
-            }
-            if(isset($safe["logo"])){
-    		$logo            		= trim($safe["logo"]);
-            }
+    		if(isset($safe["name_compagny"])){
     		$name_compagny          = trim($safe["name_compagny"]);
     		$link            		= trim($safe["link"]);
     		$description            = trim($safe["description"]);
     		$haschtage              = trim($safe["haschtag"]);
-    	
+    		$logo            		= trim($safe["logo"]);
+    		$avatar 				= '';
+			}else{
+				$name_compagny          = '';
+				$link            		= '';
+				$description            = '';
+				$haschtage              = '';
+				$avatar 				= '';
+				$logo            		= '';
+			}
+			
     		if(!is_string($last_name) || ( mb_strlen($last_name) < 5)){
     			$error++;
     			$message[] = 'Le champ nom invalide';
@@ -105,7 +113,7 @@ class UserController extends Controller
                     $logo=$filename;
                 }
                 
-                //$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
+             /*   $avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
                 $extAvatar=new \SplFileInfo($avatar);
                 $extAvatarMin=strtolower($extAvatar->getExtension());
                 
@@ -117,7 +125,7 @@ class UserController extends Controller
                                   	
                 		if($_FILES['img_test']["size"]>2000000){
                 			$message="La taille de votre avatar est supérieur à 2 MO !";
-                		}
+                		}*/
                 		
                 		//$avatarTemp=$_FILES['img_test']['tmp_name']; //le nom temporaire
                 		//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
@@ -136,13 +144,19 @@ class UserController extends Controller
     			     			"phone"      		=> $phone,
     			     			"modified"    		=> date('Y-m-d h:i:s'),
     			     			"username" 			=> $email], $id);
+    			     
+    			     
     			   $x =  $objetUsersProfilModel->search(['id_users'=>$id]);
-    			     $objetUsersProfilModel->update(['name_compagny'=>$name_compagny ,
-    			     								 'description'=>$description, 
-    			     		'logo'=>$logo, 
-    			     								 'link'=>$link, 
-    			     								 'haschtag'=>$haschtage, 
-    			     		'avatar'=>$avatar],$x[0]['id']);
+    			   if(isset($safe["name_compagny"])){
+    			     $objetUsersProfilModel->update(['avatar'=>$avatar],$x[0]['id']);
+    			   }else{
+    			   	$objetUsersProfilModel->update(['name_compagny'=>$name_compagny ,
+    			   			'description'=>$description,
+    			   			'logo'=>$logo,
+    			   			'link'=>$link,
+    			   			'haschtag'=>$haschtage,
+    			   			'avatar'=>$avatar],$x[0]['id']);
+    			   }
     			     
     			     $message[] = "BRAVO vous avez modifier vos données personnelles";
     			     $alertclass="success";
@@ -155,7 +169,7 @@ class UserController extends Controller
     		}
     	}
     	
-    	$this->show('user_partenaire',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass]);
+    	$this->show('front/partenaire',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'web'=>$web]);
     	
     }
 
