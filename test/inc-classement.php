@@ -32,13 +32,12 @@
         var_dump($team);
         $logo = $team["logo"];
         $haschtag=$team["haschtag"];
-    echo 
-<<<CODEHTML
+?>
                         
     <div class="equipe col-xs-12 id">
         <div class="blocSocial col-xs-7 col-sm-4 col-md-5 col-lg-4">
             <div class="tag">
-                <p>#airbustotem</p>
+                <p><?php echo $haschtag; ?></p>
             </div>
             <div class="fbk col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
                 <div class="imgSocial">
@@ -66,7 +65,7 @@
             </div>
         </div><!--blocSocial-->
         <div class="logoClassement text-center col-xs-3 col-sm-3 col-md-2 col-lg-2">
-            <img class="img-responsive" src="<?php $this->assetUrl('/img/logoavatar/'.$logo) ?"></img>
+            <img class="img-responsive" src="<?php echo $this->assetUrl('/img/logoavatar/'.$logo); ?>"></img>
         </div>
         <div class="zoneProgress text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
             <div class="barProgress">
@@ -81,8 +80,8 @@
         </div>
     </div><!--equipe-->
 
-CODEHTML;
-    };
+
+<?php    }
     ?>
 </div>
 
