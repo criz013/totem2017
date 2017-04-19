@@ -4,7 +4,7 @@ $tabArticle = $objetArticleModel->findAll();
 
 ?>
 	<header>
-		<h1>Configuration du site internet</h1>
+		<h2>Configuration du site internet</h2>
 	</header>
 	<main>
 	<?php 
