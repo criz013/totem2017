@@ -27,7 +27,8 @@
             </div>
         </div>
     </div><!--equipeHeader-->
-<?php    
+<?php
+    
     for($i=1; $i<=5; $i++){
     echo '<div class="equipe col-xs-12">
         <div class="blocSocial col-xs-7 col-sm-4 col-md-5 col-lg-4">

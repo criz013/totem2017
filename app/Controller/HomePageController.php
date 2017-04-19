@@ -11,6 +11,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \Model\ChallengeModel;
 use \Model\WebsiteModel;
+use \Model\UsersModel;
 
 class HomePageController extends Controller
 {
@@ -38,6 +39,9 @@ class HomePageController extends Controller
             if( strtotime($challenge['date_start']) <= $currrentTime && strtotime($challenge['date_end']) >= $currrentTime) {
                 $isChallengeEnCour = true;
             }
+
+        $UserModelObject = new  Usersmodel;
+         
         }
 
     	$this->show('front/home',[
