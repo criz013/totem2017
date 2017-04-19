@@ -88,14 +88,37 @@ class UserController extends Controller
     		 
                 $filename="logoavatar-id-".$id;
     	        $dir="<?= $this->assetUrl('/img/logoavatar/') ?>";
+    	        
                 if(isset($avatar))
                 {
-                 file_put_contents($dir.$filename, base64_decode($avatar));
+                 	file_put_contents($dir.$filename, base64_decode($avatar));
                 }
                 else
                 {
                     file_put_contents($dir.$filename, base64_decode($avatar));
                 }
+                
+                $avatar=$_FILES['cv']['name']; //le nom d'origine sur mon pc
+                $extAvatar=new \SplFileInfo($avatar);
+                $extAvatarMin=strtolower($extCv->getExtension());
+                
+                if(!in_array($extAvatarMin, ['png','jpeg','jpg'])){
+                	
+                	$message="L'extension de votre CV n'est pas reconnue. $extCvMin";
+                	
+                }//fin de verif extCv
+                                  	
+                	
+                	
+                		if($_FILES['cv']["size"]>2000000){
+                			$message="La taille de votre avatar est supérieur à 2 MO !";
+                		}
+                		
+                		$avatarTemp=$_FILES['cv']['tmp_name']; //le nom temporaire
+                		$avartar=$_FILES['cv']['name']; //le nom d'origine sur mon pc
+                		
+                		//copie du fichier
+                		move_uploaded_file($avatarTemp,$dir);
              
     			$objetUsersModel = new \W\Model\UsersModel;
     			$objetUsersProfilModel = new \Model\Users_profilModel;

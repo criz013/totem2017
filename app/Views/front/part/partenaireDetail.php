@@ -23,7 +23,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8">
     <h1>Fiche utilisateur</h1>
-    <form method="post" action="" id="fiche-user" class="form form-horizontal">
+    <form method="post" action="" id="fiche-user" class="form form-horizontal" enctype="multipart/form-data">
     	<div class="form-group">
             <label for="last_name" class="control-label col-sm-4 hidden-xs">Nom :</label>
             <div class="col-sm-8">
@@ -175,6 +175,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     		</div>
     	</div>
     <?php }?>
+            <div class="form-group">
+            <button type="submit" class="btn btn-vert">Modifier</button>
+        </div>
     </form>
 
 <?php if($tabUsers['role'] == 'sponsor' ) {?>
@@ -238,9 +241,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 		<input type="hidden" id="operation" name="operation" value="pilote" >
 		<button>Ajouter</button>
 <?php }?>
-        <div class="form-group">
-            <button type="submit" class="btn btn-vert">Modifier</button>
-        </div>
+
 
     </form>
 
