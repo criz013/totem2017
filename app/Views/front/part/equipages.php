@@ -26,9 +26,7 @@ INCLURE LE FOOTER-SECTION
 <div class="grad">
     <div class="container">
         <div id="team_list" class="">
-            <?php
-                include "../test/inc-classement.php";
-            ?>
+            <?php $this->insert('front/part/classement'); ?>
         </div>
     </div>
 </div>

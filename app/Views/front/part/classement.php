@@ -29,7 +29,6 @@
     </div><!--equipeHeader-->
 <?php    
     foreach($sponsors as $team){
-        //var_dump($team);
         $logo = $team["logo"];
         $haschtag=$team["haschtag"];
 ?>
@@ -73,7 +72,7 @@
             </div>
         </div>
         <div class="autonomie hidden-xs hidden-sm col-md-1 col-lg-1">
-            <img src="../test/img/bat-75.png"></img>
+            <img src="<?php echo $this->assetUrl('/img/bat-75.png'); ?>"></img>
         </div>
         <div class="zonePosition col-xs-2 hidden-sm hidden-md hidden-lg text-center">
                 <p class="position text-center">2</p>
