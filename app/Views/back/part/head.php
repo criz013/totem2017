@@ -66,7 +66,9 @@
 							</div>
 
 						  </div><!-- /.container-fluid -->
-						</nav>
+					</nav>
+			</div>
+
 				
 		
 
