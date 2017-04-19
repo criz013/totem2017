@@ -204,7 +204,21 @@ clear: both;
 	font-size: 17px;
 }
 
-h2 {
-	color: rgb(116, 182, 47);
+.back-style {
+	color: rgba(116, 182, 47,1);
+	padding-top: 20px;
+    padding-bottom: 10px;
 }
 
+.entete {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-right: 20px;
+	text-align: right;
+}
+
+.entete-url {
+	font-weight: bold;
+	padding-right: 20px;
+	text-align: right;
+}
