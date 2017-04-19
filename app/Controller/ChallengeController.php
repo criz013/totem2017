@@ -35,6 +35,31 @@ class ChallengeController extends Controller
         // on recupre le challenge à editer
         $challengeModel = new ChallengeModel();
         $challenge      = $challengeModel->find($id);
+        
+        if (!empty($_POST) && isset($_POST))
+        {
+        	// RECUPERER LES INFOS DU FORMULAIRE
+        	// http://php.net/manual/en/function.trim.php
+        	$year           = trim($_POST["annee"]);
+        	$name           = trim($_POST["name"]);
+        	$description    = trim($_POST["description"]);
+        	$text           = trim($_POST["text"]);
+        	$hashtag        = trim($_POST["hashtag"]);
+        	$status         = trim($_POST["status"]);
+        	$don            = trim($_POST["don"]);
+        	$uriMap         = trim($_POST["uriMap"]);
+        	
+        	$challengeModel->update([
+        			"year"         => $year,
+        			"name"          => $name,
+        			"description"         => $description,
+        			"text"         => $text,
+        			'hashtag'=>$hashtag,
+        			'status'=>$status,
+        			'don'=>$don,
+        			'uriMap'=>$uriMap
+        	],$id);
+        }
 
         $this->show('back/challenge/edit',['challenge' => $challenge,'log'=>$log]);
     }

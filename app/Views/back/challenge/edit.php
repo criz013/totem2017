@@ -20,9 +20,40 @@
 
                 <div class="form-group">
                     <label for="annee">Année: </label>
-                    <input type="text" id="annee" name="titre" class="form-control" value="<?php echo $challenge['year'];?>">
+                    <input type="text" id="annee" name="annee" class="form-control" value="<?php echo $challenge['year'];?>">
                 </div>
-
+                
+                <div class="form-group">
+                    <label for="name">Le nom: </label>
+                    <input type="text" id="name" name="name" class="form-control" value="<?php echo $challenge['name'];?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description: </label>
+                    <input type="text" id="description" name="description" class="form-control" value="<?php echo $challenge['description'];?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="text">Corp: </label>
+                    <input type="text" id="text" name="text" class="form-control" value="<?php echo $challenge['text'];?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="hashtag">Hashtag: </label>
+                    <input type="text" id="hashtag" name="hashtag" class="form-control" value="<?php echo $challenge['hashtag'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="status">status: </label>
+                    <input type="text" id="status" name="status" class="form-control" value="<?php echo $challenge['status'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="don">Don: </label>
+                    <input type="text" id="don" name="don" class="form-control" value="<?php echo $challenge['don'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="uriMap">Uri map: </label>
+                    <input type="text" id="uriMap" name="uriMap" class="form-control" value="<?php echo $challenge['uriMap'];?>">
+                </div>
                 <div class="form-group datetime">
                     <label for="date_debut">Début: </label>
 

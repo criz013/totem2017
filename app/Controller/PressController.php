@@ -198,7 +198,7 @@ class PressController extends Controller
                 					"photo"         => $img,
                 					'corp'=>'',
                 			],$id);
-                			print_r('ici');
+                			
                 			// OK
                 			$message[] = 'BRAVO L\'ARTICLE A ÉTÉ MODIFIÉ.';
                 			$alertclass="success";
