@@ -13,7 +13,7 @@
 <div class="deco-container text-center">
       <div class="deco climbdown revuedepresse" >
         <div class="">
-          <img class="cursor-deco" src="../test/img/cursor-jaune.png"/>
+          <img class="cursor-deco" src="<?php echo $this->assetUrl('/img/cursor-jaune.png'); ?>"/>
         </div>
       </div>
 </div>

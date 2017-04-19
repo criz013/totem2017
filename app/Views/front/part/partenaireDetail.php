@@ -117,13 +117,8 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
                 var img = cropper.getDataURL();
                 $("#avatar").val(img.slice(22));
                 $("#logo").val(img.slice(22));
-                //$("#avatar").val(img);
-               // $("#logo").val(img);
-                console.log($("#logo").val());
-                
-               //$('.cropped').append('<img id="avatar_tmp" name="avatar_tmp" src="'+img+'">');
-                // return img;
-            //})
+            })
+
             $('#btnZoomIn').on('click', function(){
                 cropper.zoomIn();
             })
