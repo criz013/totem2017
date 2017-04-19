@@ -32,7 +32,7 @@
 
 	<!-- inclure revuedepresse -->
 	<section id="revuedepresse" class="row section">
-	<?php $this->insert('front/part/revuedepresse'); ?>
+	<?php $this->insert('front/part/revuedepresse',['revue'=>$revue]); ?>
 	</section>
 	
 	<!-- inclure last edition -->

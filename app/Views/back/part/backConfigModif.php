@@ -40,7 +40,11 @@ extract($tabArticle);
 	</p>
 	
 	<p>
-	<label for="logo">Logo: </label>
+		<img type="text" id="img" name="img" src="<?php echo $this->assetUrl("img/".$logo) ?>" >
+	</p>
+	<p>
+		<label for="logo">Logo: </label>
+		<input type="file" id="insert_img" name="insert_img" >
 	</p>
 	<p>
 	<label for="description">Description: </label>

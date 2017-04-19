@@ -12,6 +12,7 @@ use \W\Controller\Controller;
 
 class PressController extends Controller
 {
+	
     /**
      * @route /aministrateur/revue-presse
      */
@@ -44,7 +45,7 @@ class PressController extends Controller
     		$titre           = trim($_POST["titre"]);
     		$lien            = trim($_POST["lien"]);
     		$chapo           = trim($_POST["chapo"]);
-    		$corp            = trim($_POST["corp"]);
+    		
     	
     	
     		// SECURITE
@@ -69,12 +70,7 @@ class PressController extends Controller
     			$message[] = 'Chapo invalide';
     	
     		}
-    		if ((is_string($corp) == FALSE) || ( mb_strlen($corp) == 0 ))
-    		{
-    			$error++;
-    			$message[] = 'Corps invalide';
     	
-    		}
     		$img = $_FILES['img']['name'];
     		$extimg=new \SplFileInfo($img);
     		$extimgMin=strtolower($extimg->getExtension());
@@ -93,7 +89,7 @@ class PressController extends Controller
     		if($error < 1)
     		{
     			//$filename="press-".$id.".png";
-    		$dir=\realpath(__DIR__.'/../../public/assets/img/');
+    		$dir=\realpath(__DIR__.'/../../public/assets/img/img-revuPress');
     		//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
     		
     		
@@ -111,8 +107,8 @@ class PressController extends Controller
     					"titre"         => $titre,
     					"lien"          => $lien,
     					"chapo"         => $chapo,
-    					"corp"          => $corp,
     					'photo'			=> $img,
+    					'corp'=>'',
     					"dateCreate"	=> date('Y-m-d h:i:s')
     			]);
     	
@@ -142,7 +138,6 @@ class PressController extends Controller
                 $titre           = trim($_POST["titre"]);
                 $lien            = trim($_POST["lien"]);
                 $chapo           = trim($_POST["chapo"]);
-                $corp            = trim($_POST["corp"]);
                 
                 
                 // SECURITE
@@ -163,11 +158,7 @@ class PressController extends Controller
                     $error++;
                     $message[] = 'Chapo invalide';
                 }
-                if ((is_string($corp) == FALSE) || ( mb_strlen($corp) == 0 ))
-                {
-                    $error++;
-                    $message[] = 'Corps invalide';
-                }                  
+                
                 if($error < 1)
                 {
                 	if(isset($_FILES['insert_img']) AND $_FILES['insert_img']['error'] == 0){
@@ -187,7 +178,7 @@ class PressController extends Controller
                 			$message[]="La taille de votre image est supérieur à 2 MO !";
                 		}
                 			//$filename="press-".$id.".png";
-                			$dir=\realpath(__DIR__.'/../../public/assets/img/');
+                			$dir=\realpath(__DIR__.'/../../public/assets/img/img-revuPress');
                 			//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
                 		
                 		
@@ -204,17 +195,15 @@ class PressController extends Controller
                 					"titre"         => $titre,
                 					"lien"          => $lien,
                 					"chapo"         => $chapo,
-                					"corp"          => $corp,
                 					"photo"         => $img,
+                					'corp'=>'',
                 			],$id);
                 			print_r('ici');
                 			// OK
                 			$message[] = 'BRAVO L\'ARTICLE A ÉTÉ MODIFIÉ.';
                 			$alertclass="success";
                 			$icoclass="thumbs-up";	
-                	}else
-                	//insertion d'image
-                	{
+                	}else{
                 		print_r('ici 2');
                 		// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
                 		// JE CREE UN OBJET DE LA CLASSE ArticleModel
@@ -225,7 +214,7 @@ class PressController extends Controller
                 				"titre"         => $titre,
                 				"lien"          => $lien,
                 				"chapo"         => $chapo,
-                				"corp"          => $corp,
+                				'corp'=>'',
                 				
                 		],$id);
                 		 

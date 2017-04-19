@@ -16,6 +16,8 @@ use \Model\Users_profilModel;
 
 class HomePageController extends Controller
 {
+
+	
     /**
      * @route /
      */
@@ -25,6 +27,9 @@ class HomePageController extends Controller
 
         $WebModel = new WebsiteModel;
         $web = $WebModel->findAll();
+        
+        $objetArticleModel = new \Model\revue_pressModel;
+        $revue =	$objetArticleModel->findAll('dateCreate', 'ASC', 4);
 
         // on recupere les challenges
         $challengeModel = new ChallengeModel();
@@ -54,6 +59,7 @@ class HomePageController extends Controller
             'nextChallengeStart' => $nextChallengeStart,
             'isChallengeEnCour' => $isChallengeEnCour,
             'sponsors'=> $sponsors,
+    		'revue'=>$revue,
         ]);
     }
 
@@ -132,7 +138,7 @@ class HomePageController extends Controller
     	$objetAuthentificationModel = new \W\Security\AuthentificationModel;
     	$objetAuthentificationModel->logUserOut();
     	$this->redirectToRoute('homePage_index');
-    	// REDIRIGER VERS LA PAGE D'index
+    	
     }
 
     /**

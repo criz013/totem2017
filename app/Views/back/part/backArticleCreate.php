@@ -20,12 +20,7 @@
 		</div>
 	</div>
 
-	<div class="form-group">
-        <label for="corpsArticle" class="control-label col-sm-4 hidden-xs">Corps :</label>
-        <div class="col-sm-8">
-        	<textarea rows="5" cols="100" id="corpsArticle" name="corp"></textarea>
-		</div>
-	</div>
+	
 
 	<div class="form-group">
         <label for="lienArticle" class="control-label col-sm-4 hidden-xs">Lien :</label>

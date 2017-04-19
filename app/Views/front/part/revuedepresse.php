@@ -31,58 +31,21 @@
 <div class="grad">  
   <div class="container">  
     <div class="row row-flex">     
-
+<?php foreach ($revue as $item){?>
       <div class="col-sm-6 col-md-3 col-flex">
         <div class="thumbnail captionbox">
-          <img src="assets/img/img-revuPress/challengeTotem1.jpg" alt="challenge totem">
+          <img src="<?php echo $this->assetUrl('/img/img-revuPress/'.$item['photo']);?>" alt="challenge totem">
           <div class="caption">
-            <h4>Challenge Totem 2016 - La DREAL gagne un prix</h4>
-            <p >La DREAL "éco-mobilisée" pour la semaine de réduction des déchets, gagne un des premiers prix au challenge Totem en partenariat avec "1 Déchet par jour" et "Totem Mobi"</p>
+            <h4><?php echo $item['titre'];?></h4>
+            <p ><?php echo $item['chapo'];?></p>
             <div class="thumbnailurl">
-              <a href="http://www.paca.developpement-durable.gouv.fr/challenge-totem-2016-a9790.html" target="_blank">Lire l'article</a>
+              <a href="<?php echo $item['lien'];?>" target="_blank">Lire l'article</a>
             </div>
           </div>
         </div>
       </div>
+<?php }?>
 
-      <div class="col-sm-6 col-md-3 col-flex">
-        <div class="thumbnail captionbox">
-          <img src="assets/img/img-revuPress/challengeTotem2.jpg" alt="challenge totem">
-          <div class="caption">
-            <h4>Marseille : un rallye pour ramasser les déchets</h4>
-            <p>Le "Challenge Totem" va serpenter les rues de Marseille pour l'association "Un déchet par jour"</p>
-            <div class="thumbnailurl">
-              <a href="http://www.laprovence.com/article/edition-marseille/4207773/un-rallye-pour-ramasser-les-dechets.html" target="_blank">Lire l'article</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-3 col-flex">
-        <div class="thumbnail captionbox">
-          <img src="assets/img/img-revuPress/challengeTotem3.jpg" alt="challenge totem">
-          <div class="caption">
-            <h4>Marseille Vert et Challenge Totem 2016</h4>
-            <p> Quand l’énergie collaborative mobilise une ville pour la nettoyer et la faire briller - c’est le Challenge TOTEM 2016 avec TOTEM Mobi les petites twizy en auto-partage ... </p>
-            <div class="thumbnailurl">
-              <a href="http://www.marseillevert.fr/challenge-totem-2016/" target="_blank">Lire l'article</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-3 col-flex">
-        <div class="thumbnail captionbox">
-          <img src="assets/img/img-revuPress/challengeTotem4.jpg" alt="challenge totem">
-          <div class="caption">
-            <h4>My Green Startup, partenaire de Challenge TOTEM 2016</h4>
-            <p>Le 22 novembre, à Marseille et ses alentours, a eu lieu le CHALLENGE TOTEM / 1 Déchet par Jour, un défi via les réseaux sociaux pour faire changer les habitudes en montrant l’exemple.</p>
-            <div class="thumbnailurl">
-              <a href="http://mygreenstartup.com/challenge-totem-2016/" target="_blank">Lire l'article</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

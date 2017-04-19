@@ -42,8 +42,6 @@ class WebController extends Controller
     			$codePostal         = trim($_POST["codePostal"]);
     			$ville            	= trim($_POST["ville"]);
     			$phone            	= trim($_POST["phone"]);
-    			
-    			//$logo               = trim($_POST["logo"]);
     			$description        = trim($_POST["description"]);
     			$email              = trim($_POST["email"]);
     			$facebook           = trim($_POST["facebook"]);
@@ -114,8 +112,36 @@ class WebController extends Controller
     				$message[] = 'Instagram invalide';
     			}
     					
+    			
     			if($error < 1)
     			{
+    				
+    				if(isset($_FILES['insert_img']) AND $_FILES['insert_img']['error'] == 0){
+    					print_r('ici');
+    					$img =$_FILES['insert_img']['name'];
+    				
+    					$extimg=new \SplFileInfo($img);
+    					$extimgMin=strtolower($extimg->getExtension());
+    				
+    					if(!in_array($extimgMin, ['png','jpeg','jpg'])){
+    						$error++;
+    						$message[]="L'extension de votre image n'est pas reconnue. $extimgMin";
+    				
+    					}//fin de verif extCv
+    				
+    					if($_FILES['insert_img']["size"]>2000000){
+    						$error++;
+    						$message[]="La taille de votre image est supérieur à 2 MO !";
+    					}
+    					//$filename="press-".$id.".png";
+    					$dir=\realpath(__DIR__.'/../../public/assets/img/');
+    					//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
+    				
+    				
+    					$imgTemp=$_FILES['insert_img']['tmp_name']; //le nom temporaire
+    					$avatar=$_FILES['insert_img']['name']; //le nom d'origine sur mon pc
+    					//copie du fichier
+    					move_uploaded_file($imgTemp,$dir.'/'.$avatar);
     				// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
     				// JE CREE UN OBJET DE LA CLASSE ArticleModel
     				// NE PAS OUBLIER DE FAIRE use
@@ -128,7 +154,7 @@ class WebController extends Controller
     						'codePostal'	=> $codePostal,
     						'ville'			=> $ville,
     						'phone'			=> $phone,
-    						"logo"          => 'logo1',
+    						"logo"          => $img,
     						"description"   => $description,
     						"email"         => $email,
     						"facebook"      => $facebook,
@@ -140,7 +166,35 @@ class WebController extends Controller
     				$message[] = "BRAVO TU AS MODIFIE Les parametres du site";
     				$alertclass="success";
     				$icoclass="thumbs-up";
-    		}else{
+    				}else{
+    					print_r('ici2');
+    					// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
+    					// JE CREE UN OBJET DE LA CLASSE ArticleModel
+    					// NE PAS OUBLIER DE FAIRE use
+    					$objetArticleModel = new \Model\WebsiteModel;
+    					// JE PEUX UTILISER LA METHODE update DE LA CLASSE \W\Model\Model
+    					$objetArticleModel->update([
+    							"titre"         => $titre,
+    							"url"           => $url,
+    							"adresse"       => $adresse,
+    							'codePostal'	=> $codePostal,
+    							'ville'			=> $ville,
+    							'phone'			=> $phone,
+    							"description"   => $description,
+    							"email"         => $email,
+    							"facebook"      => $facebook,
+    							"twitter"       => $twitter,
+    							"instansgram"   => $instagram,
+    					],$id);
+    					
+    					// OK
+    					$message[] = "BRAVO TU AS MODIFIE Les parametres du site";
+    					$alertclass="success";
+    					$icoclass="thumbs-up";
+    					
+    				}
+    				
+    			}else{
     			
     			$alertclass="danger";
     			$icoclass="thumbs-down";

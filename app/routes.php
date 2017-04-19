@@ -24,7 +24,7 @@
         ['GET|POST', '/administrateur/revue-press/suppression/[:id]', 'Press#delete', 'press_delete'],
         ['GET|POST', '/administrateur/revue-press/creation/', 'Press#create', 'press_create'],
         ['GET|POST', '/administrateur/revue-press/modification/[:id]', 'Press#modify', 'press_modify'],
-
+		 ['GET|POST', '/administrateur/revue', 'Press#revueHome', 'press_revueHome'],
         //Gestion des editions challenge totem
         ['GET|POST', '/administrateur/challenges', 'Challenge#index', 'challenge_index'],
         ['GET|POST', '/administrateur/challenges/edit/[:id]', 'Challenge#edit', 'challenge_edit'],
