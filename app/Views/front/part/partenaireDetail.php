@@ -60,7 +60,8 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     		</div>
             <div class="text-center formavatar">
                 
-            <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['avatar']) ?>" alt="">
+            <!-- <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['avatar']) ?>" alt=""> -->
+            <img src="<?= $this->assetUrl('/img/logoavatar/avatar.png')?>" alt="">
             </div>
     	</div>
     	<?php }?>
@@ -243,6 +244,6 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         </div>
 
     </form>
-<?php }?>
+
 </div>
 
