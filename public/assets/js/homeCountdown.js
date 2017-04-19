@@ -72,7 +72,9 @@ $(document).ready(function(){
 		var month =  moment(start).format("MMM");
 
 		$("#countdown").countdown({
-			date: start.getDate()+ " " + month +" " + start.getFullYear() + " " + start.toLocaleTimeString(), // change date/time here - do not change the format!
+			date: "21 April 2017 12:30:00", // change date/time here - do not change the format!
+			//format de date non correct
+			//date: start.getDate()+ " " + month +" " + start.getFullYear() + " " + start.toLocaleTimeString(), // change date/time here - do not change the format!
 			format: "on"
 		});
 	});
