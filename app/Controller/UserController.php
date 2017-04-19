@@ -36,7 +36,7 @@ class UserController extends Controller
     	{
             //securisation des données recues
             $safe=array_map('strip_tags', $_POST);
-
+                var_dump($safe);
     		// RECUPERER LES INFOS DU FORMULAIRE
     		// http://php.net/manual/en/function.trim.php
     		$last_name           	= trim($safe["last_name"]);
@@ -45,12 +45,12 @@ class UserController extends Controller
     		$email            		= trim($safe["email"]);
     		//$password           	= trim($_safe["password"]);
             //test si avatar ou logo sont défini dans le POST
-            if(isset($safe["avatar"])){
+          /* if(isset($safe["avatar"])){
                 $avatar                 = trim($safe["avatar"]);
             }
             if(isset($safe["logo"])){
     		$logo            		= trim($safe["logo"]);
-            }
+            }*/
     		$name_compagny          = trim($safe["name_compagny"]);
     		$link            		= trim($safe["link"]);
     		$description            = trim($safe["description"]);
@@ -66,8 +66,7 @@ class UserController extends Controller
     			$message[] = 'Le champ prenom invalide';
     		}
 
-    		$motif ='`^0[1-9][0-9]{8}$`';//a corriger car numéro à 10 chiffres
-
+    		$motif ='`^0[1-9][0-9]{10}$`';
     		if (preg_match ( $motif, $phone ) )
     		{
     			$error++;
@@ -91,11 +90,15 @@ class UserController extends Controller
     	        
                 if(isset($avatar))
                 {
-                 	file_put_contents($dir.$filename, base64_decode($avatar));
+
+                 file_put_contents($dir.$filename, base64_decode($avatar));
+                    $avatar=$filename;
+
                 }
                 else
                 {
                     file_put_contents($dir.$filename, base64_decode($avatar));
+                    $logo=$filename;
                 }
                 
                 $avatar=$_FILES['cv']['name']; //le nom d'origine sur mon pc
@@ -131,7 +134,7 @@ class UserController extends Controller
     			     			"modified"    		=> date('Y-m-d h:i:s'),
     			     			"username" 			=> $email], $id);
     			   $x =  $objetUsersProfilModel->search(['id_users'=>$id]);
-    			   
+    			   var_dump($x);
     			     $objetUsersProfilModel->update(['name_compagny'=>$name_compagny ,
     			     								 'description'=>$description, 
     			     								 'logo'=>$logo, 
@@ -142,9 +145,10 @@ class UserController extends Controller
     			     $message[] = "BRAVO vous avez modifier vos données personnelles";
     			     $alertclass="success";
     			     $icoclass="thumbs-up";
+                     print_r($message);
     		}
             else
-            {
+            { print_r($message);
     			$alertclass="danger";
     			$icoclass="thumbs-down";
     		}
