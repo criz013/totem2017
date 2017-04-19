@@ -12,6 +12,7 @@ use \W\Controller\Controller;
 use \Model\ChallengeModel;
 use \Model\WebsiteModel;
 use \Model\UsersModel;
+use \Model\Users_profilModel;
 
 class HomePageController extends Controller
 {
@@ -32,7 +33,7 @@ class HomePageController extends Controller
         // on recupere la date de debut du prochain evenement pour le countdown
         $nextChallengeStart = $challenges[0]['date_start'];
 
-        // on regarde si un challenge est en cour
+        // on regarde si un challenge est en cours
         $currrentTime = time();
         $isChallengeEnCour = false;
 
@@ -41,8 +42,8 @@ class HomePageController extends Controller
                 $isChallengeEnCour = true;
             }
 
-        $UserModelObject = new  Usersmodel;
-         
+        $objectUsersModel = new  UsersModel;
+        $sponsors = $objectUsersModel->sponsors(["role"=>"sponsor"]);
         }
 
     	$this->show('front/home',[
@@ -51,7 +52,8 @@ class HomePageController extends Controller
             'challenges'    => $challenges,
             'web'           => $web,
             'nextChallengeStart' => $nextChallengeStart,
-            'isChallengeEnCour' => $isChallengeEnCour
+            'isChallengeEnCour' => $isChallengeEnCour,
+            'sponsors'=> $sponsors,
         ]);
     }
 

@@ -23,7 +23,6 @@ INCLURE LE FOOTER-SECTION
       </div><!--/row-->
     </div><!--/container-->
 </div><!--/currentedition-->
-
 <div class="grad">
     <div class="container">
         <div id="team_list" class="">

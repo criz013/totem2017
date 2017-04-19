@@ -16,7 +16,7 @@
 
             <?php // var_dump($challenge); ?>
 
-            <form method="post" action="" >
+            <form method="POST" >
 
                 <div class="form-group">
                     <label for="annee">Année: </label>

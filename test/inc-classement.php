@@ -27,10 +27,15 @@
             </div>
         </div>
     </div><!--equipeHeader-->
-<?php
-    
-    for($i=1; $i<=5; $i++){
-    echo '<div class="equipe col-xs-12">
+<?php    
+    foreach($sponsors as $team){
+        var_dump($team);
+        $logo = $team["logo"];
+        $haschtag=$team["haschtag"];
+    echo 
+<<<CODEHTML
+                        
+    <div class="equipe col-xs-12 id">
         <div class="blocSocial col-xs-7 col-sm-4 col-md-5 col-lg-4">
             <div class="tag">
                 <p>#airbustotem</p>
@@ -61,7 +66,7 @@
             </div>
         </div><!--blocSocial-->
         <div class="logoClassement text-center col-xs-3 col-sm-3 col-md-2 col-lg-2">
-            <img class="img-responsive" src="../test/img/airbus.png"></img>
+            <img class="img-responsive" src="<?php $this->assetUrl('/img/logoavatar/'.$logo) ?"></img>
         </div>
         <div class="zoneProgress text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
             <div class="barProgress">
@@ -74,12 +79,11 @@
         <div class="zonePosition col-xs-2 hidden-sm hidden-md hidden-lg text-center">
                 <p class="position text-center">2</p>
         </div>
-    </div><!--equipe-->';
-    }
+    </div><!--equipe-->
+
+CODEHTML;
+    };
     ?>
 </div>
 
-    
-
-    
-    <link href="../test/classement.css" rel="stylesheet">
+<link href="../test/classement.css" rel="stylesheet">

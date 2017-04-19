@@ -26,7 +26,7 @@
 	<!-- inclure equipages -->
 	<?php if ( $isChallengeEnCour ) : ?>
 		<section id="equipages" class="row section">
-		<?php $this->insert('front/part/equipages',['teamList'=>$teamList]); ?>
+		<?php $this->insert('front/part/equipages',['sponsors'=>$sponsors]); ?>
 		</section>
 	<?php endif; ?>
 

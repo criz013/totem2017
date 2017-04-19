@@ -19,18 +19,18 @@
 		['GET|POST', '/administrateur/gestion-inscription/traitement/[:id]', 'User#userTraitement', 'user_userTraitement'],
 
         //Edition et suppression d'article de la revue de press
-        ['GET', '/administrateur/revue-press', 'Press#index', 'press_index'],
-        ['GET', '/administrateur/revue-press/detail/[:id]', 'Press#detail', 'press_detail'],
+        ['GET|POST', '/administrateur/revue-press', 'Press#index', 'press_index'],
+        ['GET|POST', '/administrateur/revue-press/detail/[:id]', 'Press#detail', 'press_detail'],
         ['GET|POST', '/administrateur/revue-press/suppression/[:id]', 'Press#delete', 'press_delete'],
         ['GET|POST', '/administrateur/revue-press/creation/', 'Press#create', 'press_create'],
         ['GET|POST', '/administrateur/revue-press/modification/[:id]', 'Press#modify', 'press_modify'],
 
         //Gestion des editions challenge totem
-        ['GET', '/administrateur/challenges', 'Challenge#index', 'challenge_index'],
-        ['GET', '/administrateur/challenges/edit/[:id]', 'Challenge#edit', 'challenge_edit'],
+        ['GET|POST', '/administrateur/challenges', 'Challenge#index', 'challenge_index'],
+        ['GET|POST', '/administrateur/challenges/edit/[:id]', 'Challenge#edit', 'challenge_edit'],
 
         //Gestion du site en général
-        ['GET', '/administrateur/configuration-site', 'Web#site', 'web_site'],
+        ['GET|POST', '/administrateur/configuration-site', 'Web#site', 'web_site'],
 		['GET|POST', '/administrateur/configuration-site/modification/[:id]', 'Web#modification', 'web_modification'],
 
         ['GET|POST', '/administrateur/reseau-sociaux', 'Web#sociaux', 'web_sociaux'],
