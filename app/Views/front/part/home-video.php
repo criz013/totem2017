@@ -55,7 +55,7 @@ Fichier home-video (c'est le header de notre one page) contenant :
   <?php $this->insert('front/part/sidenav-seconnecter'); ?>
   </div>
   <div class="row" id="signin">
-  <?php $this->insert('front/part/sidenav-participer'); ?>
+  <?php $this->insert('front/part/sidenav-participer',['message'=>$message]); ?>
   </div>
 </div>
 <div class="container">

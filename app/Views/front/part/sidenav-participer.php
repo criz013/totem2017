@@ -6,6 +6,6 @@ Boutons + Formulaires d'inscriptions et de connexion
 	<div id="sidenav-participer">
     	<div class="close sign"><i class="fa fa-close"></i></div>
 		<?php $this->insert('front/part/signin',["message" => $message]); 
-		var_dump($message);?>
+		?>
 	</div>
 </div>

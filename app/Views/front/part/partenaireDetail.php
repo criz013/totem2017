@@ -243,6 +243,6 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         </div>
 
     </form>
-<?php }?>
+
 </div>
 
