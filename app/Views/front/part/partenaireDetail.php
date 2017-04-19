@@ -55,13 +55,13 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	<?php if($tabUsers['role'] == 'benevole' ) {?>
     	<div class="form-group">
             <label for="avatar" class="control-label col-sm-4 hidden-xs">avatar :</label>
-            <div class="hidden">
+            <div class="">
     			<input class="form-control" type="text" id="avatar" name="avatar" value="<?php echo $usersProfil[0]['avatar'] ?>" >
     		</div>
             <div class="text-center formavatar">
                 
-            <!-- <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['avatar']) ?>" alt=""> -->
-            <img src="<?= $this->assetUrl('/img/logoavatar/avatar.png')?>" alt="">
+            <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['avatar']) ?>" alt="">
+            
             </div>
     	</div>
     	<?php }?>
@@ -69,11 +69,12 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	<?php if($tabUsers['role'] == 'sponsor' ) {?>
     	<div class="form-group">
             <label for="logo" class="control-label col-sm-4 hidden-xs">logo :</label>
-            <div class="hidden">
+            <div class="">
     			<input class="form-control" type="text" id="logo" name="logo" value="<?php echo $usersProfil[0]['logo'] ?>" >
     		</div>
             <div class="text-center formlogo">
-                <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['logo']) ?>" alt="">
+                <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['logo']) ?>" alt=""> 
+                
             </div>
     	</div>
     	<?php }?>
@@ -92,7 +93,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	        <input type="button" class="btn btn-primary" id="btnZoomOut" value="Zoom -">
     	        </div>
     	        <div>
-    	        <input type="button" class="btn btn-vert" id="btnCrop" value="Enregister">
+    	        <input type="button" class="btn btn-vert" id="btnCrop" value="Générer image">
     	        </div>
     	    </div>
         <!-- <div class="cropped">
@@ -132,7 +133,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
                 //$("#logo").val(img.slice(22));
                 $("#avatar").val(img);
                 $("#logo").val(img);
-                // console.log($("#logo").val());
+                console.log($("#logo").val());
                 
                 // $('.cropped').append('<img src="'+img+'">');
                 // return img;
@@ -175,6 +176,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     			<input class="form-control" type="text" id="haschtag" name="haschtag" value="<?php echo $usersProfil[0]['haschtag'] ?>" >
     		</div>
     	</div>
+    	<div class="form-group">
+            <button type="submit" class="btn btn-vert">Modifier</button>
+        </div>
     <?php }?>
     </form>
 
@@ -239,9 +243,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 		<input type="hidden" id="operation" name="operation" value="pilote" >
 		<button>Ajouter</button>
 <?php }?>
-        <div class="form-group">
-            <button type="submit" class="btn btn-vert">Modifier</button>
-        </div>
+        
 
     </form>
 
