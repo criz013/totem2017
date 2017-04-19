@@ -96,9 +96,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	        <input type="button" class="btn btn-vert" id="btnCrop" value="Générer image">
     	        </div>
     	    </div>
-        <!-- <div class="cropped">
+        <div class="cropped hidden">
 
-        </div> -->
+        </div>
     	</div>
 
     <script src="<?= $this->assetUrl('/js/cropbox/require.js') ?>"></script>
@@ -135,7 +135,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
                 $("#logo").val(img);
                 console.log($("#logo").val());
                 
-                // $('.cropped').append('<img src="'+img+'">');
+               $('.cropped').append('<img id="avatar_tmp" name="avatar_tmp" src="'+img+'">');
                 // return img;
             })
             $('#btnZoomIn').on('click', function(){
