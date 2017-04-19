@@ -63,4 +63,39 @@ class ChallengeController extends Controller
 
         $this->show('back/challenge/edit',['challenge' => $challenge,'log'=>$log]);
     }
+    
+    /**
+     *
+     * route: /administrateur/challenges/news
+     */
+    public function news(){
+    	$log = $this->getUser();
+    	$challengeModel = new ChallengeModel();
+    	if (!empty($_POST) && isset($_POST))
+    	{
+    		// RECUPERER LES INFOS DU FORMULAIRE
+    		// http://php.net/manual/en/function.trim.php
+    		$year           = trim($_POST["year"]);
+    		$name           = trim($_POST["name"]);
+    		$description    = trim($_POST["description"]);
+    		$text           = trim($_POST["text"]);
+    		$hashtag        = trim($_POST["hashtag"]);
+    		$status         = trim($_POST["status"]);
+    		$don            = trim($_POST["don"]);
+    		$uriMap         = trim($_POST["uriMap"]);
+    		 
+    		$challengeModel->insert([
+    				"year"         => $year,
+    				"name"          => $name,
+    				"description"         => $description,
+    				"text"         => $text,
+    				'hashtag'=>$hashtag,
+    				'status'=>$status,
+    				'don'=>$don,
+    				'uriMap'=>$uriMap
+    		]);
+    	}
+    
+    	$this->show('back/challenge/new',['log'=>$log]);
+    }
 }

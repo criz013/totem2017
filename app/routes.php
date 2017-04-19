@@ -28,6 +28,7 @@
         //Gestion des editions challenge totem
         ['GET|POST', '/administrateur/challenges', 'Challenge#index', 'challenge_index'],
         ['GET|POST', '/administrateur/challenges/edit/[:id]', 'Challenge#edit', 'challenge_edit'],
+		['GET|POST', '/administrateur/challenges/news', 'Challenge#news', 'challenge_news'],
 
         //Gestion du site en général
         ['GET|POST', '/administrateur/configuration-site', 'Web#site', 'web_site'],
