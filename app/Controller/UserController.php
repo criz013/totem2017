@@ -88,10 +88,12 @@ class UserController extends Controller
     		 
                 $filename="logoavatar-id-".$id;
     	        $dir="<?= $this->assetUrl('/img/logoavatar/') ?>";
-                if(isset($avatar)){
+                if(isset($avatar))
+                {
                  file_put_contents($dir.$filename, base64_decode($avatar));
                 }
-                else{
+                else
+                {
                     file_put_contents($dir.$filename, base64_decode($avatar));
                 }
              
@@ -117,7 +119,9 @@ class UserController extends Controller
     			     $message[] = "BRAVO vous avez modifier vos données personnelles";
     			     $alertclass="success";
     			     $icoclass="thumbs-up";
-    		}else{
+    		}
+            else
+            {
     			$alertclass="danger";
     			$icoclass="thumbs-down";
     		}
