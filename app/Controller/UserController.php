@@ -77,7 +77,7 @@ class UserController extends Controller
     			$message[] = 'E-mail invalide';
     			$error++;
     		}
-    		echo $error;
+    		
 
     		if($error == 0)
             {
