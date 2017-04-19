@@ -1,4 +1,6 @@
 <?php
-$this->insert('front/part/head');
-$this->insert('front/part/partenaireDetail', ['id'=>$id ]);
-$this->insert('front/part/footer');
+$this->insert('front/part/head',['web'=>$web]);
+$this->insert('front/part/partenaireDetail', ['id'=>$id]);?>
+<footer><?php 
+$this->insert('front/part/footer',['web'=>$web]);?>
+</footer>

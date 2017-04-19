@@ -42,10 +42,11 @@ class PressController extends Controller
     		// RECUPERER LES INFOS DU FORMULAIRE
     		// http://php.net/manual/en/function.trim.php
     		$titre           = trim($_POST["titre"]);
-    		$lien             = trim($_POST["lien"]);
+    		$lien            = trim($_POST["lien"]);
     		$chapo           = trim($_POST["chapo"]);
     		$corp            = trim($_POST["corp"]);
-    	
+    		//$img			 = trim($_POST["img"]);
+    	\var_dump($_POST);
     	
     		// SECURITE
     		// VERIFIER QUE CHAQUE INFO EST CONFORME
@@ -75,9 +76,33 @@ class PressController extends Controller
     			$message[] = 'Corps invalide';
     	
     		}
+    		$img = $_FILES['img']['name'];
+    		$extimg=new \SplFileInfo($img);
+    		$extimgMin=strtolower($extimg->getExtension());
+    		
+    		if(!in_array($extimgMin, ['png','jpeg','jpg'])){
+    			$error++;
+    			$message="L'extension de votre image n'est pas reconnue. $extimgMin";
+    			
+    		}//fin de verif extCv
+    		
+    		if($_FILES['img']["size"]>2000000){
+    			$error++;
+    			$message="La taille de votre image est supérieur à 2 MO !";
+    		}
     	
     		if($error < 1)
     		{
+    			//$filename="press-".$id.".png";
+    		$dir=\realpath(__DIR__.'/../../public/assets/img/');
+    		//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
+    		
+    		
+    		$imgTemp=$_FILES['img']['tmp_name']; //le nom temporaire
+    		$avatar=$_FILES['img']['name']; //le nom d'origine sur mon pc
+
+    		//copie du fichier
+    		move_uploaded_file($imgTemp,$dir.'/'.$img);
     			// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
     			// JE CREE UN OBJET DE LA CLASSE ArticleModel
     			// NE PAS OUBLIER DE FAIRE use
@@ -88,6 +113,7 @@ class PressController extends Controller
     					"lien"          => $lien,
     					"chapo"         => $chapo,
     					"corp"          => $corp,
+    					'photo'			=> $img,
     					"dateCreate"	=> date('Y-m-d h:i:s')
     			]);
     	
@@ -115,7 +141,7 @@ class PressController extends Controller
                 // RECUPERER LES INFOS DU FORMULAIRE
                 // http://php.net/manual/en/function.trim.php
                 $titre           = trim($_POST["titre"]);
-                $lien             = trim($_POST["lien"]);
+                $lien            = trim($_POST["lien"]);
                 $chapo           = trim($_POST["chapo"]);
                 $corp            = trim($_POST["corp"]);
                 

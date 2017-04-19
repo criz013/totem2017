@@ -19,7 +19,10 @@ class UserController extends Controller
      *@param interger $id id de l'user
      */
     public function partenaire($id){
-    	$this->show('front/partenaire',['id'=>$id]);
+    	$log = $this->getUser();
+    	$WebModel = new \Model\WebsiteModel;
+    	$web = $WebModel->findAll();
+    	$this->show('front/partenaire',['id'=>$id,'log'=>$log,'web'=>$web]);
     }
     
     /**
@@ -36,7 +39,7 @@ class UserController extends Controller
     	{
             //securisation des données recues
             $safe=array_map('strip_tags', $_POST);
-                var_dump($safe);
+           
     		// RECUPERER LES INFOS DU FORMULAIRE
     		// http://php.net/manual/en/function.trim.php
     		$last_name           	= trim($safe["last_name"]);

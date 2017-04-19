@@ -5,7 +5,7 @@
 
 <h1>Formulaire pour créer un article</h1>
 
-<form method="post" action="" class="form-horizontal sign">
+<form method="post" action="" class="form-horizontal sign" enctype="multipart/form-data">
 	<div class="form-group">
         <label for="titreArticle" class="control-label col-sm-4 hidden-xs">Titre :</label>
         <div class="col-sm-8">
@@ -33,7 +33,14 @@
 			<input type="text" id="lienArticle" name="lien" value="" >
 		</div>
 	</div>
-
+	
+	<div class="form-group">
+        <label for="img" class="control-label col-sm-4 hidden-xs">Image:</label>
+        <div class="col-sm-8">
+			<input type="file" id="img" name="img" >
+		</div>
+	</div>
+	
 	<button type="submit">Ajouter</button>
 </form>
 <a class="btn btn-vert" href="<?php echo $this->url('press_index') ?>" role="button">Retour</a>

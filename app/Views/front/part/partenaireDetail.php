@@ -1,19 +1,5 @@
 <?php
-/*
- * 'id' => string '37' (length=2)
-  'last_name' => string 'administrateur' (length=14)
-  'first_name' => string 'administrateur' (length=14)
-  'role' => string 'sponsor' (length=7)
-  'phone' => string '0011223344' (length=10)
-  'email' => string 'administrateur@totem.fr' (length=23)
-  'created' => string '2017-04-15 03:10:28' (length=19)
-  'modified' => null
-  'status' => string 'refuser' (length=7)
-  'token_validation' => string '0y_XE-h5OdgroeZMTVi-7aVsOfHiv9fp' (length=32)
-  'token_lost_pwd' => null
-  'username' => string 'administrateur@totem.fr' (length=23)
-  'valider' => string '0' (length=1)
- */
+
 
 $objetUsersModel = new \W\Model\UsersModel;
 $tabUsers= $objetUsersModel->find($id);
@@ -56,7 +42,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	<div class="form-group">
             <label for="avatar" class="control-label col-sm-4 hidden-xs">avatar :</label>
             <div class="">
-    			<input class="form-control" type="text" id="avatar" name="avatar" value="<?php echo $usersProfil[0]['avatar'] ?>" >
+    			<input class="form-control hidden" type="text" id="avatar" name="avatar" value="<?php echo $usersProfil[0]['avatar'] ?>" >
     		</div>
             <div class="text-center formavatar">
                 
@@ -70,7 +56,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	<div class="form-group">
             <label for="logo" class="control-label col-sm-4 hidden-xs">logo :</label>
             <div class="">
-    			<input class="form-control" type="text" id="logo" name="logo" value="<?php echo $usersProfil[0]['logo'] ?>" >
+    			<input class="form-control hidden" type="text" id="logo" name="logo" value="<?php echo $usersProfil[0]['logo'] ?>" >
     		</div>
             <div class="text-center formlogo">
                 <img src="<?= $this->assetUrl('/img/logoavatar/'.$usersProfil[0]['logo']) ?>" alt=""> 
@@ -100,9 +86,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 	
 	        </div>
     	</div>
-    	<div class="form-group">
-			<input type="file" name="img_test" id="icone"/>
-		</div>
+    	
     <script src="<?= $this->assetUrl('/js/cropbox/require.js') ?>"></script>
     <script>
         require.config({
@@ -131,15 +115,15 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
             })
             $('#btnCrop').on('click', function(){
                 var img = cropper.getDataURL();
-                //$("#avatar").val(img.slice(22));
+                $("#avatar").val(img.slice(22));
                 $("#logo").val(img.slice(22));
-                $("#avatar").val(img);
-                //$("#logo").val(img);
+                //$("#avatar").val(img);
+               // $("#logo").val(img);
                 console.log($("#logo").val());
                 
-               $('.cropped').append('<img id="avatar_tmp" name="avatar_tmp" src="'+img+'">');
+               //$('.cropped').append('<img id="avatar_tmp" name="avatar_tmp" src="'+img+'">');
                 // return img;
-            })
+            //})
             $('#btnZoomIn').on('click', function(){
                 cropper.zoomIn();
             })
@@ -186,7 +170,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     </form>
 
 <?php if($tabUsers['role'] == 'sponsor' ) {?>
-    <form action="" method="post">
+    <form action="<?php echo $this->url("user_updateUser",['id'=>$id]);?>" method="post">
         <h3>Equipier 1</h3>
     	<div class="form-group">
 	        <label for="nom_equip1" class="control-label col-sm-4 hidden-xs">Nom :</label>
@@ -248,6 +232,6 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 <?php }?>
 
     </form>
-
+<a class="btn btn-vert" href="<?php echo $this->url('homePage_index') ?>" role="button">Retour</a>
 </div>
 
