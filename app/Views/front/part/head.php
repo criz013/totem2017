@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/currentEdition-partenaires.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/components/sidenav.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/pages/lastEdition-photos.css') ?>" />
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/classement.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/pages/lastEdition-partenaires.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/revuedepresse.css') ?>" />
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/sections/contact.css') ?>">

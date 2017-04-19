@@ -29,7 +29,7 @@
     </div><!--equipeHeader-->
 <?php    
     foreach($sponsors as $team){
-        var_dump($team);
+        //var_dump($team);
         $logo = $team["logo"];
         $haschtag=$team["haschtag"];
 ?>
@@ -41,7 +41,7 @@
             </div>
             <div class="fbk col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
                 <div class="imgSocial">
-                    <img class="img-responsive" src="../test/img/fbk.png"></img>  
+                    <img class="img-responsive" src="<?php echo $this->assetUrl('/img/fbk.png'); ?>"></img>  
                 </div>
                 <div class="likeSocial">
                     <p>1233 K</p>
@@ -49,7 +49,7 @@
             </div>
             <div class="twt col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
                 <div class="imgSocial">
-                    <img class="img-responsive" src="../test/img/twt.png"></img>
+                    <img class="img-responsive" src="<?php echo $this->assetUrl('/img/twt.png'); ?>"></img>
                 </div>
                 <div class="likeSocial">
                     <p>1233 K</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="itg col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
                 <div class="imgSocial">
-                    <img class="img-responsive" src="../test/img/instag.png"></img>
+                    <img class="img-responsive" src="<?php echo $this->assetUrl('/img/instag.png'); ?>"></img>
                 </div>
                 <div class="likeSocial">
                     <p>1233 K</p>
@@ -69,7 +69,7 @@
         </div>
         <div class="zoneProgress text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
             <div class="barProgress">
-                    <img class="cursorProgress" src="../test/img/cursor.png"></img>
+                    <img class="cursorProgress" src="<?php echo $this->assetUrl('/img/cursor.png'); ?>"></img>
             </div>
         </div>
         <div class="autonomie hidden-xs hidden-sm col-md-1 col-lg-1">
@@ -84,5 +84,3 @@
 <?php    }
     ?>
 </div>
-
-<link href="../test/classement.css" rel="stylesheet">

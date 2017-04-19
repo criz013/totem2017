@@ -13,7 +13,7 @@ Fichier contact contenant :
 <div class="deco-container text-center">
       <div class="deco climbdown contact" >
         <div class="">
-          <img class="cursor-deco" src="../test/img/cursor-rouge.png"/>
+          <img class="cursor-deco" src="<?php echo $this->assetUrl('/img/cursor-rouge.png'); ?>"/>
         </div>
       </div>
 </div>

@@ -118,9 +118,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
             $('#btnCrop').on('click', function(){
                 var img = cropper.getDataURL();
                 $("#avatar").val(img.slice(22));
-                $("#logo").val(img.slice(22));
-               
+                $("#logo").val(img.slice(22));  
             })
+
             $('#btnZoomIn').on('click', function(){
                 cropper.zoomIn();
             })

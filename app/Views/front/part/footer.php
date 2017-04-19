@@ -4,21 +4,21 @@
             <div class="col-xs-4 col-sm-offset-3 col-sm-2 col-md-offset-3 col-md-2 col-lg-offset-3 col-lg-2 text-center">
                 
                    <a href="<?php echo $web[0]['facebook'];?>">
-                       <img class="" src="../test/img/fbk.png"></img>
+                       <img class="" src="<?php echo $this->assetUrl('/img/fbk.png'); ?>"></img>
                    </a>
                 
             </div>
             <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center">
                 
                     <a href="<?php echo $web[0]['twitter'];?>">
-                        <img class="" src="../test/img/twt.png"></img>
+                        <img class="" src="<?php echo $this->assetUrl('/img/twt.png'); ?>"></img>
                      </a>
             </div>
 
             <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center">
                 
                     <a href="<?php echo $web[0]['instansgram'];?>">
-                        <img class="" src="../test/img/instag.png"></img>
+                        <img class="" src="<?php echo $this->assetUrl('/img/instag.png'); ?>"></img>
                      </a>
             </div>
         </div>

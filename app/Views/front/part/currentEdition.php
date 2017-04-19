@@ -14,7 +14,7 @@ INCLURE LE FOOTER-SECTION
 <div class="deco-container text-center">
       <div class="deco climbdown currentedition" >
         <div class="">
-          <img class="cursor-deco" src="../test/img/cursor-vert.png"/>
+          <img class="cursor-deco" src="<?php echo $this->assetUrl('/img/cursor-vert.png'); ?>"/>
         </div>
       </div>
 </div>
