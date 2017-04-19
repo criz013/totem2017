@@ -4,7 +4,7 @@
     */
     ?>
 
-    <?php $this->insert("back/part/head"); ?>
+    <?php $this->insert("back/part/head",['log'=>$log]); ?>
 
     <div class="row">
         <div class="container">

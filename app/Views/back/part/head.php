@@ -60,7 +60,7 @@
 									<li><a href="<?php echo $this->url("user_inscription")?>">Inscription partenaire/Bénévole</a></li>
 									<li><a href="<?php echo $this->url("challenge_index")?>">Editions</a></li>
 									<li><a href="<?php echo $this->url("press_index")?>">Revue de presse</a></li>
-									<li><a href="<?php echo $this->url("web_sociaux")?>">Réseaux sociaux</a></li>
+									<li><a href="<?php //echo $this->url("web_sociaux")?>">Réseaux sociaux</a></li>
 							     </ul>
 							    </div><!-- /.navbar-collapse -->
 							</div>

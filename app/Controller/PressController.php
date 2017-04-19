@@ -45,8 +45,7 @@ class PressController extends Controller
     		$lien            = trim($_POST["lien"]);
     		$chapo           = trim($_POST["chapo"]);
     		$corp            = trim($_POST["corp"]);
-    		//$img			 = trim($_POST["img"]);
-    	\var_dump($_POST);
+    	
     	
     		// SECURITE
     		// VERIFIER QUE CHAQUE INFO EST CONFORME
@@ -153,59 +152,94 @@ class PressController extends Controller
                 {
                     $error++;
                     $message[] = 'Titre invalide';
-                    
-                    
                 }
                 if ((is_string($lien) == FALSE) || ( strlen($lien) == 0 ))
                 {
                     $error++;
                     $message[] = 'Url invalide';
-                    
                 }
                 if ((is_string($chapo == FALSE))  || ( strlen($chapo) == 0 ))
                 {
                     $error++;
                     $message[] = 'Chapo invalide';
-                    
                 }
                 if ((is_string($corp) == FALSE) || ( mb_strlen($corp) == 0 ))
                 {
                     $error++;
                     $message[] = 'Corps invalide';
-                    
-                }
-                                        
+                }                  
                 if($error < 1)
                 {
-                	if(!empty($_FILES['insert_img'])){
-                		$img = $cv=$_FILES['insert_img']['name'];
-                	}
-                    // ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
-                    // JE CREE UN OBJET DE LA CLASSE ArticleModel
-                    // NE PAS OUBLIER DE FAIRE use
-                    $objetArticleModel = new \Model\revue_pressModel;
-                    // JE PEUX UTILISER LA METHODE update DE LA CLASSE \W\Model\Model
-                    $objetArticleModel->update([
-                            "titre"         => $titre,
-                            "lien"          => $lien,
-                            "chapo"         => $chapo,
-                            "corp"          => $corp,
-                    		"photo"         => $img,
-                    ],$id);
-                    
-                    // OK
-                    $message[] = "BRAVO L'ARTICLE A ÉTÉ MODIFIÉ.";
-                    $alertclass="success";
-                    $icoclass="thumbs-up";
-                }else{
-                	$alertclass="danger";
-                	$icoclass="thumbs-down";
-                }
-            }
-        
-        $this->show('back/backArticleModify',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'log'=>$log]);
-    }  
+                	if(isset($_FILES['insert_img']) AND $_FILES['insert_img']['error'] == 0){
+                		$img =$_FILES['insert_img']['name'];
 
+                		$extimg=new \SplFileInfo($img);
+                		$extimgMin=strtolower($extimg->getExtension());
+                		
+                		if(!in_array($extimgMin, ['png','jpeg','jpg'])){
+                			$error++;
+                			$message[]="L'extension de votre image n'est pas reconnue. $extimgMin";
+                			 
+                		}//fin de verif extCv
+                		
+                		if($_FILES['insert_img']["size"]>2000000){
+                			$error++;
+                			$message[]="La taille de votre image est supérieur à 2 MO !";
+                		}
+                			//$filename="press-".$id.".png";
+                			$dir=\realpath(__DIR__.'/../../public/assets/img/');
+                			//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
+                		
+                		
+                			$imgTemp=$_FILES['insert_img']['tmp_name']; //le nom temporaire
+                			$avatar=$_FILES['insert_img']['name']; //le nom d'origine sur mon pc
+                			//copie du fichier
+                			move_uploaded_file($imgTemp,$dir.'/'.$avatar);
+                			// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
+                			// JE CREE UN OBJET DE LA CLASSE ArticleModel
+                			// NE PAS OUBLIER DE FAIRE use
+                			$objetArticleModel = new \Model\revue_pressModel;
+                			// JE PEUX UTILISER LA METHODE update DE LA CLASSE \W\Model\Model
+                			$objetArticleModel->update([
+                					"titre"         => $titre,
+                					"lien"          => $lien,
+                					"chapo"         => $chapo,
+                					"corp"          => $corp,
+                					"photo"         => $img,
+                			],$id);
+                			print_r('ici');
+                			// OK
+                			$message[] = 'BRAVO L\'ARTICLE A ÉTÉ MODIFIÉ.';
+                			$alertclass="success";
+                			$icoclass="thumbs-up";	
+                	}else
+                	//insertion d'image
+                	{
+                		print_r('ici 2');
+                		// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
+                		// JE CREE UN OBJET DE LA CLASSE ArticleModel
+                		// NE PAS OUBLIER DE FAIRE use
+                		$objetArticleModel = new \Model\revue_pressModel;
+                		// JE PEUX UTILISER LA METHODE update DE LA CLASSE \W\Model\Model
+                		$objetArticleModel->update([
+                				"titre"         => $titre,
+                				"lien"          => $lien,
+                				"chapo"         => $chapo,
+                				"corp"          => $corp,
+                				
+                		],$id);
+                		 
+                		// OK
+                		$message[] = 'BRAVO L\'ARTICLE A ÉTÉ MODIFIÉ.';
+                		$alertclass="success";
+                		$icoclass="thumbs-up";
+                		
+                	}
+                }
+      
+    }//isset post 
+    $this->show('back/backArticleModify',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'log'=>$log]);
+    }
     //fonction pour gérer suppression d'un article 
     public function delete($id){
     	$objetArticleModel = new \Model\revue_pressModel;

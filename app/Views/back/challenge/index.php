@@ -4,7 +4,7 @@
     */
     ?>
 
-    <?php $this->insert("back/part/head"); ?>
+    <?php $this->insert("back/part/head",['log'=>$log]); ?>
 
     <table class="table table-stripped table-hover">
         <tr>

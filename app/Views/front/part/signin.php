@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group msgErreurs">
                 <ul>
-                
+                <?php var_dump($message)?>
                 </ul>
                 </div>
             </form>

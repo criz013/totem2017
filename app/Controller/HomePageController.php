@@ -142,6 +142,8 @@ class HomePageController extends Controller
      */
     public function inscription()
     {
+    	$WebModel = new WebsiteModel;
+    	$web = $WebModel->findAll();
     	// METHODE QUI VA GERER LA ROUTE /signup
     	// CONTROLLER
     	$message = [];
@@ -174,18 +176,19 @@ class HomePageController extends Controller
     			$message[] = 'Le champ prenom invalide';
     		}
     		//Numéro de télphone français sous la form 00 00 00 00 00
-    		$motif ='`^0[1-9][0-9]{8}$`';
-    		if (preg_match ( $motif, $phone ) )
+    		
+    		if (preg_match ( "/\^(\d\d\s){4}(\d\d)$\/" , $phone ) )
     		{
     			$error++;
     			$message[] = 'Numéros de téléphone invalide';
     		}
     		
     		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    			$message[]='Votre email n\'est pas conforme';
     			$error++;	
     		}
     		if(!is_string($password)  || ( mb_strlen($password) < 5 )){
-    			
+    			$message[]='Votre mot de passe n\'est pas conforme';
     			$error++;		
     		}
     				
@@ -206,7 +209,9 @@ class HomePageController extends Controller
     			$error++;
     			$message[] = "ERREUR: email existe dejà";
     			//Une redirection ici aussi
-    		}else{
+    		}
+    		
+    		if($error == 0){
     			     	$passwordHash   = password_hash($password, PASSWORD_DEFAULT);
     			     	$token_validation = \W\Security\StringUtils::randomString(32);
     			     $lastId =	$objetUsersModel->insert([
@@ -224,19 +229,20 @@ class HomePageController extends Controller
     			     	
     			     	$objetUsersProfilModel = new \Model\Users_profilModel;
     			     	$objetUsersProfilModel->insert(['id_users'=>$lastId['id']]);
-    			     	
+    			     	$message[]='Bienvenue';
     			     	/*Mail de validation de l'utilisateur */
     		     		$lien = $this->generateUrl("homePage_validationMail");
     			     	$lien .= "?email=".$email."&token=".$token_validation;
     			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
-    			     	$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
+    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
     			     	
     			     			
     		}
+    		//$this->redirectToRoute('homePage_index',['message'=>$message]);
     		//Ici message d'erreur avec les messages
-    		$this->show("front/part/sidenav-participer", [ "message" => $message,'lien'=>$lien ]);
+    		$this->show("front/inscription", [ "message" => $message,'web'=>$web ]);
     	}
     			     	
     }

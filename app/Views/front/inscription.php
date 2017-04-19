@@ -1,6 +1,6 @@
 
-<?php $this->insert('front/part/head'); ?>
-<?php $this->insert('front/part/validInscri', [ "message" => $message,'lien'=>$lien ])?>
+<?php $this->insert('front/part/head',['web'=>$web]); ?>
+<?php $this->insert('front/part/validInscri', [ "message" => $message])?>
 <footer>
-<?php $this->insert('front/part/footer'); ?>
+<?php $this->insert('front/part/footer',['web'=>$web]); ?>
 </footer>
