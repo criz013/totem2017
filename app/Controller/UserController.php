@@ -45,16 +45,16 @@ class UserController extends Controller
     		$email            		= trim($safe["email"]);
     		//$password           	= trim($_safe["password"]);
             //test si avatar ou logo sont défini dans le POST
-          /* if(isset($safe["avatar"])){
+          if(isset($safe["avatar"])){
                 $avatar                 = trim($safe["avatar"]);
             }
             if(isset($safe["logo"])){
     		$logo            		= trim($safe["logo"]);
-            }*/
+            }
     		$name_compagny          = trim($safe["name_compagny"]);
     		$link            		= trim($safe["link"]);
     		$description            = trim($safe["description"]);
-    		$haschtage              = trim($safe["haschtage"]);
+    		$haschtage              = trim($safe["haschtag"]);
     	
     		if(!is_string($last_name) || ( mb_strlen($last_name) < 5)){
     			$error++;
@@ -83,45 +83,45 @@ class UserController extends Controller
             {
     		/**
              * Debut de l upload
-             *on crée un fichier à partir de la base encodée 64 */
+             *on crée un fichier à partir de la base encodée 64 
+             **/
     		 
-                $filename="logoavatar-id-".$id;
-    	        $dir="<?= $this->assetUrl('/img/logoavatar/') ?>";
-    	        
+                $filename="logoavatar-id-".$id.".png";
+                $dir=\realpath(__DIR__.'/../../public/assets/img/logoavatar/');
+    	       
                 if(isset($avatar))
                 {
 
-                 file_put_contents($dir.$filename, base64_decode($avatar));
-                    $avatar=$filename;
+                	file_put_contents($dir.$filename, base64_decode($avatar));
+                	$avatar=$filename;
 
                 }
-                else
+                if(isset($logo))
                 {
-                    file_put_contents($dir.$filename, base64_decode($avatar));
+                    file_put_contents($dir.'/'.$filename, base64_decode($logo));
                     $logo=$filename;
                 }
                 
-                $avatar=$_FILES['cv']['name']; //le nom d'origine sur mon pc
+                //$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
                 $extAvatar=new \SplFileInfo($avatar);
-                $extAvatarMin=strtolower($extCv->getExtension());
+                $extAvatarMin=strtolower($extAvatar->getExtension());
                 
                 if(!in_array($extAvatarMin, ['png','jpeg','jpg'])){
                 	
-                	$message="L'extension de votre CV n'est pas reconnue. $extCvMin";
+                	$message="L'extension de votre avatar n'est pas reconnue. $extAvatarMin";
                 	
                 }//fin de verif extCv
                                   	
-                	
-                	
-                		if($_FILES['cv']["size"]>2000000){
+                		if($_FILES['img_test']["size"]>2000000){
                 			$message="La taille de votre avatar est supérieur à 2 MO !";
                 		}
                 		
-                		$avatarTemp=$_FILES['cv']['tmp_name']; //le nom temporaire
-                		$avartar=$_FILES['cv']['name']; //le nom d'origine sur mon pc
-                		
+                		//$avatarTemp=$_FILES['img_test']['tmp_name']; //le nom temporaire
+                		//$avatar=$_FILES['img_test']['name']; //le nom d'origine sur mon pc
+                		//\var_dump($avatar);
+                		//\var_dump($dir);
                 		//copie du fichier
-                		move_uploaded_file($avatarTemp,$dir);
+                		//move_uploaded_file($avatarTemp,$dir.'/'.$avatar);
              
     			$objetUsersModel = new \W\Model\UsersModel;
     			$objetUsersProfilModel = new \Model\Users_profilModel;
@@ -134,21 +134,19 @@ class UserController extends Controller
     			     			"modified"    		=> date('Y-m-d h:i:s'),
     			     			"username" 			=> $email], $id);
     			   $x =  $objetUsersProfilModel->search(['id_users'=>$id]);
-    			   var_dump($x);
     			     $objetUsersProfilModel->update(['name_compagny'=>$name_compagny ,
     			     								 'description'=>$description, 
-    			     								 'logo'=>$logo, 
+    			     		'logo'=>$logo, 
     			     								 'link'=>$link, 
     			     								 'haschtag'=>$haschtage, 
-    			     								 'avatar'=>$avatar],$x['id']);
+    			     		'avatar'=>$avatar],$x[0]['id']);
     			     
     			     $message[] = "BRAVO vous avez modifier vos données personnelles";
     			     $alertclass="success";
     			     $icoclass="thumbs-up";
-                     print_r($message);
     		}
             else
-            { print_r($message);
+            {
     			$alertclass="danger";
     			$icoclass="thumbs-down";
     		}

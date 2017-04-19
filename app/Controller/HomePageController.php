@@ -18,6 +18,7 @@ class HomePageController extends Controller
      * @route /
      */
     public function index(){
+    	
     	$loggedUser = $this->getUser();
 
         $WebModel = new WebsiteModel;

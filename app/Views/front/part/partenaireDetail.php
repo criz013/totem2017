@@ -23,7 +23,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8">
     <h1>Fiche utilisateur</h1>
-    <form method="post" action="" id="fiche-user" class="form form-horizontal" enctype="multipart/form-data">
+    <form method="post" action="<?php echo $this->url("user_updateUser",['id'=>$id]);?>" id="fiche-user" class="form form-horizontal" enctype="multipart/form-data">
     	<div class="form-group">
             <label for="last_name" class="control-label col-sm-4 hidden-xs">Nom :</label>
             <div class="col-sm-8">
@@ -96,11 +96,13 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	        <input type="button" class="btn btn-vert" id="btnCrop" value="Générer image">
     	        </div>
     	    </div>
-        <div class="cropped hidden">
-
-        </div>
+	        <div class="cropped hidden">
+	
+	        </div>
     	</div>
-
+    	<div class="form-group">
+			<input type="file" name="img_test" id="icone"/>
+		</div>
     <script src="<?= $this->assetUrl('/js/cropbox/require.js') ?>"></script>
     <script>
         require.config({
@@ -130,9 +132,9 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
             $('#btnCrop').on('click', function(){
                 var img = cropper.getDataURL();
                 //$("#avatar").val(img.slice(22));
-                //$("#logo").val(img.slice(22));
+                $("#logo").val(img.slice(22));
                 $("#avatar").val(img);
-                $("#logo").val(img);
+                //$("#logo").val(img);
                 console.log($("#logo").val());
                 
                $('.cropped').append('<img id="avatar_tmp" name="avatar_tmp" src="'+img+'">');
@@ -176,9 +178,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     			<input class="form-control" type="text" id="haschtag" name="haschtag" value="<?php echo $usersProfil[0]['haschtag'] ?>" >
     		</div>
     	</div>
-    	<div class="form-group">
-            <button type="submit" class="btn btn-vert">Modifier</button>
-        </div>
+    	
     <?php }?>
             <div class="form-group">
             <button type="submit" class="btn btn-vert">Modifier</button>
