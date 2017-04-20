@@ -5,7 +5,7 @@
         <label for="role" class="control-label col-sm-4">Vous voulez devenir :</label>
             <div class="col-sm-8">
 				<select name="role" id="role" class="form-control">
-      				<option selected="selected">Type de participation</option>
+      				<option selected disabled>Type de participation</option>
       				<option value="sponsor">Sponsor</option>
       				<option value="benevole">Bénévole</option>
  				</select>

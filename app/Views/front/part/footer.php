@@ -91,7 +91,8 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-
+	<!-- script pour la gestion des inscriptions -->
+	<script src="<?= $this->assetUrl('js/ajaxConnection.js') ?>"></script>
 	
 	<script src="<?= $this->assetUrl('js/sidenav.js') ?>"></script>
 	<script src="<?= $this->assetUrl('js/sections/equipages.js') ?>"></script>

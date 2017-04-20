@@ -69,13 +69,19 @@ class HomePageController extends Controller
      * 
      */
     public function login(){
-		
+    	$objetUsersProfilModel = new \Model\Users_profilModel;
     	$message = [];
     	$error = 0;
-    	
+    	if(isset($_POST['operation']) && $_POST['operation'] == 'login'){
     		// RECUPERER LES INFOS
     		$login      = trim($_POST["email"]); // Le login est l email de l'utilisateur
     		$password   = trim($_POST["password"]);
+    		
+    		if(!is_string($password)  && ( mb_strlen($password) < 5 ))
+    		{
+    			$error++;
+    			$message[] = 'Mot de passe incorrect';
+    		}
     		
     		// UN PEU DE SECURITE
     		if (!filter_var($login, FILTER_VALIDATE_EMAIL))
@@ -84,19 +90,7 @@ class HomePageController extends Controller
     			$message[] = 'Login incorect';
     		}
     		
-    		if(!is_string($password)  && ( mb_strlen($password) < 5 ))
-    		{
-    			$error++;
-    			$message[] = 'Mot de passe incorrect';
-    		}
-    		$objetUsersProfilModel = new \Model\Users_profilModel;
-    		$bValide = $objetUsersProfilModel->search(['email'=>$login]);
     		
-    		if ($bValide['valider'] == '0'){
-    			$error++;
-    			$message[] = 'Vous n\'avez pas encore valider votre compte' ;
-    		}
-			
     		if($error == 0)
     		{
     			// ON VA VERIFIER SI LES INFOS CORRESPONDENT A UNE LIGNE DANS LA TABLE MYSQL
@@ -114,10 +108,9 @@ class HomePageController extends Controller
     				// JE VAIS MEMORISER CES INFOS DANS UNE SESSION
     				$objetAuthentificationModel->logUserIn($tabUser);
     				$loggedUser = $this->getUser();
-
+					//$message[]='Bien jouer';
     				// ON PEUT FAIRE UNE REDIRECTION VERS UNE PAGE PROTEGEE
     				$this->redirectToRoute('homePage_index',['message'=>$message,'loggedUser'=>$loggedUser]);
-    				
     			}
     			else
     			{
@@ -126,7 +119,10 @@ class HomePageController extends Controller
     			}
     			
     		}
-    		var_dump($message);
+    	}
+    		$msgJson = ['message'=>$message];
+    		//$msgJson = json_encode($message);
+    		$this->showJson($msgJson);
     }
 
     /**
@@ -143,7 +139,8 @@ class HomePageController extends Controller
 
     /**
      * Methode qui gere les inscriptions d'un bénévole ou d'un sponsor
-     * 
+     * Formulaire d'inscription traité par une methode ajax dans le fichier
+     * public/assets/js/ajaxConnection.js
      * @route /inscription
      */
     public function inscription()
@@ -183,7 +180,7 @@ class HomePageController extends Controller
     		}
     		//Numéro de télphone français sous la form 00 00 00 00 00
     		
-    		if (preg_match ( "/\^(\d\d\s){4}(\d\d)$\/" , $phone ) )
+    		if (preg_match ( "/^[0-9]{10}$/", $phone ) == 0 )
     		{
     			$error++;
     			$message[] = 'Numéros de téléphone invalide';
@@ -236,19 +233,21 @@ class HomePageController extends Controller
     			     	$objetUsersProfilModel = new \Model\Users_profilModel;
     			     	$objetUsersProfilModel->insert(['id_users'=>$lastId['id']]);
     			     	$message[]='Bienvenue';
+    			     	
     			     	/*Mail de validation de l'utilisateur */
     		     		$lien = $this->generateUrl("homePage_validationMail");
     			     	$lien .= "?email=".$email."&token=".$token_validation;
     			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
-    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);
-    			     	
-    			     			
+    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);   			
     		}
+    		//$msgJson = json_encode($message);
+    		$msgJson = ['message'=>$message];
+    		$this->showJson($msgJson);
     		//$this->redirectToRoute('homePage_index',['message'=>$message]);
     		//Ici message d'erreur avec les messages
-    		$this->show("front/inscription", [ "message" => $message,'web'=>$web ]);
+    		//$this->show("front/inscription", [ "message" => $message,'web'=>$web ]);
     	}
     			     	
     }

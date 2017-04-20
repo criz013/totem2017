@@ -1,6 +1,6 @@
 <!--création d'une liste de liens pour accéder au différents formulaires-->
 
-        <form action="<?php echo $this->url("homePage_inscription")?>" method="POST" class="text-center sign form-horizontal">
+        <form action="<?php echo $this->url("homePage_inscription")?>" id="sign-up" method="POST" class="text-center sign form-horizontal">
             
                 <div id="useraccount" class="step step1">
                     <?php $this->insert('front/part/signup/useraccount'); ?>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group msgErreurs">
                 <ul>
-                <?php var_dump($message)?>
+
                 </ul>
                 </div>
             </form>

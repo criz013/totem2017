@@ -37,10 +37,11 @@
         ['GET|POST', '/administrateur/reseau-sociaux', 'Web#sociaux', 'web_sociaux'],
 
         //Identification et inscription
-        ['GET|POST', '/login', 'HomePage#login', 'homepage_login'],
         ['GET|POST', '/logout', 'HomePage#logout', 'homePage_logout'],
-        ['GET|POST', '/inscription', 'HomePage#inscription', 'homePage_inscription'],
 		['GET|POST', '/validation', 'HomePage#validationMail', 'homePage_validationMail'],
 		['GET|POST', '/mdp-perdu', 'HomePage#mdpPerdu', 'homePage_mdpPerdu'],
-
+			
+		//route ajax pour la connection et la deconnection
+			['GET|POST', '/login', 'HomePage#login', 'homepage_login'],
+			['GET|POST', '/inscription', 'HomePage#inscription', 'homePage_inscription'],
 	);
