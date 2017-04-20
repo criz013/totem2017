@@ -205,7 +205,7 @@ class UserController extends Controller
     			   			'description'=>$description,
     			   			//'logo'=>$logo,
     			   			'link'=>$link,
-    					'haschtag'=>$haschtag,
+    						'haschtag'=>$haschtag,
     			   			//'avatar'=>$avatar
                             ],$x[0]['id']);
     			   //}

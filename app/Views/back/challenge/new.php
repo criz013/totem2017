@@ -5,6 +5,8 @@
  <?php $this->insert("back/part/head",['log'=>$log]); ?>
 <h1>Formulaire pour créer un article</h1>
 
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+
 <form method="post" action="" class="form-horizontal sign" enctype="multipart/form-data">
 	
                 <div class="form-group">
@@ -24,7 +26,7 @@
                 
                 <div class="form-group">
                     <label for="text">Corp: </label>
-                    <input type="text" id="text" name="text" class="form-control" value=">">
+                    <input type="text" id="text" name="text" class="form-control" value="">
                 </div>
                 
                 <div class="form-group">
@@ -46,6 +48,7 @@
 	
 	<button type="submit">Ajouter</button>
 </form>
+</div>
 <a class="btn btn-vert" href="<?php echo $this->url('press_index') ?>" role="button">Retour</a>
 <div class="form-group">
 	<ul>

@@ -73,6 +73,7 @@ class ChallengeController extends Controller
     public function news(){
     	$this->allowTo('admin');
     	$log = $this->getUser();
+    	$message =[];
     	$challengeModel = new ChallengeModel();
     	if (!empty($_POST) && isset($_POST))
     	{
@@ -83,22 +84,39 @@ class ChallengeController extends Controller
     		$description    = trim($_POST["description"]);
     		$text           = trim($_POST["text"]);
     		$hashtag        = trim($_POST["hashtag"]);
-    		$status         = trim($_POST["status"]);
+    		//$status         = trim($_POST["status"]);
     		$don            = trim($_POST["don"]);
     		$uriMap         = trim($_POST["uriMap"]);
     		 
     		$challengeModel->insert([
     				"year"         => $year,
-    				"name"          => $name,
-    				"description"         => $description,
+    				"name"         => $name,
+    				"description"  => $description,
     				"text"         => $text,
-    				'hashtag'=>$hashtag,
-    				'status'=>$status,
-    				'don'=>$don,
-    				'uriMap'=>$uriMap
+    				'hashtag'	   =>$hashtag,
+    				'status'       =>'inactif',
+    				'don'          =>$don,
+    				'uriMap'       =>$uriMap,
+    				'date_start'   =>date('Y-m-d h:i:s'),
+    				'date_end'	   =>date('Y-m-d h:i:s')
     		]);
     	}
     
-    	$this->show('back/challenge/new',['log'=>$log]);
+    	$this->show('back/challenge/new',['log'=>$log,'message'=>$message]);
+    }
+    public function activationStatus($id){
+    	$this->allowTo(['admin']);
+    	$log = $this->getUser();
+    	$objetChallengeModel = new \Model\ChallengeModel;
+    	$challenges =	$objetChallengeModel->findAll();
+    	$users = $objetChallengeModel->find($id);
+    	if($users['status'] == 'inactive'){
+    		$objetChallengeModel->update(['status'=>'actif'],$id);
+    	}else{
+    		$objetChallengeModel->update(['status'=>'inactive'],$id);
+    	}
+    	
+    	$this->show('back/challenge/index',['challenges' => $challenges,'log'=>$log]);
+    	
     }
 }

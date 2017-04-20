@@ -241,17 +241,18 @@ class HomePageController extends Controller
     			     			"username" 			=> $email
     			     	]);
     			     	
-    			     	$objetUsersProfilModel = new \Model\Users_profilModel;
+    			     	$objetUsersProfilModel = new \Model\UsersProfilModel;
     			     	$objetUsersProfilModel->insert(['id_users'=>$lastId['id']]);
     			     	
-    			     	
+    			     	$message[] ="Un e-mail a ete envoyer pour confirmer votre inscription";
     			     	/*Mail de validation de l'utilisateur */
     			     	$lien = $this->generateUrl("homePage_validationMail");
     			     	$lien .= "?email=".$email."&token=".$token_validation;
-    			     
+    			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
     			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);   			
+    		
     		}
     		
     		$msgJson = ['message'=>$message];
@@ -328,7 +329,7 @@ class HomePageController extends Controller
     	}
     	else{
     		$message[] = 'Erreur';
-    		print_r($message);
+    		
     	}	
     }
     
