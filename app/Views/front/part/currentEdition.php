@@ -34,7 +34,7 @@ INCLURE LE FOOTER-SECTION
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h2>Le Programme</h2>
           <p>Cette année Totem Challenge aura lieu le 22 septembre 2017</p>
-          <p>Départ des équipage à 09H00</p>
+          <p>Départ des équipages à 09H00</p>
           <p>Fin du challenge à 18H00</p>
           <h2>La cause : Action Recyclage Marseille</h2>
           <p>Action Recyclage Marseille réunit plus de 85% des établissements scolaires de Marseille avec le but de sensibiliser les jeunes Marseillais autour de la nécessité de recycler les déchets de leur ville. Des bénévoles d'Action Recyclage Marseille organisent des ateliers trimestriels dans les écoles de Marseille avec un suivi en-ligne de nombreux projets créés par des jeunes Marseillais.</p>
