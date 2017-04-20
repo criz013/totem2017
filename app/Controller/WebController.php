@@ -113,7 +113,7 @@ class WebController extends Controller
     			}
     					
     			
-    			if($error < 1)
+    			if($error == 0 )
     			{
     				
     				if(isset($_FILES['insert_img']) AND $_FILES['insert_img']['error'] == 0){
@@ -167,7 +167,7 @@ class WebController extends Controller
     				$alertclass="success";
     				$icoclass="thumbs-up";
     				}else{
-    					print_r('ici2');
+    					
     					// ENREGISTRER LA LIGNE DANS LA TABLE MYSQL article
     					// JE CREE UN OBJET DE LA CLASSE ArticleModel
     					// NE PAS OUBLIER DE FAIRE use

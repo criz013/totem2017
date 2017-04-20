@@ -10,7 +10,7 @@ extract($tabArticle);
 
 ?>
 <h1>Modification des information du site</h1>
-<form method="post" action="" >
+<form method="post" action="" enctype="multipart/form-data">
 
 	<p>
 	<label for="titre">Titre: </label>
@@ -40,7 +40,7 @@ extract($tabArticle);
 	</p>
 	
 	<p>
-		<img type="text" id="img" name="img" src="<?php echo $this->assetUrl("img/".$logo) ?>" >
+		<img id="img" name="img" src="<?php echo $this->assetUrl("img/".$logo) ?>" >
 	</p>
 	<p>
 		<label for="logo">Logo: </label>

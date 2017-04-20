@@ -23,7 +23,7 @@ $tabArticle = $objetArticleModel->findAll();
 		<div class="row"><div class="entete col-sm-4">Code postal</div><div class="donnees col-sm-8"><?php echo $info['codePostal']; ?></div></div>
 		<div class="row"><div class="entete col-sm-4">Ville</div><div class="donnees col-sm-8"><?php echo $info['ville']; ?></div></div>
 		<div class="row"><div class="entete col-sm-4">Téléphone</div><div class="donnees col-sm-8"><?php echo $info['phone']; ?></div></div>
-		<div class="row"><div class="entete col-sm-4">Logo</div><div class="donnees col-sm-8"><?php echo $info['logo']; ?></div></div>
+		<div class="row"><div class="entete col-sm-4">Logo</div><div class="donnees col-sm-8"><img type="text" id="img" name="img" src="<?php echo $this->assetUrl("img/".$info['logo']) ?>" ></div></div>
 		<div class="row"><div class="entete col-sm-4">Description</div><div class="donnees col-sm-8"><?php echo $info['description']; ?></div></div>
 		<div class="row"><div class="entete col-sm-4">Email</div><div class="donnees col-sm-8"><?php echo $info['email']; ?></div></div>
 		<div class="row"><div class="entete col-sm-4">Facebook</div><div class="donnees col-sm-8"><?php echo $info['facebook']; ?></div></div>
