@@ -18,6 +18,8 @@ class AdminController extends Controller
      */
     public function index(){
     	$log = $this->getUser();
-    	$this->show('back/backHome',['log'=>$log]);
+    	$WebModel = new WebsiteModel;
+    	$web = $WebModel->findAll();
+    	$this->show('back/backHome',['log'=>$log,'web'=>$web]);
     }
 }
