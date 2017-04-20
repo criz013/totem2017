@@ -45,8 +45,24 @@ class UsersModel extends Model
 		$req = "SELECT * FROM ".$this->table." as u 
 				join users_profil as up 
 				on u.id = up.id_users 
-				WHERE u.role ='sponsor' and u.statusr='valider' 
-				ORDER BY up.cpt-twitter desc";
+				WHERE u.role ='sponsor' and u.status='valider' 
+				ORDER BY up.cpttwitter desc";
+
+				$sth = $this->dbh->prepare($req);
+		
+		if(!$sth->execute()){
+			return false;
+		}
+        return $sth->fetchAll();
+	}
+
+	public function sponsorsValides(){
+
+		$req = "SELECT * FROM ".$this->table." as u 
+				join users_profil as up 
+				on u.id = up.id_users 
+				WHERE u.role ='sponsor' and u.status='valider'
+				";
 
 				$sth = $this->dbh->prepare($req);
 		
