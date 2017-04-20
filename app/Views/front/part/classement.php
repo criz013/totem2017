@@ -27,26 +27,6 @@
             </div>
         </div>
     </div><!--equipeHeader-->
-<?php
-    //Param API Twiter
-    $consumer_key='wGZe3qrmv2keBlz6JyQOSUGDP'; //Provide your application consumer key
-    $consumer_secret='pikj9SJ2mmjpY8mXevBL6geXwCiPSUq1NPcWhxvk5Q5XuiRMyI'; //Provide your application consumer secret
-    $oauth_token = '854619489908011009-jLjZ5WAdAywARYqEUOOdi8fxtzl2TII'; //Provide your oAuth Token
-    $oauth_token_secret = 'LcicAxZFjDx9RIUqH93bmnGzU8vYBtr0fktFaKngaKuFs'; //Provide your oAuth Token Secret
-
-    //on appelle la classe
-    use \Abraham\TwitterOAuth\TwitterOAuth;
-
-    /* Create a TwitterOauth object with consumer/user tokens. */
-    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $oauth_token, $oauth_token_secret);
-
-    //4 - Start Querying
-    $tweets = $connection->get("search/tweets", ["q" => "ChallengeTOTEM2017"]); 
-
-    var_dump($tweets);
-    foreach($sponsors as $team){
-        $logo = $team["logo"];
-        $haschtag=$team["haschtag"];?>
                         
     <div class="equipe col-xs-12 id">
         <div class="blocSocial col-xs-7 col-sm-4 col-md-5 col-lg-4">
@@ -60,7 +40,7 @@
                     <img class="img-responsive" src="<?php echo $this->assetUrl('/img/fbk.png');?>"></img>  
                 </div>
                 <div class="likeSocial">
-                    <p>1233 K</p>
+                    <p><?php echo $cpttwitter; ?></p>
                 </div>
             </div>
             <div class="twt col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
@@ -68,7 +48,7 @@
                     <img class="img-responsive" src="<?php echo $this->assetUrl('/img/twt.png');?>"></img>
                 </div>
                 <div class="likeSocial">
-                    <p>1233 K</p>
+                    <p><?php echo $cpttwitter; ?></p>
                 </div>
             </div>
             <div class="itg col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
@@ -95,9 +75,4 @@
                 <p class="position text-center">2</p>
         </div>
     </div><!--equipe-->
-
-
-<?php 
-}
-?>
 </div>

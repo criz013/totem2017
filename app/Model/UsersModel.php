@@ -39,4 +39,20 @@ class UsersModel extends Model
 		}
         return $sth->fetchAll();
 	} 
+
+	public function sponsorsTwitAsc(){
+
+		$req = "SELECT * FROM ".$this->table." as u 
+				join users_profil as up 
+				on u.id = up.id_users 
+				WHERE u.role ='sponsor' and u.statusr='valider' 
+				ORDER BY up.cpt-twitter desc";
+
+				$sth = $this->dbh->prepare($req);
+		
+		if(!$sth->execute()){
+			return false;
+		}
+        return $sth->fetchAll();
+	}
 }
