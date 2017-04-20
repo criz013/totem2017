@@ -12,7 +12,7 @@ use \W\Controller\Controller;
 use \Model\ChallengeModel;
 use \Model\WebsiteModel;
 use \Model\UsersModel;
-use \Model\Users_profilModel;
+use \Model\UsersProfilModel;
 use \Controller\UserController;
 
 class HomePageController extends Controller
@@ -50,7 +50,7 @@ class HomePageController extends Controller
         //$sponsors = $objectUsersModel->sponsors(["role"=>"sponsor"]);
         $sponsorsValides = $objectUsersModel->sponsorsValides();
       
-        echo 'vous etes ici';
+       // echo 'vous etes ici';
         $objectUserController->updateSocials($sponsorsValides);
        
         foreach ( $challenges as $challenge) {
