@@ -33,7 +33,7 @@ $(function(){
 	            data:       infosFormulaire
 	        })
 	        .done(function(reponseJSON){
-	        	$("#login .msgErreurs").html(reponseJSON.message);
+	        	$("#sidenav-seconnecter .msgErreurs").html(reponseJSON.message);
 	        });
 	});
 	

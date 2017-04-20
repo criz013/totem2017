@@ -24,23 +24,29 @@ class UserController extends Controller
     /* Create a TwitterOauth object with consumer/user tokens. */
     $connection = new TwitterOAuth($consumer_key, $consumer_secret, $oauth_token, $oauth_token_secret);
 
-    //4 - Start Querying
-     
-    var_dump($sponsors);
+    //Start Querying
+
     $objetUsersModel = new \W\Model\UsersModel;
-    $objetUsersProfilModel = new \Model\Users_profilModel;
-    
+    $objetUsersProfilModel = new \Model\UsersProfilModel;
+    //$x = $objetUsersModel->sponsorsTwitAsc();
     foreach($sponsors as $team){
         $id=$team["id"];
         $haschtag=$team["haschtag"];
         $idusers=$team["id_users"];
-        $tweets = $connection->get("search/tweets", ["q" => $haschtag]);
-        $cpttwitter = sizeof($tweets)+1;
-        
-        $objetUsersProfilModel->update(['cpt-twitter'=>$cpttwitter],$id);
+        if($haschtag!=""){
+            $tweets = $connection->get("search/tweets", ["q" => $haschtag]);
+        //var_dump($tweets->statuses);
+        $cpttwitter = count($tweets->statuses);
+        //var_dump($id);
+        $objetUsersProfilModel->update(['cpttwitter'=>$cpttwitter],$id);
+        }
+        else
+        {
+            $cpttwitter =0;
+        }
         
     }
-    $this->show('front/partenaire',['id'=>$id,'log'=>$log,'web'=>$web]);
+    //$this->show('front/partenaire',['id'=>$id,'log'=>$log,'web'=>$web]);
 }
      /**
      * Renvois vers la fiche récapitulatif de l'utilisateur

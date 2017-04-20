@@ -15,7 +15,7 @@
 	
 	<!-- inclure currentEdition -->
 	<section id="currentEdition" class="row section">
-	<?php $this->insert('front/part/currentEdition',['sponsors'=>$sponsors]); ?>
+	<?php $this->insert('front/part/currentEdition',['sponsorsValides'=>$sponsorsValides]); ?>
 	</section>
 	
 	<!-- inclure currentEdition partenaires -->
@@ -26,7 +26,7 @@
 	<!-- inclure equipages -->
 	<?php if ( $isChallengeEnCour ) : ?>
 		<section id="equipages" class="row section">
-		<?php $this->insert('front/part/equipages',['sponsors'=>$sponsors]); ?>
+		<?php $this->insert('front/part/equipages',['sponsorsValides'=>$sponsorsValides]); ?>
 		</section>
 	<?php endif; ?>
 

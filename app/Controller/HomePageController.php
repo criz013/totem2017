@@ -13,6 +13,7 @@ use \Model\ChallengeModel;
 use \Model\WebsiteModel;
 use \Model\UsersModel;
 use \Model\Users_profilModel;
+use \Controller\UserController;
 
 class HomePageController extends Controller
 {
@@ -41,15 +42,20 @@ class HomePageController extends Controller
         // on regarde si un challenge est en cours
         $currrentTime = time();
         $isChallengeEnCour = false;
+        $objectUsersModel = new  UsersModel;
+       $objectUserController = new  UserController;
+        //$sponsors = $objectUsersModel->sponsors(["role"=>"sponsor"]);
+        $sponsorsValides = $objectUsersModel->sponsorsValides();
+        echo 'vous etes ici';
+        $objectUserController->updateSocials($sponsorsValides);
 
         foreach ( $challenges as $challenge) {
             if( strtotime($challenge['date_start']) <= $currrentTime && strtotime($challenge['date_end']) >= $currrentTime) {
                 $isChallengeEnCour = true;
-            }
+            }  
 
-        $objectUsersModel = new  UsersModel;
-        $sponsors = $objectUsersModel->sponsors(["role"=>"sponsor"]);
         }
+        
 
     	$this->show('front/home',[
     	    'log'           => $loggedUser,
@@ -58,7 +64,7 @@ class HomePageController extends Controller
             'web'           => $web,
             'nextChallengeStart' => $nextChallengeStart,
             'isChallengeEnCour' => $isChallengeEnCour,
-            'sponsors'=> $sponsors,
+            'sponsorsValides'=> $sponsorsValides,
     		'revue'=>$revue,
         ]);
     }
