@@ -26,7 +26,7 @@ INCLURE LE FOOTER-SECTION
 <div class="grad">
     <div class="container">
         <div id="team_list" class="">
-            <?php $this->insert('front/part/classement'); ?>
+            <?php $this->insert('front/part/classement',['sponsors'=>$sponsors]); ?>
         </div>
     </div>
 </div>
