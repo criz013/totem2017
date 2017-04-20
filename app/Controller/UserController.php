@@ -8,11 +8,40 @@
 
 namespace Controller;
 use \W\Controller\Controller;
+use \Abraham\TwitterOAuth\TwitterOAuth;
 
 class UserController extends Controller
 {
 	protected $expediteur = '';
 
+    public function updateSocials($sponsors){
+         //Param API Twiter
+    $consumer_key='wGZe3qrmv2keBlz6JyQOSUGDP'; //Provide your application consumer key
+    $consumer_secret='pikj9SJ2mmjpY8mXevBL6geXwCiPSUq1NPcWhxvk5Q5XuiRMyI'; //Provide your application consumer secret
+    $oauth_token = '854619489908011009-jLjZ5WAdAywARYqEUOOdi8fxtzl2TII'; //Provide your oAuth Token
+    $oauth_token_secret = 'LcicAxZFjDx9RIUqH93bmnGzU8vYBtr0fktFaKngaKuFs'; //Provide your oAuth Token Secret
+
+    /* Create a TwitterOauth object with consumer/user tokens. */
+    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $oauth_token, $oauth_token_secret);
+
+    //4 - Start Querying
+     
+    var_dump($sponsors);
+    $objetUsersModel = new \W\Model\UsersModel;
+    $objetUsersProfilModel = new \Model\Users_profilModel;
+    
+    foreach($sponsors as $team){
+        $id=$team["id"];
+        $haschtag=$team["haschtag"];
+        $idusers=$team["id_users"];
+        $tweets = $connection->get("search/tweets", ["q" => $haschtag]);
+        $cpttwitter = sizeof($tweets)+1;
+        
+        $objetUsersProfilModel->update(['cpt-twitter'=>$cpttwitter],$id);
+        
+    }
+    $this->show('front/partenaire',['id'=>$id,'log'=>$log,'web'=>$web]);
+}
      /**
      * Renvois vers la fiche récapitulatif de l'utilisateur
      * @route /partenaire/[:id]
