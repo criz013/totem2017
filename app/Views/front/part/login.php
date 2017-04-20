@@ -1,4 +1,5 @@
 
+<form action="<?php echo $this->url("homepage_login")?>" method="POST" id="formLogin" class="text-center sign">
 
     <div class="form-group">
         <div class="input-group">
@@ -24,4 +25,5 @@
     <div class="form-group">
         <button type="submit" class="btn btn-vert"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Se connecter</button>
     </div>
+    </form>
 

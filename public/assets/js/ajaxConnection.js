@@ -22,9 +22,11 @@ $(function(){
 	        });
 	});
 	
-	$("#login").on("submit", function(event){
-		//event.preventDefault();
+	$("#formLogin").on("submit", function(event){
+		event.preventDefault();
+		console.log('Ajax  c est bien')
 		var urlAjax = $(this).attr('action');
+		console.log(urlAjax);
 		var infosFormulaire = $(this).serialize();
 	       $.ajax({
 	            method:     'POST',
@@ -33,7 +35,9 @@ $(function(){
 	            data:       infosFormulaire
 	        })
 	        .done(function(reponseJSON){
-	        	$("#sidenav-seconnecter .msgErreurs").html(reponseJSON.message);
+
+	        	console.log(reponseJSON);
+
 	        });
 	});
 	
