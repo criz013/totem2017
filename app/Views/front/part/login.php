@@ -14,16 +14,13 @@
         </div>
     </div>
     <input type="hidden" name="operation" value="login"/>
-    <div class="form-group msgErreurs">
-         <ul></ul>
+    
+    <button type="submit" class="btn btn-vert"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Se connecter</button>
+    <div class="form-group msgErreurs" id="msgErrorLogin">
+          <ul></ul>
     </div>
-    <div class="form-group msgErreurs">
-                <ul>
-
-                </ul>
-                </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-vert"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Se connecter</button>
+        
     </div>
     </form>
 

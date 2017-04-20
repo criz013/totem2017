@@ -2,7 +2,7 @@
 	
 	$w_routes = array(
 	    //Route pour la home page
-        ['GET', '/', 'HomePage#index', 'homePage_index'],
+        ['GET|POST', '/', 'HomePage#index', 'homePage_index'],
 
         //route pour la partie administrateur
         ['GET|POST', '/administrateur', 'Admin#index', 'admin_index'],

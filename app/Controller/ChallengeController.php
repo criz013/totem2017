@@ -18,6 +18,7 @@ class ChallengeController extends Controller
      * route: /administrateur/challenges
      */
     public function index(){
+    	$this->allowTo('admin');
     	$log = $this->getUser();
         // on recupere tous les challenges pour les lister
         $challengeModel = new ChallengeModel();
@@ -31,6 +32,7 @@ class ChallengeController extends Controller
      * route: /administrateur/challenges/edit
      */
     public function edit($id){
+    	$this->allowTo('admin');
     	$log = $this->getUser();
         // on recupre le challenge à editer
         $challengeModel = new ChallengeModel();
@@ -51,13 +53,13 @@ class ChallengeController extends Controller
         	
         	$challengeModel->update([
         			"year"         => $year,
-        			"name"          => $name,
-        			"description"         => $description,
+        			"name"         => $name,
+        			"description"  => $description,
         			"text"         => $text,
-        			'hashtag'=>$hashtag,
-        			'status'=>$status,
-        			'don'=>$don,
-        			'uriMap'=>$uriMap
+        			'hashtag'      =>$hashtag,
+        			'status'       =>$status,
+        			'don'          =>$don,
+        			'uriMap'       =>$uriMap
         	],$id);
         }
 
@@ -69,6 +71,7 @@ class ChallengeController extends Controller
      * route: /administrateur/challenges/news
      */
     public function news(){
+    	$this->allowTo('admin');
     	$log = $this->getUser();
     	$challengeModel = new ChallengeModel();
     	if (!empty($_POST) && isset($_POST))

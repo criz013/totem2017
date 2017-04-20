@@ -26,7 +26,6 @@ $(function(){
 		event.preventDefault();
 		
 		var urlAjax = $(this).attr('action');
-		console.log(urlAjax);
 		var infosFormulaire = $(this).serialize();
 	       $.ajax({
 	            method:     'POST',
@@ -36,7 +35,11 @@ $(function(){
 	        })
 	        .done(function(reponseJSON){
 	        	console.log(reponseJSON);
-	        	$("#login .msgErreurs").html(reponseJSON.message);
+	        	$("#msgErrorLogin").html(reponseJSON.message);
+	        	if(reponseJSON.redirection != ''){
+	        		location.href = reponseJSON.redirection;
+	        		
+	        	}
 	        });
 	});
 	

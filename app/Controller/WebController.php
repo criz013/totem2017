@@ -17,6 +17,7 @@ class WebController extends Controller
      * @route /aministrateur/configuration-site
      */
     public function site(){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$this->show('back/backConfig',['log'=>$log]);
     }
@@ -26,6 +27,7 @@ class WebController extends Controller
      * @param integer $id il renvois l'id de la table website
      */
     public function modification($id){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$message = [];
     	$error = 0;

@@ -69,9 +69,11 @@ class HomePageController extends Controller
      * 
      */
     public function login(){
-    	$objetUsersProfilModel = new \Model\Users_profilModel;
+     	//$objetUsersProfilModel = new \Model\Users_profilModel;
+    	 
     	$message = [];
     	$error = 0;
+    	$redirection = '';
     	if(isset($_POST['operation']) && $_POST['operation'] == 'login'){
     		// RECUPERER LES INFOS
     		$login      = trim($_POST["email"]); // Le login est l email de l'utilisateur
@@ -108,9 +110,9 @@ class HomePageController extends Controller
     				// JE VAIS MEMORISER CES INFOS DANS UNE SESSION
     				$objetAuthentificationModel->logUserIn($tabUser);
     				$loggedUser = $this->getUser();
-					//$message[]='Bien jouer';
+    				$redirection =$this->generateUrl('homePage_index');
     				// ON PEUT FAIRE UNE REDIRECTION VERS UNE PAGE PROTEGEE
-    				$this->redirectToRoute('homePage_index',['message'=>$message,'loggedUser'=>$loggedUser]);
+    				//$this->redirectToRoute('homePage_index',['message'=>$message,'loggedUser'=>$loggedUser]);
     			}
     			else
     			{
@@ -118,10 +120,9 @@ class HomePageController extends Controller
     				$message[] = "IDENTIFIANTS INCORRECTS";
     			}
     			
-    		}
-    	}
-    		$msgJson = ['message'=>$message];
-    		//$msgJson = json_encode($message);
+    		}// error
+    	}//isset
+    		$msgJson = ['message'=>$message,'redirection'=>$redirection];
     		$this->showJson($msgJson);
     }
 
@@ -211,7 +212,7 @@ class HomePageController extends Controller
     		{
     			$error++;
     			$message[] = "ERREUR: email existe dejà";
-    			//Une redirection ici aussi
+    			
     		}
     		
     		if($error == 0){
@@ -232,27 +233,24 @@ class HomePageController extends Controller
     			     	
     			     	$objetUsersProfilModel = new \Model\Users_profilModel;
     			     	$objetUsersProfilModel->insert(['id_users'=>$lastId['id']]);
-    			     	$message[]='Bienvenue';
+    			     	
     			     	
     			     	/*Mail de validation de l'utilisateur */
-    		     		$lien = $this->generateUrl("homePage_validationMail");
+    			     	$lien = $this->generateUrl("homePage_validationMail");
     			     	$lien .= "?email=".$email."&token=".$token_validation;
-    			     	
+    			     
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
     			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);   			
     		}
-    		//$msgJson = json_encode($message);
+    		
     		$msgJson = ['message'=>$message];
     		$this->showJson($msgJson);
-    		//$this->redirectToRoute('homePage_index',['message'=>$message]);
-    		//Ici message d'erreur avec les messages
-    		//$this->show("front/inscription", [ "message" => $message,'web'=>$web ]);
     	}
     			     	
     }
     
-    /**
+    /**0
      * 
      * Methode qui permet d'envoyer des msgs par mail
      * 

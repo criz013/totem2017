@@ -17,8 +17,9 @@ class AdminController extends Controller
      * route: /administrateur
      */
     public function index(){
+    	$this->allowTo('admin');
     	$log = $this->getUser();
-    	$WebModel = new WebsiteModel;
+    	$WebModel = new  \Model\WebsiteModel;
     	$web = $WebModel->findAll();
     	$this->show('back/backHome',['log'=>$log,'web'=>$web]);
     }

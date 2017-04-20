@@ -15,6 +15,7 @@ class UserController extends Controller
 	protected $expediteur = '';
 
     public function updateSocials($sponsors){
+    	$this->allowTo('admin');
          //Param API Twiter
     $consumer_key='wGZe3qrmv2keBlz6JyQOSUGDP'; //Provide your application consumer key
     $consumer_secret='pikj9SJ2mmjpY8mXevBL6geXwCiPSUq1NPcWhxvk5Q5XuiRMyI'; //Provide your application consumer secret
@@ -48,6 +49,7 @@ class UserController extends Controller
      *@param interger $id id de l'user
      */
     public function partenaire($id){
+    	$this->allowTo(['admin','sponsor','benevole']);
     	$log = $this->getUser();
     	$WebModel = new \Model\WebsiteModel;
     	$web = $WebModel->findAll();
@@ -59,6 +61,7 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function updateUser($id){
+    	$this->allowTo(['admin','sponsor','benevole']);
     	$WebModel = new \Model\WebsiteModel;
     	$web = $WebModel->findAll();
     	$alertclass="";
@@ -218,6 +221,7 @@ class UserController extends Controller
      * @route /aministrateur/gestion-inscription
      */
     public function inscription(){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     		$users =	$objetUsersModel->findAll();
@@ -228,6 +232,7 @@ class UserController extends Controller
      * @route /aministrateur/gestion-inscription/detail/[:id]
      */
     public function inscriptionDetail($id){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersProfilModel = new \Model\Users_profilModel;
@@ -241,6 +246,7 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function userValider($id){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	
@@ -261,6 +267,7 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function userRefuser($id){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'refuser'],$id);
@@ -280,6 +287,7 @@ class UserController extends Controller
      * @param integer $id l'id de l utilisateur
      */
     public function userTraitement($id){
+    	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
     	$objetUsersModel->update(['status'=>'Cour'],$id);
