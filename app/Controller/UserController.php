@@ -57,10 +57,10 @@ class UserController extends Controller
     		$description            = trim($safe["description"]);
     		$haschtag               = trim($safe["haschtag"]);
 
-    		if(isset($safe["logo"]){
+    		if(isset($safe["logo"])){
                 $logo = trim($safe["logo"]);
             }
-    		if(isset($safe["avatar"]){
+    		if(isset($safe["avatar"])){
                 $avatar = trim($safe["avatar"]);
             }
 			// }else{
