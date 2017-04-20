@@ -2,7 +2,7 @@
 
 $objetUsersModel = new \W\Model\UsersModel;
 $tabUsers= $objetUsersModel->find($id);
-$objetUsersProfilModel = new \Model\Users_profilModel;
+$objetUsersProfilModel = new \Model\UsersProfilModel;
 $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
 
 ?>
@@ -160,9 +160,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
         <div class="col-xs-12 col-sm-12 text-center">
             <button type="submit" class="btn btn-vert">Modifier</button>
         </div>
-        <div class="col-xs-12 col-sm-12">
-            <a class="btn btn-primary" href="<?php echo $this->url('homePage_index') ?>" role="button">Retour</a>
-        </div>
+        
     </form>
 
 <?php if($tabUsers['role'] == 'sponsor' ) {?>

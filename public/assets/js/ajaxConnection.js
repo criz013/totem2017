@@ -35,12 +35,9 @@ $(function(){
 	        })
 	        .done(function(reponseJSON){
 
-	        	console.log(reponseJSON);
-
 	        	$("#msgErrorLogin").html(reponseJSON.message);
 	        	if(reponseJSON.redirection != ''){
-	        		location.href = reponseJSON.redirection;
-	        		
+	        		location.href = reponseJSON.redirection;	
 	        	}
 	        });
 	});

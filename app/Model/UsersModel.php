@@ -63,7 +63,7 @@ class UsersModel extends Model
 				on u.id = up.id_users 
 				WHERE u.role ='sponsor' and u.status='valider'
 				";
-
+			
 				$sth = $this->dbh->prepare($req);
 		
 		if(!$sth->execute()){

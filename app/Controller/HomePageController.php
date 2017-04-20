@@ -42,13 +42,17 @@ class HomePageController extends Controller
         // on regarde si un challenge est en cours
         $currrentTime = time();
         $isChallengeEnCour = false;
+        
         $objectUsersModel = new  UsersModel;
-       $objectUserController = new  UserController;
+        
+       	$objectUserController = new  UserController;
+       	
         //$sponsors = $objectUsersModel->sponsors(["role"=>"sponsor"]);
         $sponsorsValides = $objectUsersModel->sponsorsValides();
+      
         echo 'vous etes ici';
         $objectUserController->updateSocials($sponsorsValides);
-
+       
         foreach ( $challenges as $challenge) {
             if( strtotime($challenge['date_start']) <= $currrentTime && strtotime($challenge['date_end']) >= $currrentTime) {
                 $isChallengeEnCour = true;
@@ -56,7 +60,7 @@ class HomePageController extends Controller
 
         }
         
-
+		
     	$this->show('front/home',[
     	    'log'           => $loggedUser,
             'message'       => '',

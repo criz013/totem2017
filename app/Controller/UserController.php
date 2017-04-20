@@ -15,7 +15,7 @@ class UserController extends Controller
 	protected $expediteur = '';
 
     public function updateSocials($sponsors){
-    	$this->allowTo('admin');
+    	//$this->allowTo('admin');
          //Param API Twiter
     $consumer_key='wGZe3qrmv2keBlz6JyQOSUGDP'; //Provide your application consumer key
     $consumer_secret='pikj9SJ2mmjpY8mXevBL6geXwCiPSUq1NPcWhxvk5Q5XuiRMyI'; //Provide your application consumer secret
@@ -30,6 +30,7 @@ class UserController extends Controller
     $objetUsersModel = new \W\Model\UsersModel;
     $objetUsersProfilModel = new \Model\UsersProfilModel;
     //$x = $objetUsersModel->sponsorsTwitAsc();
+    print_r($sponsors);
     foreach($sponsors as $team){
         $id=$team["id"];
         $haschtag=$team["haschtag"];
@@ -241,7 +242,7 @@ class UserController extends Controller
     	$this->allowTo(['admin']);
     	$log = $this->getUser();
     	$objetUsersModel = new \W\Model\UsersModel;
-    	$objetUsersProfilModel = new \Model\Users_profilModel;
+    	$objetUsersProfilModel = new \Model\UsersProfilModel;
     	$users =	$objetUsersModel->find($id);
     	$usersProfil = $objetUsersProfilModel->search(['id_users'=>$id]);
     	$this->show('back/gestionIncriptionDetail',['users' => $users,'usersProfil'=>$usersProfil,'log'=>$log]);
