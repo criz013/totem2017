@@ -61,11 +61,11 @@
 								<h3><i class="fa fa-cogs" aria-hidden="true"></i> Paramètres</h3>
 								<div class="encart">
 									<ul id="settings-indicators">
-											<li><i class="fa fa-map-marker" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
-											<li><i class="fa fa-envelope" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
-											<li><i class="fa fa-facebook" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
-											<li><i class="fa fa-twitter" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
-											<li><i class="fa fa-instagram" aria-hidden="true"></i> : <span>mettre adresse en dynamique</span></li>
+											<li><i class="fa fa-map-marker" aria-hidden="true"></i> : <span><?php echo $web['adresse'].$web['codePostal'].$web['ville']?></span></li>
+											<li><i class="fa fa-envelope" aria-hidden="true"></i> : <span><?php echo $web['']?></span></li>
+											<li><i class="fa fa-facebook" aria-hidden="true"></i> : <span><?php echo $web['']?></span></li>
+											<li><i class="fa fa-twitter" aria-hidden="true"></i> : <span><?php echo $web['']?></span></li>
+											<li><i class="fa fa-instagram" aria-hidden="true"></i> : <span><?php echo $web['']?></span></li>
 										</ul>
 								</div>
 							</div>

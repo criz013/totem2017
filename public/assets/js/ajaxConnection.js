@@ -24,7 +24,7 @@ $(function(){
 	
 	$("#formLogin").on("submit", function(event){
 		event.preventDefault();
-		console.log('Ajax  c est bien')
+		
 		var urlAjax = $(this).attr('action');
 		console.log(urlAjax);
 		var infosFormulaire = $(this).serialize();
