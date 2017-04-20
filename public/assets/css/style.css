@@ -226,3 +226,13 @@ main {
 }
 
 /* FIN DATETIMEPICKER */
+
+.form-control-ib {
+	width: 70%;
+	display: inline-block;
+}
+
+.label-width {
+	width: 20%;
+	display: inline-block;
+}

@@ -6,8 +6,9 @@
 
     <?php $this->insert("back/part/head",['log'=>$log]); ?>
 
-    <div class="row">
-        <div class="container">
+    <div class="container">
+        <div class="row">
+        
 
             <h2 class="back-style">Edition challenge</h2>
 
