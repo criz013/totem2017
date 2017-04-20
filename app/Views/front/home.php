@@ -15,7 +15,7 @@
 	
 	<!-- inclure currentEdition -->
 	<section id="currentEdition" class="row section">
-	<?php $this->insert('front/part/currentEdition'); ?>
+	<?php $this->insert('front/part/currentEdition',['sponsors'=>$sponsors]); ?>
 	</section>
 	
 	<!-- inclure currentEdition partenaires -->
