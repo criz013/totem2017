@@ -73,6 +73,11 @@
 	padding: 9px 5px;
 	font-size: 20px;
 }
+
+#back-title a {
+	color: white;
+}
+
 #back-organisation {
 	float: left;
 	vertical-align: middle;

@@ -23,7 +23,7 @@
 	<header>
 		<nav id="top-infos" role="navigation">
 			<div class="navbar-header">
-				<span id="back-title"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</span>
+				<span id="back-title"><a href="<?php echo $this->url("admin_index");?>"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></span>
 				<span id="back-organisation"><a href="<?php echo $this->url("homePage_index");?>">CHALLENGE TOTEM</a></span>
 				<ul id="top-indicators">
 					<li><i class="fa fa-trophy" aria-hidden="true"></i><span class="badge">2</span></li>
