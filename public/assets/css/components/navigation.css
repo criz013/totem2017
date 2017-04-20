@@ -35,7 +35,7 @@
     /*font-weight: normal;*/
 }
 
-.navbar-scroll li a:hover {
+.navbar-scroll li a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
     background: rgba(255, 255, 255,.35);
 }
 
@@ -80,10 +80,11 @@
 }
 
 #navbar-collapse {
+	background-color: rgba(0,0,0,.8);
 }
 
 #navbar-collapse ul li {
-	text-align: right;
+	text-align: center;
 	/*background: rgba(0,0,0,.5);*/
 }
 

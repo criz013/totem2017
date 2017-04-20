@@ -6,8 +6,8 @@ $oauth_token = '854619489908011009-jLjZ5WAdAywARYqEUOOdi8fxtzl2TII'; //Provide y
 $oauth_token_secret = 'LcicAxZFjDx9RIUqH93bmnGzU8vYBtr0fktFaKngaKuFs'; //Provide your oAuth Token Secret
 
 //2 - Include @abraham's PHP twitteroauth Library
-require "twitteroauth/autoload.php";
-use Abraham\TwitterOAuth\TwitterOAuth;
+
+use \Abraham\TwitterOAuth\TwitterOAuth;
 //3 - Authentication
 /* Create a TwitterOauth object with consumer/user tokens. */
 $connection = new TwitterOAuth($consumer_key, $consumer_secret, $oauth_token, $oauth_token_secret);

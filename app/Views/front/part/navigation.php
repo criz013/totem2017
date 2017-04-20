@@ -5,7 +5,7 @@ Fichier de navigation contenant :
 -->
 
 <nav id="nav-onepage" class="navbar navbar-onepage">
-  <div class="container">
+  <div class="text-center">
     
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -20,7 +20,7 @@ Fichier de navigation contenant :
     <div class="row">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav navbar-scroll">
+      <ul class="nav navbar-nav navbar-scroll text-center">
         <li><a href="#currentEdition">Edition 2017</a></li>
         <li><a href="#equipages">Suivi des équipages</a></li>
         <li><a href="#revuedepresse">Revue de presse</a></li>

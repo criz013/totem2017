@@ -41,7 +41,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     		
     	<?php if($tabUsers['role'] == 'benevole' ) {?>
     	<div class="form-group">
-            <label for="avatar" class="control-label col-sm-4 col-xs-12">Avatar ou photo :</label>
+            <label for="avatar" class="control-label col-sm-4 col-xs-12">Avatar ou photo actuelle :</label>
             <div class="">
     			<input class="form-control hidden" type="text" id="avatar" name="avatar" value="<?php echo $usersProfil[0]['avatar'] ?>" >
     		</div>
@@ -55,7 +55,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	
     	<?php if($tabUsers['role'] == 'sponsor' ) {?>
     	<div class="form-group">
-            <label for="logo" class="control-label col-sm-4 col-xs-12">Logo :</label>
+            <label for="logo" class="control-label col-sm-4 col-xs-12">Logo actuel:</label>
             <div class="">
     			<input class="form-control hidden" type="text" id="logo" name="logo" value="<?php echo $usersProfil[0]['logo'] ?>" >
     		</div>
