@@ -51,21 +51,26 @@ class UserController extends Controller
     		
     		//$password           	= trim($_safe["password"]);
             //test si avatar ou logo sont défini dans le POST
-    		if(isset($safe["name_compagny"])){
+    		//if(isset($safe["name_compagny"])){
     		$name_compagny          = trim($safe["name_compagny"]);
     		$link            		= trim($safe["link"]);
     		$description            = trim($safe["description"]);
-    		$haschtage              = trim($safe["haschtag"]);
-    		$logo            		= trim($safe["logo"]);
-    		$avatar 				= '';
-			}else{
-				$name_compagny          = '';
-				$link            		= '';
-				$description            = '';
-				$haschtage              = '';
-				$avatar 				= '';
-				$logo            		= '';
-			}
+    		$haschtag               = trim($safe["haschtag"]);
+
+    		if(isset($safe["logo"]){
+                $logo = trim($safe["logo"]);
+            }
+    		if(isset($safe["avatar"]){
+                $avatar = trim($safe["avatar"]);
+            }
+			// }else{
+			// 	$name_compagny          = '';
+			// 	$link            		= '';
+			// 	$description            = '';
+			// 	$haschtage              = '';
+			// 	$avatar 				= '';
+			// 	$logo            		= '';
+			// }
 			
     		if(!is_string($last_name) || ( mb_strlen($last_name) < 5)){
     			$error++;
@@ -81,7 +86,7 @@ class UserController extends Controller
     		if (preg_match ( $motif, $phone ) )
     		{
     			$error++;
-    			$message[] = 'Numéros de téléphone invalide';
+    			$message[] = 'Numéro de téléphone invalide';
     		}
     		
     		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -102,11 +107,10 @@ class UserController extends Controller
     	       
                 if(isset($avatar))
                 {
-
                 	file_put_contents($dir.$filename, base64_decode($avatar));
                 	$avatar=$filename;
-
                 }
+
                 if(isset($logo))
                 {
                     file_put_contents($dir.'/'.$filename, base64_decode($logo));
@@ -137,37 +141,45 @@ class UserController extends Controller
     			$objetUsersModel = new \W\Model\UsersModel;
     			$objetUsersProfilModel = new \Model\Users_profilModel;
     			
-    			     $objetUsersModel->update([
-    			     			"email"      		=> $email,
-    			     			"last_name"  		=> $last_name,
-    			     			"first_name" 		=> $first_name,
-    			     			"phone"      		=> $phone,
-    			     			"modified"    		=> date('Y-m-d h:i:s'),
-    			     			"username" 			=> $email], $id);
+                $objetUsersModel->update([
+                			"email"      		=> $email,
+                			"last_name"  		=> $last_name,
+                			"first_name" 		=> $first_name,
+                			"phone"      		=> $phone,
+                			"modified"    		=> date('Y-m-d h:i:s'),
+                			"username" 			=> $email], $id);
     			     
     			     
-    			   $x =  $objetUsersProfilModel->search(['id_users'=>$id]);
-    			   if(isset($safe["name_compagny"])){
-    			     $objetUsersProfilModel->update(['avatar'=>$avatar],$x[0]['id']);
-    			   }else{
-    			   	$objetUsersProfilModel->update(['name_compagny'=>$name_compagny ,
+			   $x =  $objetUsersProfilModel->search(['id_users'=>$id]);
+			   //if(isset($safe["name_compagny"])){
+                if(isset($avatar)){
+	                $objetUsersProfilModel->update(['avatar'=>$avatar],$x[0]['id']);
+                }
+
+                if(isset($logo)){
+                    $objetUsersProfilModel->update(['logo'=>$logo],$x[0]['id']);
+                }
+    			   //}else{
+    			$objetUsersProfilModel->update(['name_compagny'=>$name_compagny,
     			   			'description'=>$description,
-    			   			'logo'=>$logo,
+    			   			//'logo'=>$logo,
     			   			'link'=>$link,
-    			   			'haschtag'=>$haschtage,
-    			   			'avatar'=>$avatar],$x[0]['id']);
-    			   }
+    			   			'haschtag'=>$haschtag,
+    			   			//'avatar'=>$avatar
+                            ],$x[0]['id']);
+    			   //}
     			     
-    			     $message[] = "BRAVO vous avez modifier vos données personnelles";
-    			     $alertclass="success";
-    			     $icoclass="thumbs-up";
-    		}
-            else
-            {
-    			$alertclass="danger";
-    			$icoclass="thumbs-down";
+                $message[] = "BRAVO vous avez modifier vos données personnelles";
+                $alertclass="success";
+                $icoclass="thumbs-up";
     		}
     	}
+        else
+        {
+            $message[] = "Vous devez remplir le formulaire";
+            $alertclass="danger";
+            $icoclass="thumbs-down";
+        }
     	
     	$this->show('front/partenaire',['id'=>$id,'message'=>$message, 'alertclass'=>$alertclass, 'icoclass'=>$icoclass,'web'=>$web]);
     	

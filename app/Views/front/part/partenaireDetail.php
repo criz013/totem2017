@@ -75,7 +75,7 @@ $usersProfil=  $objetUsersProfilModel->search(['id_users'=>$id]);
     	           <input class="form-control col-xs-12" type="file" id="file">
     	        </div>
     	        <div class="text-center">
-    	           <input type="button" class="btn btn-primary" id="btnZoomOut" value="Zoom -">
+                    <input type="button" class="btn btn-primary" id="btnZoomOut" value="Zoom -">
                     <input type="button" class="btn btn-primary" id="btnZoomIn" value="Zoom +">
     	        </div>
     	        <div class="text-center">
