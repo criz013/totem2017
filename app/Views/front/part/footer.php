@@ -31,7 +31,8 @@
             <ul>
             	<li><a href="#sidenav-participer">Participer</a></li>
 				<li><a href="#sidenav-seconnecter">Se connecter</a></li>
-				<li><a href="#currentEdition_partenaires">Partenaires 2017</a></li>
+				<li><a href="#currentEdition">Edition 2017</a></li>
+                <li><a href="#current_partenaires">Sponsors 2017</a></li>
 				<li><a href="#equipages">Suivi des équipages</a></li>
 				<li><a href="#revuedepresse">Revue de presse</a></li>
 				<li><a href="#contact">Contact</a></li>
