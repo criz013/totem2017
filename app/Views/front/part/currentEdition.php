@@ -49,7 +49,7 @@ INCLURE LE FOOTER-SECTION
   </div><!--/container-->
   
   <div class="container">     
-      <div class="row">
+      <div class="row" id="current_partenaires">
         <div class="col-xs-12">
           <h2>Partenaires 2017</h2>
         </div>
