@@ -35,10 +35,14 @@
         //$objectUsersModel->updateSocials($sponsorsValides);
         $classement=$objectUsersModel->sponsorsTwitAsc();
         $max=$classement[0]['cpttwitter'];
+        $place=1;
         //for each 
         foreach ($classement as $team) :
-            
-        
+        if($max!=0){    
+        $positioncursor=($team['cpttwitter']*100)/$max;
+        } else {
+            positioncursor=0;
+        }
    ?>                    
     <div class="equipe col-xs-12 id">
         <div class="blocSocial col-xs-7 col-sm-4 col-md-5 col-lg-4">
@@ -52,7 +56,7 @@
                     <img class="img-responsive" src="<?php echo $this->assetUrl('/img/fbk.png');?>"></img>  
                 </div>
                 <div class="likeSocial">
-                    <p><?php echo $team['cpt-fbk']; ?></p>
+                    <p><?php echo $team['cptfbk']; ?></p>
                 </div>
             </div>
             <div class="twt col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
@@ -68,27 +72,27 @@
                     <img class="img-responsive" src="<?php echo $this->assetUrl('/img/instag.png');?>"></img>
                 </div>
                 <div class="likeSocial">
-                    <p><?php echo $team['cpt-instag']; ?></p>
+                    <p><?php echo $team['cptinstag']; ?></p>
                 </div>
             </div>
         </div><!--blocSocial-->
         <div class="logoClassement text-center col-xs-3 col-sm-3 col-md-2 col-lg-2">
-            <img class="img-responsive" src="<?php echo $this->assetUrl('/img/logoavatar/'.$logo);?>"></img>
+            <img class="img-responsive" src="<?php echo $this->assetUrl('/img/logoavatar/'.$team['logo']);?>"></img>
         </div>
         <div class="zoneProgress text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
             <div class="barProgress">
-                    <img class="cursorProgress" src="<?php echo $this->assetUrl('/img/cursor.png');?>"></img>
-                    <script>
-                        $positioncursor=($max*100)/$team['cpt-twitter'];
-                        
-                    </script>
+                    <img class="cursorProgress" src="<?php echo $this->assetUrl('/img/cursor.png');?>"  style="left: <?php echo $positioncursor.'%'; ?></img>
             </div>
         </div>
         <div class="autonomie hidden-xs hidden-sm col-md-1 col-lg-1">
             <img src="<?php echo $this->assetUrl('/img/bat-75.png');?>"></img>
         </div>
         <div class="zonePosition col-xs-2 hidden-sm hidden-md hidden-lg text-center">
-                <p class="position text-center">2</p>
+                <p class="position text-center"><?php echo $place; ?></p>
         </div>
     </div><!--equipe-->
-<?php endforeach ?>
+<?php 
+    $place++;
+    endforeach
+?>
+</div>

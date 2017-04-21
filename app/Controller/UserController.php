@@ -30,7 +30,7 @@ class UserController extends Controller
     $objetUsersModel = new \W\Model\UsersModel;
     $objetUsersProfilModel = new \Model\UsersProfilModel;
     //$x = $objetUsersModel->sponsorsTwitAsc();
-    print_r($sponsors);
+    //print_r($sponsors);
     foreach($sponsors as $team){
         $id=$team["id"];
         $haschtag=$team["haschtag"];
