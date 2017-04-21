@@ -39,10 +39,4 @@
 	<button type="submit">Ajouter</button>
 </form>
 <a class="btn btn-vert" href="<?php echo $this->url('press_index') ?>" role="button">Retour</a>
-<div class="form-group">
-	<ul>
-       <?php foreach ($message as $item){?>
-    <li><?php echo $item; ?></li>
-    <?php }?>
-    </ul>
-	</div>
+

@@ -251,7 +251,7 @@ class HomePageController extends Controller
     			     	
     			     	$sujet = 'Bienvenue '.$first_name.' '.$last_name;
     			     	$corp = 'Bienvenue '.$first_name.' '.$last_name.' pour valider votre inscription veuillez cliquer sur ce lien <a href='.$lien.'>Valider votre inscription</a>';
-    			     	//$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);   			
+    			     	$this->envoyerMail('chrastophe@gmail.com',$email,$sujet,$corp);   			
     		
     		}
     		

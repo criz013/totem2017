@@ -41,7 +41,7 @@
         if($max!=0){    
         $positioncursor=($team['cpttwitter']*100)/$max;
         } else {
-            positioncursor=0;
+            $positioncursor=0;
         }
    ?>                    
     <div class="equipe col-xs-12 id">
@@ -81,7 +81,7 @@
         </div>
         <div class="zoneProgress text-center hidden-xs col-sm-5 col-md-4 col-lg-5">
             <div class="barProgress">
-                    <img class="cursorProgress" src="<?php echo $this->assetUrl('/img/cursor.png');?>"  style="left: <?php echo $positioncursor.'%'; ?></img>
+                    <img class="cursorProgress" src="<?php echo $this->assetUrl('/img/cursor.png');?>"  style="left: <?php echo $positioncursor.'%'; ?>" >
             </div>
         </div>
         <div class="autonomie hidden-xs hidden-sm col-md-1 col-lg-1">
@@ -95,4 +95,4 @@
     $place++;
     endforeach
 ?>
-</div>
+
